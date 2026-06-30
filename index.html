@@ -1,0 +1,1449 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Said B. — Narrative Designer</title>
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;1,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --bg: #0e0e0c;
+  --surface: #161613;
+  --surface2: #1e1e1a;
+  --border: rgba(255,255,255,0.08);
+  --border-hover: rgba(255,255,255,0.18);
+  --text: #e8e4d9;
+  --text-muted: #7a7669;
+  --text-dim: #4a4840;
+  --accent: #c8a96e;
+  --accent-dim: rgba(200,169,110,0.10);
+  --sidebar-w: 220px;
+  --font-serif: 'EB Garamond', Georgia, serif;
+  --font-mono: 'JetBrains Mono', 'Courier New', monospace;
+}
+
+html, body { height: 100%; }
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--font-serif);
+  font-size: 17px;
+  line-height: 1.6;
+  display: flex;
+}
+
+/* ── SIDEBAR ── */
+.sidebar {
+  width: var(--sidebar-w);
+  min-height: 100vh;
+  background: var(--surface);
+  border-right: 0.5px solid var(--border);
+  position: fixed;
+  top: 0; left: 0; bottom: 0;
+  display: flex;
+  flex-direction: column;
+  padding: 2rem 0;
+  z-index: 200;
+  overflow-y: auto;
+}
+
+.sidebar-logo {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  color: var(--accent);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  padding: 0 1.5rem 2rem;
+  border-bottom: 0.5px solid var(--border);
+  cursor: pointer;
+  text-decoration: none;
+  display: block;
+}
+
+.sidebar-logo span {
+  display: block;
+  font-size: 10px;
+  color: var(--text-muted);
+  letter-spacing: 0.06em;
+  margin-top: 0.25rem;
+  text-transform: none;
+}
+
+nav.sidebar-nav {
+  padding: 1.5rem 0;
+  flex: 1;
+}
+
+.nav-item {
+  position: relative;
+}
+
+.nav-link {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.55rem 1.5rem;
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  text-decoration: none;
+  cursor: pointer;
+  transition: color 0.2s, background 0.2s;
+  user-select: none;
+  border: none;
+  background: none;
+  width: 100%;
+  text-align: left;
+}
+
+.nav-link:hover, .nav-link.active {
+  color: var(--text);
+  background: rgba(255,255,255,0.03);
+}
+
+.nav-link.active { color: var(--accent); }
+
+.nav-arrow {
+  font-size: 8px;
+  transition: transform 0.2s;
+  opacity: 0.5;
+}
+
+.nav-item.open .nav-arrow { transform: rotate(90deg); }
+
+.nav-dropdown {
+  display: none;
+  flex-direction: column;
+  background: rgba(0,0,0,0.2);
+}
+
+.nav-item.open .nav-dropdown { display: flex; }
+
+.nav-dropdown a {
+  padding: 0.45rem 1.5rem 0.45rem 2.25rem;
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: 0.06em;
+  color: var(--text-dim);
+  text-decoration: none;
+  transition: color 0.2s;
+  cursor: pointer;
+}
+
+.nav-dropdown a:hover, .nav-dropdown a.active {
+  color: var(--accent);
+}
+
+.sidebar-footer {
+  padding: 1.5rem;
+  border-top: 0.5px solid var(--border);
+}
+
+.sidebar-footer p {
+  font-family: var(--font-mono);
+  font-size: 9px;
+  color: var(--text-dim);
+  letter-spacing: 0.05em;
+  line-height: 1.6;
+}
+
+/* ── MAIN CONTENT ── */
+.main {
+  margin-left: var(--sidebar-w);
+  flex: 1;
+  min-height: 100vh;
+}
+
+.page { display: none; }
+.page.active { display: block; }
+
+/* ── HOME PAGE ── */
+.home-hero {
+  padding: 4rem 3.5rem 3rem;
+  border-bottom: 0.5px solid var(--border);
+}
+
+.hero-eyebrow {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  color: var(--accent);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin-bottom: 1.25rem;
+}
+
+.hero-title {
+  font-size: clamp(2.2rem, 4vw, 3.2rem);
+  font-weight: 400;
+  line-height: 1.15;
+  letter-spacing: -0.01em;
+  margin-bottom: 1.25rem;
+}
+
+.hero-title em { font-style: italic; color: var(--accent); }
+
+.cursor {
+  display: inline-block;
+  width: 3px;
+  height: 0.82em;
+  background: var(--accent);
+  margin-left: 4px;
+  vertical-align: middle;
+  animation: blink 1.1s step-end infinite;
+}
+
+@keyframes blink { 0%,100%{opacity:1} 50%{opacity:0} }
+
+.hero-bio {
+  font-size: 1rem;
+  color: var(--text-muted);
+  max-width: 560px;
+  line-height: 1.8;
+}
+
+/* CAROUSEL */
+.carousel-section {
+  padding: 3rem 3.5rem;
+  border-bottom: 0.5px solid var(--border);
+}
+
+.section-label {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  color: var(--text-dim);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin-bottom: 1.5rem;
+}
+
+.carousel-wrap {
+  position: relative;
+}
+
+.carousel-track {
+  display: flex;
+  gap: 1.25rem;
+  overflow: hidden;
+}
+
+.carousel-slide {
+  flex: 0 0 calc(33.333% - 0.85rem);
+  border: 0.5px solid var(--border);
+  cursor: pointer;
+  transition: border-color 0.25s, transform 0.25s;
+  position: relative;
+  overflow: hidden;
+  aspect-ratio: 16/9;
+}
+
+.carousel-slide:hover {
+  border-color: var(--accent);
+  transform: translateY(-3px);
+}
+
+.carousel-img {
+  width: 50%;
+  height: 50%;
+  object-fit: cover;
+  display: block;
+  background: var(--surface2);
+}
+
+.placeholder-img {
+  width: 100%;
+  height: 100%;
+  background: var(--surface2);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+.placeholder-img span {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  color: var(--text-dim);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.placeholder-img .ph-icon {
+  font-size: 1.5rem;
+  opacity: 0.2;
+}
+
+.slide-label {
+  position: absolute;
+  bottom: 0; left: 0; right: 0;
+  padding: 0.75rem 1rem;
+  background: linear-gradient(transparent, rgba(0,0,0,0.85));
+  font-family: var(--font-mono);
+  font-size: 10px;
+  color: var(--text);
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+}
+
+/* OVERVIEW */
+.overview-section {
+  padding: 3rem 3.5rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+}
+
+.overview-block h3 {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  color: var(--accent);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 0.5px solid var(--border);
+}
+
+.overview-block p {
+  font-size: 0.92rem;
+  color: var(--text-muted);
+  line-height: 1.75;
+  margin-bottom: 0.75rem;
+}
+
+.overview-block p strong { color: var(--text); font-weight: 500; }
+
+.tag-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem;
+  margin-top: 0.5rem;
+}
+
+.tag {
+  font-family: var(--font-mono);
+  font-size: 9px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  padding: 0.2rem 0.55rem;
+  border: 0.5px solid var(--border);
+  color: var(--text-muted);
+}
+
+/* ── SECTION PAGE (project grid) ── */
+.section-page {
+  padding: 3.5rem;
+}
+
+.section-page-header {
+  margin-bottom: 2.5rem;
+  padding-bottom: 1.5rem;
+  border-bottom: 0.5px solid var(--border);
+}
+
+.section-page-header h2 {
+  font-size: 1.8rem;
+  font-weight: 400;
+  margin-bottom: 0.4rem;
+}
+
+.section-page-header p {
+  font-size: 0.9rem;
+  color: var(--text-muted);
+}
+
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 1.25rem;
+}
+
+.project-thumb {
+  border: 0.5px solid var(--border);
+  cursor: pointer;
+  transition: border-color 0.2s, transform 0.2s;
+  overflow: hidden;
+}
+
+.project-thumb:hover {
+  border-color: var(--accent);
+  transform: translateY(-4px);
+}
+
+.project-thumb:hover .thumb-overlay { opacity: 1; }
+
+.thumb-img {
+  aspect-ratio: 16/9;
+  background: var(--surface2);
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.thumb-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(200,169,110,0.08);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 0.2s;
+  font-family: var(--font-mono);
+  font-size: 10px;
+  color: var(--accent);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.ph-box {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.4rem;
+}
+
+.ph-box span {
+  font-family: var(--font-mono);
+  font-size: 9px;
+  color: var(--text-dim);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.thumb-info {
+  padding: 0.9rem 1rem;
+  border-top: 0.5px solid var(--border);
+}
+
+.thumb-tag {
+  font-family: var(--font-mono);
+  font-size: 9px;
+  color: var(--accent);
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+  margin-bottom: 0.3rem;
+}
+
+.thumb-title {
+  font-size: 1rem;
+  font-weight: 400;
+}
+
+.thumb-year {
+  font-family: var(--font-mono);
+  font-size: 9px;
+  color: var(--text-dim);
+  margin-top: 0.25rem;
+}
+
+/* ── CASE STUDY PAGE ── */
+.case-study {
+  max-width: 820px;
+  padding: 3.5rem;
+}
+
+.cs-back {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  color: var(--text-muted);
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  margin-bottom: 2.5rem;
+  border: none;
+  background: none;
+  padding: 0;
+  transition: color 0.2s;
+}
+
+.cs-back:hover { color: var(--accent); }
+
+.cs-cover {
+  width: 100%;
+  aspect-ratio: 21/9;
+  background: var(--surface2);
+  margin-bottom: 2.5rem;
+  border: 0.5px solid var(--border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.cs-cover span {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  color: var(--text-dim);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.cs-meta-row {
+  display: flex;
+  gap: 2.5rem;
+  margin-bottom: 2.5rem;
+  padding-bottom: 1.5rem;
+  border-bottom: 0.5px solid var(--border);
+  flex-wrap: wrap;
+}
+
+.cs-meta-item label {
+  font-family: var(--font-mono);
+  font-size: 9px;
+  color: var(--text-dim);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  display: block;
+  margin-bottom: 0.25rem;
+}
+
+.cs-meta-item span {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  color: var(--text);
+}
+
+.cs-title {
+  font-size: clamp(1.8rem, 3.5vw, 2.8rem);
+  font-weight: 400;
+  margin-bottom: 0.5rem;
+  line-height: 1.2;
+}
+
+.cs-subtitle {
+  font-size: 1rem;
+  color: var(--text-muted);
+  font-style: italic;
+  margin-bottom: 2.5rem;
+}
+
+.cs-section {
+  margin-bottom: 2.5rem;
+}
+
+.cs-section-label {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  color: var(--accent);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin-bottom: 0.75rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 0.5px solid var(--border);
+}
+
+.cs-section p {
+  font-size: 0.97rem;
+  color: var(--text-muted);
+  line-height: 1.85;
+  margin-bottom: 0.75rem;
+}
+
+.cs-section p strong { color: var(--text); font-weight: 500; }
+
+.cs-section ul {
+  list-style: none;
+  padding: 0;
+}
+
+.cs-section ul li {
+  font-size: 0.95rem;
+  color: var(--text-muted);
+  line-height: 1.7;
+  padding: 0.4rem 0;
+  padding-left: 1.1rem;
+  border-bottom: 0.5px solid var(--border);
+  position: relative;
+}
+
+.cs-section ul li::before {
+  content: '—';
+  position: absolute;
+  left: 0;
+  color: var(--accent);
+  font-size: 0.8rem;
+}
+
+.cs-highlight {
+  background: var(--surface2);
+  border-left: 2px solid var(--accent);
+  padding: 1.25rem 1.5rem;
+  margin: 1.5rem 0;
+}
+
+.cs-highlight p {
+  font-size: 1.05rem;
+  font-style: italic;
+  color: var(--text);
+  margin: 0;
+  line-height: 1.7;
+}
+
+.cs-gallery {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.75rem;
+  margin: 1.5rem 0;
+}
+
+.cs-gallery-img {
+  aspect-ratio: 16/9;
+  background: var(--surface2);
+  border: 0.5px solid var(--border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.cs-gallery-img span {
+  font-family: var(--font-mono);
+  font-size: 9px;
+  color: var(--text-dim);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+/* ── ABOUT PAGE ── */
+.about-page {
+  padding: 3.5rem;
+  max-width: 720px;
+}
+
+.about-page h2 {
+  font-size: 2rem;
+  font-weight: 400;
+  margin-bottom: 0.4rem;
+}
+
+.about-page .about-role {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  color: var(--accent);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  margin-bottom: 2.5rem;
+}
+
+.about-page p {
+  font-size: 0.97rem;
+  color: var(--text-muted);
+  line-height: 1.85;
+  margin-bottom: 1rem;
+}
+
+.about-page p strong { color: var(--text); font-weight: 500; }
+
+.about-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  margin-top: 2.5rem;
+  padding-top: 2rem;
+  border-top: 0.5px solid var(--border);
+}
+
+.about-grid h4 {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  color: var(--accent);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  margin-bottom: 0.75rem;
+}
+
+/* ── CONTACTS PAGE ── */
+.contacts-page {
+  padding: 3.5rem;
+  max-width: 600px;
+}
+
+.contacts-page h2 {
+  font-size: 2rem;
+  font-weight: 400;
+  margin-bottom: 0.4rem;
+}
+
+.contacts-page .contacts-sub {
+  font-size: 0.95rem;
+  color: var(--text-muted);
+  margin-bottom: 3rem;
+  font-style: italic;
+}
+
+.contact-row {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  padding: 1rem 0;
+  border-bottom: 0.5px solid var(--border);
+}
+
+.contact-row:first-of-type { border-top: 0.5px solid var(--border); }
+
+.contact-label {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  color: var(--text-dim);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  width: 90px;
+  flex-shrink: 0;
+}
+
+.contact-value {
+  font-size: 0.97rem;
+  color: var(--text-muted);
+}
+
+.contact-value a {
+  color: var(--accent);
+  text-decoration: none;
+}
+
+.contact-value a:hover { text-decoration: underline; }
+</style>
+</head>
+<body>
+
+<!-- ══════════════════════════════════ SIDEBAR ══════════════════════════════════ -->
+<aside class="sidebar">
+  <a class="sidebar-logo" onclick="showPage('home')">
+    Said B.
+    <span>Narrative Designer</span>
+  </a>
+
+  <nav class="sidebar-nav">
+
+    <div class="nav-item">
+      <button class="nav-link active" onclick="showPage('home')">Home</button>
+    </div>
+
+    <div class="nav-item" id="nav-academic">
+      <button class="nav-link" onclick="toggleDropdown('nav-academic')">
+        Academic Projects <span class="nav-arrow">▶</span>
+      </button>
+      <div class="nav-dropdown">
+        <a onclick="showProjectSection('academic')">All Projects</a>
+        <a onclick="showCaseStudy('dodgy')">Dodgy Depot</a>
+        <a onclick="showCaseStudy('ostrava')">Ostrava</a>
+        <a onclick="showCaseStudy('hocus')">Hocus Potion</a>
+      </div>
+    </div>
+
+    <div class="nav-item" id="nav-personal">
+      <button class="nav-link" onclick="toggleDropdown('nav-personal')">
+        Personal Projects <span class="nav-arrow">▶</span>
+      </button>
+      <div class="nav-dropdown">
+        <a onclick="showProjectSection('personal')">All Projects</a>
+        <a onclick="showCaseStudy('dreamjumper')">Dream Jumper</a>
+        <a onclick="showCaseStudy('tides')">Tides of Vengeance</a>
+        <a onclick="showCaseStudy('culling')">Culling Circuit</a>
+      </div>
+    </div>
+
+    <div class="nav-item" id="nav-jam">
+      <button class="nav-link" onclick="toggleDropdown('nav-jam')">
+        Game Jam <span class="nav-arrow">▶</span>
+      </button>
+      <div class="nav-dropdown">
+        <a onclick="showProjectSection('jam')">All Projects</a>
+        <a onclick="showCaseStudy('comingback')">Coming Back</a>
+      </div>
+    </div>
+
+    <div class="nav-item">
+      <button class="nav-link" onclick="showPage('characters')">Characters</button>
+    </div>
+
+    <div class="nav-item">
+      <button class="nav-link" onclick="showPage('about')">About Me</button>
+    </div>
+
+    <div class="nav-item">
+      <button class="nav-link" onclick="showPage('contacts')">Contacts</button>
+    </div>
+
+  </nav>
+
+  <div class="sidebar-footer">
+    <p>DBGA Milano<br>2024 — 2027</p>
+  </div>
+</aside>
+
+<!-- ══════════════════════════════════ MAIN ══════════════════════════════════ -->
+<main class="main">
+
+  <!-- ── HOME ── -->
+  <div class="page active" id="page-home">
+
+    <div class="home-hero">
+      <div class="hero-eyebrow">Narrative Designer · DBGA Milano · IT</div>
+      <h1 class="hero-title">
+        Building worlds<br>through <em>words</em><span class="cursor"></span>
+      </h1>
+      <p class="hero-bio">
+        First-year student at DBGA, specialising in narrative design, sound design, and production.
+        I'm drawn to surreal worlds, liminal atmospheres, and games that treat sound as a storytelling tool.
+        Long-term goal: ship something at Techland or CD Projekt RED.
+      </p>
+    </div>
+
+    <div class="carousel-section">
+      <div class="section-label">// Browse by section</div>
+      <div class="carousel-track">
+
+        <div class="carousel-slide" onclick="showProjectSection('academic')">
+          <img src="./images/academic.jpg">
+            <span class="ph-icon">📁</span>
+            <span>Cover image</span>
+          </div>
+          <div class="slide-label">Academic Projects</div>
+        </div>
+
+        <div class="carousel-slide" onclick="showProjectSection('personal')">
+          <img src="./images/PersonalProjects.png">
+            <span class="ph-icon">📁</span>
+            <span>Cover image</span>
+          </div>
+          <div class="slide-label">Personal Projects</div>
+        </div>
+
+        <div class="carousel-slide" onclick="showProjectSection('jam')">
+          <img src="./images/academic.jpg">
+            <span class="ph-icon">📁</span>
+            <span>Cover image</span>
+          </div>
+          <div class="slide-label">Game Jam</div>
+        </div>
+
+        <div class="carousel-slide" onclick="showPage('characters')">
+          <img src="./images/AcademyProjects.png">
+            <span class="ph-icon">📁</span>
+            <span>Cover image</span>
+          </div>
+          <div class="slide-label">Characters</div>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="overview-section">
+      <div class="overview-block">
+        <h3>Currently working on</h3>
+        <p><strong>Dream Jumper</strong> — first-person liminal horror walking simulator with roguelite elements. Full GDD, two level design documents, producing a playable demo with a small team.</p>
+        <p><strong>Portfolio development</strong> — case studies for Dodgy Depot, Dream Jumper, Tides of Vengeance, Coming Back.</p>
+        <p><strong>Exploring</strong> Ink / Yarn Spinner for dialogue implementation in Unity.</p>
+      </div>
+      <div class="overview-block">
+        <h3>Skills &amp; tools</h3>
+        <p><strong>Narrative</strong></p>
+        <div class="tag-list">
+          <span class="tag">World Building</span>
+          <span class="tag">Dialogue Systems</span>
+          <span class="tag">GDD Writing</span>
+          <span class="tag">Character Design</span>
+          <span class="tag">Ink / Yarn</span>
+        </div>
+        <p style="margin-top:1rem;"><strong>Production &amp; Design</strong></p>
+        <div class="tag-list">
+          <span class="tag">Sound Design</span>
+          <span class="tag">Level Design</span>
+          <span class="tag">Unity</span>
+          <span class="tag">Jira</span>
+          <span class="tag">Trello</span>
+          <span class="tag">Git</span>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- ── ACADEMIC SECTION ── -->
+  <div class="page" id="page-section-academic">
+    <div class="section-page">
+      <div class="section-page-header">
+        <h2>Academic Projects</h2>
+        <p>Work developed during the DBGA programme — narrative, sound, and level design.</p>
+      </div>
+      <div class="projects-grid">
+
+        <div class="project-thumb" onclick="showCaseStudy('dodgy')">
+          <div class="thumb-img">
+            <div class="ph-box"><span>Cover image</span></div>
+            <div class="thumb-overlay">View case study →</div>
+          </div>
+          <div class="thumb-info">
+            <div class="thumb-tag">Narrative + Sound Design</div>
+            <div class="thumb-title">Dodgy Depot</div>
+            <div class="thumb-year">2024 – 2025 · DBGA</div>
+          </div>
+        </div>
+
+        <div class="project-thumb" onclick="showCaseStudy('ostrava')">
+          <div class="thumb-img">
+            <div class="ph-box"><span>Cover image</span></div>
+            <div class="thumb-overlay">View case study →</div>
+          </div>
+          <div class="thumb-info">
+            <div class="thumb-tag">Level Design</div>
+            <div class="thumb-title">Ostrava: The Old Quarter</div>
+            <div class="thumb-year">2024 · DBGA</div>
+          </div>
+        </div>
+
+        <div class="project-thumb" onclick="showCaseStudy('hocus')">
+          <div class="thumb-img">
+            <div class="ph-box"><span>Cover image</span></div>
+            <div class="thumb-overlay">View case study →</div>
+          </div>
+          <div class="thumb-info">
+            <div class="thumb-tag">Copywriting · Mobile</div>
+            <div class="thumb-title">Hocus Potion</div>
+            <div class="thumb-year">2024 · DBGA</div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- ── PERSONAL SECTION ── -->
+  <div class="page" id="page-section-personal">
+    <div class="section-page">
+      <div class="section-page-header">
+        <h2>Personal Projects</h2>
+        <p>Original concepts, pitches, and designs developed independently.</p>
+      </div>
+      <div class="projects-grid">
+
+        <div class="project-thumb" onclick="showCaseStudy('dreamjumper')">
+          <div class="thumb-img">
+            <div class="ph-box"><span>Cover image</span></div>
+            <div class="thumb-overlay">View case study →</div>
+          </div>
+          <div class="thumb-info">
+            <div class="thumb-tag">GDD · Narrative · Level Design</div>
+            <div class="thumb-title">Dream Jumper</div>
+            <div class="thumb-year">2025 · In development</div>
+          </div>
+        </div>
+
+        <div class="project-thumb" onclick="showCaseStudy('tides')">
+          <div class="thumb-img">
+            <div class="ph-box"><span>Cover image</span></div>
+            <div class="thumb-overlay">View case study →</div>
+          </div>
+          <div class="thumb-info">
+            <div class="thumb-tag">Worldbuilding · Pitch</div>
+            <div class="thumb-title">Tides of Vengeance</div>
+            <div class="thumb-year">2024 – 2025 · Concept</div>
+          </div>
+        </div>
+
+        <div class="project-thumb" onclick="showCaseStudy('culling')">
+          <div class="thumb-img">
+            <div class="ph-box"><span>Cover image</span></div>
+            <div class="thumb-overlay">View case study →</div>
+          </div>
+          <div class="thumb-info">
+            <div class="thumb-tag">Worldbuilding · Concept</div>
+            <div class="thumb-title">Culling Circuit</div>
+            <div class="thumb-year">2024 · Concept</div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- ── JAM SECTION ── -->
+  <div class="page" id="page-section-jam">
+    <div class="section-page">
+      <div class="section-page-header">
+        <h2>Game Jam</h2>
+        <p>Projects completed under tight time constraints — 5 days or less.</p>
+      </div>
+      <div class="projects-grid">
+
+        <div class="project-thumb" onclick="showCaseStudy('comingback')">
+          <div class="thumb-img">
+            <div class="ph-box"><span>Cover image</span></div>
+            <div class="thumb-overlay">View case study →</div>
+          </div>
+          <div class="thumb-info">
+            <div class="thumb-tag">Concept · Art · Sound</div>
+            <div class="thumb-title">Coming Back</div>
+            <div class="thumb-year">2024 · Completed</div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- ══════════════ CASE STUDIES ══════════════ -->
+
+  <!-- DODGY DEPOT -->
+  <div class="page" id="cs-dodgy">
+    <div class="case-study">
+      <button class="cs-back" onclick="showProjectSection('academic')">← Back to Academic Projects</button>
+      <div class="cs-cover"><span>Cover image — replace with key artwork</span></div>
+      <div class="cs-meta-row">
+        <div class="cs-meta-item"><label>Type</label><span>Academic</span></div>
+        <div class="cs-meta-item"><label>Role</label><span>Narrative + Sound Designer</span></div>
+        <div class="cs-meta-item"><label>Year</label><span>2024 – 2025</span></div>
+        <div class="cs-meta-item"><label>Context</label><span>DBGA Milano</span></div>
+        <div class="cs-meta-item"><label>Status</label><span>Completed</span></div>
+      </div>
+      <h1 class="cs-title">Dodgy Depot</h1>
+      <p class="cs-subtitle">A retrofuturistic first-person job simulation game set in a world where work never ends.</p>
+
+      <div class="cs-section">
+        <div class="cs-section-label">Overview</div>
+        <p>Dodgy Depot is a first-person job simulation game with a <strong>retrofuturistic aesthetic</strong>. Players navigate a strange, bureaucratic workplace where the mundane becomes surreal. The project gave me full ownership of the narrative and audio direction — working largely independently from concept to delivery.</p>
+      </div>
+
+      <div class="cs-section">
+        <div class="cs-section-label">My Contribution</div>
+        <ul>
+          <li>Developed the full cast of 30+ characters with distinct voices, roles, and dialogue arcs</li>
+          <li>Designed and wrote the complete dialogue system — branching conversations, in-world emails, tutorial text</li>
+          <li>Built the worldbuilding from scratch: lore, internal glossary, invented slang, company history</li>
+          <li>Directed the audio and music — source selection, implementation logic, ambient design</li>
+          <li>Created easter eggs and cross-references woven throughout the environment</li>
+        </ul>
+      </div>
+
+      <div class="cs-highlight">
+        <p>"The narrative layer was consistently cited by playtesters and peers as the element that made Dodgy Depot feel like a real place rather than a game level."</p>
+      </div>
+
+      <div class="cs-section">
+        <div class="cs-section-label">Narrative Design Approach</div>
+        <p>The core challenge was building a world that felt <strong>lived-in</strong> without overwhelming the player with lore. I approached it through layering: essential story beats in dialogue, background texture in environmental details, deeper lore accessible only to players who looked for it.</p>
+        <p>Character voices were the most demanding part. With 30+ NPCs sharing the same workspace, each needed a distinct register — from the aggressively upbeat receptionist to the quietly nihilistic warehouse foreman — without any feeling like a parody.</p>
+      </div>
+
+      <div class="cs-section">
+        <div class="cs-section-label">Sound Direction</div>
+        <p>Sound design doubled as narrative design in Dodgy Depot. The sonic palette — <strong>muffled machinery, degraded muzak, intermittent PA announcements</strong> — was built to reinforce the sense of a system running slightly past its expiry date. Each audio layer was chosen to add atmosphere without explaining it.</p>
+      </div>
+
+      <div class="cs-section">
+        <div class="cs-section-label">Gallery</div>
+        <div class="cs-gallery">
+          <div class="cs-gallery-img"><span>Screenshot / artwork</span></div>
+          <div class="cs-gallery-img"><span>Screenshot / artwork</span></div>
+          <div class="cs-gallery-img"><span>Dialogue system diagram</span></div>
+          <div class="cs-gallery-img"><span>Character sheet / concept</span></div>
+        </div>
+      </div>
+
+      <div class="cs-section">
+        <div class="cs-section-label">What I Learned</div>
+        <p>Managing the full narrative pipeline solo taught me how to <strong>prioritise ruthlessly</strong>. Not every character needs a deep arc. Not every piece of lore needs to be findable. The world feels complete when the parts the player does see feel inevitable — not when everything is documented.</p>
+        <p>Friction with the production side of the team also sharpened my instinct for <strong>defending narrative decisions with design language</strong> rather than creative intuition alone.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- DREAM JUMPER -->
+  <div class="page" id="cs-dreamjumper">
+    <div class="case-study">
+      <button class="cs-back" onclick="showProjectSection('personal')">← Back to Personal Projects</button>
+      <div class="cs-cover"><span>Cover image — replace with key artwork</span></div>
+      <div class="cs-meta-row">
+        <div class="cs-meta-item"><label>Type</label><span>Personal</span></div>
+        <div class="cs-meta-item"><label>Role</label><span>Narrative Designer · Director</span></div>
+        <div class="cs-meta-item"><label>Year</label><span>2025</span></div>
+        <div class="cs-meta-item"><label>Team</label><span>Said, Marco, Alice</span></div>
+        <div class="cs-meta-item"><label>Status</label><span>In development</span></div>
+      </div>
+      <h1 class="cs-title">Dream Jumper</h1>
+      <p class="cs-subtitle">A first-person liminal horror walking simulator with roguelite elements. You fall asleep. The spaces remember.</p>
+
+      <div class="cs-section">
+        <div class="cs-section-label">Concept</div>
+        <p>Dream Jumper follows <strong>Elias</strong>, a young man trapped in recursive dreamscapes — familiar spaces warped just past recognition. Each run generates a new configuration of liminal rooms pulled from his own memory, each holding fragments of the life he's trying to piece together.</p>
+        <p>The game sits between horror and melancholy. The threat is never a monster — it's the creeping sense that the architecture knows you.</p>
+      </div>
+
+      <div class="cs-section">
+        <div class="cs-section-label">Documents Produced</div>
+        <ul>
+          <li>Game Design Document v3.0 — full systemic and narrative specification</li>
+          <li>Level Design Document: <em>Silent Pool</em> — atmospheric horror, memory as space</li>
+          <li>Level Design Document: <em>Playdate</em> — domestic uncanny, childhood distorted</li>
+          <li>Pitch deck for internal presentation</li>
+          <li>AI image prompt documentation for visual direction</li>
+        </ul>
+      </div>
+
+      <div class="cs-highlight">
+        <p>"Both level design documents were praised for their original mechanical thinking — the narrative and spatial logic working as a single system rather than two parallel tracks."</p>
+      </div>
+
+      <div class="cs-section">
+        <div class="cs-section-label">Narrative Design Approach</div>
+        <p>The central design constraint was that <strong>space must carry story</strong>. Dream Jumper has no cutscenes, minimal dialogue, and no explicit exposition. Every piece of information a player receives comes through environmental detail, audio cues, or the behaviour of the space itself.</p>
+        <p>This meant designing levels as narrative instruments first, playable spaces second — then finding the intersection.</p>
+      </div>
+
+      <div class="cs-section">
+        <div class="cs-section-label">Gallery</div>
+        <div class="cs-gallery">
+          <div class="cs-gallery-img"><span>Concept art / moodboard</span></div>
+          <div class="cs-gallery-img"><span>Level map — Silent Pool</span></div>
+          <div class="cs-gallery-img"><span>Level map — Playdate</span></div>
+          <div class="cs-gallery-img"><span>Screenshot / prototype</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- OSTRAVA -->
+  <div class="page" id="cs-ostrava">
+    <div class="case-study">
+      <button class="cs-back" onclick="showProjectSection('academic')">← Back to Academic Projects</button>
+      <div class="cs-cover"><span>Cover image — replace with key artwork</span></div>
+      <div class="cs-meta-row">
+        <div class="cs-meta-item"><label>Type</label><span>Academic</span></div>
+        <div class="cs-meta-item"><label>Role</label><span>Level Designer</span></div>
+        <div class="cs-meta-item"><label>Year</label><span>2024</span></div>
+        <div class="cs-meta-item"><label>Context</label><span>DBGA Milano</span></div>
+        <div class="cs-meta-item"><label>Status</label><span>Completed</span></div>
+      </div>
+      <h1 class="cs-title">Ostrava: The Old Quarter</h1>
+      <p class="cs-subtitle">A level design exercise — six zones, one city, a spatial logic that tells its own story.</p>
+
+      <div class="cs-section">
+        <div class="cs-section-label">Overview</div>
+        <p>An academic level design presentation built around a fictional district of Ostrava, Czech Republic. The brief was to design a space with <strong>contextual logic</strong> — each zone had to feel like it belonged to the same city while serving a distinct gameplay function.</p>
+      </div>
+
+      <div class="cs-section">
+        <div class="cs-section-label">Design Approach</div>
+        <ul>
+          <li>Six zones with distinct spatial rhythm, visual language, and gameplay purpose</li>
+          <li>Narrative context embedded in architecture — every area readable as a place with history</li>
+          <li>Custom Unity C# mechanics: climbing system and ledge detection</li>
+          <li>Verticality used as both gameplay tool and narrative metaphor</li>
+        </ul>
+      </div>
+
+      <div class="cs-section">
+        <div class="cs-section-label">Gallery</div>
+        <div class="cs-gallery">
+          <div class="cs-gallery-img"><span>Zone overview map</span></div>
+          <div class="cs-gallery-img"><span>Zone detail — screenshot</span></div>
+          <div class="cs-gallery-img"><span>Climbing mechanic demo</span></div>
+          <div class="cs-gallery-img"><span>Presentation slide</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- HOCUS POTION -->
+  <div class="page" id="cs-hocus">
+    <div class="case-study">
+      <button class="cs-back" onclick="showProjectSection('academic')">← Back to Academic Projects</button>
+      <div class="cs-cover"><span>Cover image — replace with key artwork</span></div>
+      <div class="cs-meta-row">
+        <div class="cs-meta-item"><label>Type</label><span>Academic</span></div>
+        <div class="cs-meta-item"><label>Role</label><span>Narrative Copywriter</span></div>
+        <div class="cs-meta-item"><label>Year</label><span>2024</span></div>
+        <div class="cs-meta-item"><label>Context</label><span>DBGA Milano</span></div>
+        <div class="cs-meta-item"><label>Status</label><span>Completed</span></div>
+      </div>
+      <h1 class="cs-title">Hocus Potion</h1>
+      <p class="cs-subtitle">Mobile alchemy game. Writing that sells a world in under 150 characters.</p>
+
+      <div class="cs-section">
+        <div class="cs-section-label">Overview</div>
+        <p>Hocus Potion is a mobile alchemy game developed as part of the DBGA programme. My contribution focused on <strong>app store copywriting</strong> — a discipline that demands narrative compression without losing tone or personality.</p>
+      </div>
+
+      <div class="cs-section">
+        <div class="cs-section-label">The Challenge</div>
+        <p>App store copy lives under extreme constraints: character limits, keyword requirements, platform conventions. The challenge was writing descriptions that felt like <strong>invitations into a world</strong> rather than feature lists — while still hitting every commercial requirement.</p>
+        <p>This meant making every word do double duty: communicate tone, communicate function, and hold attention in a context where the reader is already halfway to scrolling past.</p>
+      </div>
+
+      <div class="cs-section">
+        <div class="cs-section-label">What I Learned</div>
+        <p>Constraint is clarifying. When you can't use ten words, you find the one word that carries everything. That discipline transfers directly to in-game writing — tooltip text, item descriptions, UI copy — anywhere narrative has to work in a small space.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- TIDES OF VENGEANCE -->
+  <div class="page" id="cs-tides">
+    <div class="case-study">
+      <button class="cs-back" onclick="showProjectSection('personal')">← Back to Personal Projects</button>
+      <div class="cs-cover"><span>Cover image — replace with key artwork</span></div>
+      <div class="cs-meta-row">
+        <div class="cs-meta-item"><label>Type</label><span>Personal</span></div>
+        <div class="cs-meta-item"><label>Role</label><span>Concept · Narrative Designer</span></div>
+        <div class="cs-meta-item"><label>Year</label><span>2024 – 2025</span></div>
+        <div class="cs-meta-item"><label>Status</label><span>Concept / Pitch</span></div>
+      </div>
+      <h1 class="cs-title">Tides of Vengeance</h1>
+      <p class="cs-subtitle">An original pitch recognised by a lead designer at DBGA. A world built from the sea floor up.</p>
+
+      <div class="cs-section">
+        <div class="cs-section-label">Concept</div>
+        <p>Tides of Vengeance is an original game concept with a fully developed pitch and worldbuilding documentation. The project was <strong>recognised by a lead designer at the academy</strong> as a standout original concept — praised for its internal consistency and the distinctiveness of its fictional world.</p>
+      </div>
+
+      <div class="cs-section">
+        <div class="cs-section-label">Worldbuilding Approach</div>
+        <p>The world of Tides of Vengeance was built around a single guiding question: <strong>what does revenge look like when the thing you're avenging no longer exists?</strong> Every faction, location, and mechanic was designed to refract that question differently.</p>
+      </div>
+
+      <div class="cs-section">
+        <div class="cs-section-label">Documents Produced</div>
+        <ul>
+          <li>Original pitch document — concept, tone, core loop, target audience</li>
+          <li>Worldbuilding documentation — factions, geography, mythology</li>
+          <li>Narrative design notes — protagonist arc, thematic pillars</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- CULLING CIRCUIT -->
+  <div class="page" id="cs-culling">
+    <div class="case-study">
+      <button class="cs-back" onclick="showProjectSection('personal')">← Back to Personal Projects</button>
+      <div class="cs-cover"><span>Cover image — replace with key artwork</span></div>
+      <div class="cs-meta-row">
+        <div class="cs-meta-item"><label>Type</label><span>Personal</span></div>
+        <div class="cs-meta-item"><label>Role</label><span>Concept · Worldbuilding</span></div>
+        <div class="cs-meta-item"><label>Year</label><span>2024</span></div>
+        <div class="cs-meta-item"><label>Status</label><span>Concept</span></div>
+      </div>
+      <h1 class="cs-title">Culling Circuit</h1>
+      <p class="cs-subtitle">A kart racer built inside the skull of a dead god. Azathoth as finish line.</p>
+
+      <div class="cs-section">
+        <div class="cs-section-label">Concept</div>
+        <p>Culling Circuit is a cosmic horror kart racing concept blending the energy of Crash Team Racing, the brutality of Mortal Kombat, and the rhythm of Thumper — set inside a mythology where <strong>Azathoth's dreaming is the track itself</strong>.</p>
+        <p>Factions race not for glory but for the right to survive the next cycle of the Outer Gods' attention. Losing means ceasing to exist. Winning means you get to race again.</p>
+      </div>
+
+      <div class="cs-section">
+        <div class="cs-section-label">Worldbuilding</div>
+        <ul>
+          <li>Cosmological structure built around Lovecraftian mythology — recontextualised for competition</li>
+          <li>Multiple distinct factions with competing eschatologies</li>
+          <li>Visual language: psychedelic, gothic, non-Euclidean track geometry</li>
+          <li>Tone: absurd surface, genuinely unsettling undercurrent</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- COMING BACK -->
+  <div class="page" id="cs-comingback">
+    <div class="case-study">
+      <button class="cs-back" onclick="showProjectSection('jam')">← Back to Game Jam</button>
+      <div class="cs-cover"><span>Cover image — replace with key artwork</span></div>
+      <div class="cs-meta-row">
+        <div class="cs-meta-item"><label>Type</label><span>Game Jam</span></div>
+        <div class="cs-meta-item"><label>Role</label><span>Concept · Art · Sound · AI Direction</span></div>
+        <div class="cs-meta-item"><label>Duration</label><span>5 days</span></div>
+        <div class="cs-meta-item"><label>Theme</label><span>Origins</span></div>
+        <div class="cs-meta-item"><label>Status</label><span>Completed · Playable</span></div>
+      </div>
+      <h1 class="cs-title">Coming Back</h1>
+      <p class="cs-subtitle">Every thousand years, the god Mucco grants one cow the right to return. You are an hamburger. You are going home.</p>
+
+      <div class="cs-section">
+        <div class="cs-section-label">Overview</div>
+        <p>Coming Back is a shoot 'em up developed in five days for a game jam on the theme of Origins. The concept: a divine bovine mythology in which <strong>the god Mucco</strong> periodically resurrects a fallen cow — in the form of a hamburger — and grants them a chance to ascend back through a shoot 'em up gauntlet inspired by Cuphead and Cho Aniki.</p>
+        <p>The premise is absurdist, but the execution is earnest — which is what makes it work.</p>
+      </div>
+
+      <div class="cs-section">
+        <div class="cs-section-label">My Contribution</div>
+        <ul>
+          <li>Original concept and narrative premise</li>
+          <li>All animated background GIFs — produced and integrated in 5 days</li>
+          <li>Original music composition and implementation</li>
+          <li>Creative direction for the team's AI image and visual tool pipeline — no dedicated artist on the team</li>
+        </ul>
+      </div>
+
+      <div class="cs-highlight">
+        <p>"No artist on the team. Five days. A playable, visually coherent game. That's what problem-solving under pressure looks like."</p>
+      </div>
+
+      <div class="cs-section">
+        <div class="cs-section-label">Creative Direction Under Constraint</div>
+        <p>The absence of a dedicated artist forced a fast pivot to <strong>AI-assisted visual production</strong> — but the outputs still needed creative direction. I developed a prompt documentation workflow on the fly: consistent tone references, style constraints, and iteration notes that let the team generate coherent visuals without a single visual specialist.</p>
+        <p>This is the most transferable skill to come out of Coming Back: knowing how to <strong>maintain aesthetic coherence when the usual pipeline doesn't exist</strong>.</p>
+      </div>
+
+      <div class="cs-section">
+        <div class="cs-section-label">Gallery</div>
+        <div class="cs-gallery">
+          <div class="cs-gallery-img"><span>Screenshot — gameplay</span></div>
+          <div class="cs-gallery-img"><span>Background art sample</span></div>
+          <div class="cs-gallery-img"><span>Character design</span></div>
+          <div class="cs-gallery-img"><span>Mucco — god of cows</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── CHARACTERS ── -->
+  <div class="page" id="page-characters">
+    <div class="section-page">
+      <div class="section-page-header">
+        <h2>Characters</h2>
+        <p>Character design, sheets, and writing across projects.</p>
+      </div>
+      <div class="projects-grid">
+        <div class="project-thumb">
+          <div class="thumb-img"><div class="ph-box"><span>Character artwork</span></div></div>
+          <div class="thumb-info">
+            <div class="thumb-tag">Dodgy Depot</div>
+            <div class="thumb-title">Character Name</div>
+          </div>
+        </div>
+        <div class="project-thumb">
+          <div class="thumb-img"><div class="ph-box"><span>Character artwork</span></div></div>
+          <div class="thumb-info">
+            <div class="thumb-tag">Dream Jumper</div>
+            <div class="thumb-title">Elias</div>
+          </div>
+        </div>
+        <div class="project-thumb">
+          <div class="thumb-img"><div class="ph-box"><span>Character artwork</span></div></div>
+          <div class="thumb-info">
+            <div class="thumb-tag">Coming Back</div>
+            <div class="thumb-title">Mucco</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── ABOUT ── -->
+  <div class="page" id="page-about">
+    <div class="about-page">
+      <h2>Said B.</h2>
+      <div class="about-role">Narrative Designer · DBGA Milano · First Year</div>
+
+      <p>I'm a narrative design student at DBGA in Milan, with a background that refuses to stay in one lane — narrative design, sound design, production, level design, and a long-standing obsession with games that treat their worlds as lived-in places.</p>
+
+      <p>My aesthetic preferences run toward the <strong>surreal, the gothic, and the genuinely strange</strong>. I'm less interested in conventional fantasy settings than in games that find horror in the domestic, grandeur in the mundane, or comedy in the cosmic. Culling Circuit has a dead god as the racetrack. Dream Jumper is a horror game where the monster is memory. Coming Back is about a hamburger ascending to bovine heaven.</p>
+
+      <p>Outside of games: I play trumpet, compose music, write weird fiction, do cosplay, and maintain a library of physical games spanning PS1 through PS5. I believe sound design is narrative design. I also believe Mortal Shell deserves more recognition than it gets.</p>
+
+      <p><strong>Long-term goal:</strong> a narrative or production role at Techland or CD Projekt RED — studios that treat worldbuilding as a craft rather than a checkbox. Currently building the portfolio and the skills to get there by summer 2027.</p>
+
+      <div class="about-grid">
+        <div>
+          <h4>Skills</h4>
+          <div class="tag-list">
+            <span class="tag">Narrative Design</span>
+            <span class="tag">Sound Design</span>
+            <span class="tag">GDD Writing</span>
+            <span class="tag">Level Design</span>
+            <span class="tag">Production</span>
+            <span class="tag">Dialogue Systems</span>
+            <span class="tag">Worldbuilding</span>
+            <span class="tag">Ink / Yarn Spinner</span>
+            <span class="tag">Unity</span>
+            <span class="tag">Jira · Trello · Git</span>
+          </div>
+        </div>
+        <div>
+          <h4>Languages</h4>
+          <div class="tag-list">
+            <span class="tag">Italian — Native</span>
+            <span class="tag">English — Fluent</span>
+          </div>
+          <h4 style="margin-top:1.25rem;">Education</h4>
+          <div class="tag-list">
+            <span class="tag">DBGA Milano 2024–2027</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── CONTACTS ── -->
+  <div class="page" id="page-contacts">
+    <div class="contacts-page">
+      <h2>Get in touch</h2>
+      <p class="contacts-sub">Open to internships, collaborations, and conversations about narrative design.</p>
+
+      <div class="contact-row">
+        <div class="contact-label">Email</div>
+        <div class="contact-value"><a href="mailto:your@email.com">your@email.com</a></div>
+      </div>
+      <div class="contact-row">
+        <div class="contact-label">Instagram</div>
+        <div class="contact-value"><a href="https://instagram.com/just_said_baby" target="_blank">@just_said_baby</a></div>
+      </div>
+      <div class="contact-row">
+        <div class="contact-label">LinkedIn</div>
+        <div class="contact-value"><a href="#">linkedin.com/in/said-b</a></div>
+      </div>
+      <div class="contact-row">
+        <div class="contact-label">Location</div>
+        <div class="contact-value">Bergamo / Milan, Italy</div>
+      </div>
+      <div class="contact-row">
+        <div class="contact-label">Based</div>
+        <div class="contact-value">Available for remote collaboration and relocation post-2027</div>
+      </div>
+    </div>
+  </div>
+
+</main>
+
+<script>
+function showPage(id) {
+  document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+  const el = document.getElementById('page-' + id);
+  if (el) { el.classList.add('active'); window.scrollTo(0,0); }
+  document.querySelectorAll('.nav-link').forEach(l => l.classList.remove('active'));
+}
+
+function showProjectSection(section) {
+  document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+  const el = document.getElementById('page-section-' + section);
+  if (el) { el.classList.add('active'); window.scrollTo(0,0); }
+}
+
+function showCaseStudy(id) {
+  document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+  const el = document.getElementById('cs-' + id);
+  if (el) { el.classList.add('active'); window.scrollTo(0,0); }
+}
+
+function toggleDropdown(id) {
+  const item = document.getElementById(id);
+  item.classList.toggle('open');
+}
+</script>
+
+</body>
+</html>
