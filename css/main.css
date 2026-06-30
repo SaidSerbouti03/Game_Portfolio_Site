@@ -1,0 +1,166 @@
+
+header{
+    padding: 20px, 15px;
+    
+}
+
+
+
+ .col-destra {
+
+    width: 20%;
+    float: left;
+
+    background-color:#fa6a0a ;
+
+}
+
+header .col-sinistra{
+
+    width: 80%;
+    float: right; 
+    background-image:url(https://theconsumerverse.files.wordpress.com/2019/10/mcdonalds-green.jpg?w=1024);
+
+}
+
+header img{
+
+    width: 100%;
+    height: auto;
+
+}
+
+header nav ul{
+
+    margin: 0px;
+    padding: 0px;
+
+
+}
+
+header nav ul li{
+
+    list-style-type: none;
+    display: inline-block;
+    text-decoration: none;
+    margin-right: 10px;
+
+}
+
+/*MAIN*/
+.background-image{
+
+    width: 100 px;
+    padding: 150 px 0 px;
+}
+
+.background{
+    background-color: aquamarine;
+}
+
+.intro-img{
+    background-image: url('..HTML/images/test.jpg');
+    background-position:center ;
+    background-size: contain ;
+    background-repeat: repeat ;
+}
+
+.clearfix {
+
+    clear: both;
+    
+}
+
+#paragrafo {
+
+    font-size: 30px;
+    font-weight: bold;
+
+}
+
+#paragrafo span {
+
+    font-style: italic;
+
+}
+
+#paragrafo-2 {
+
+    font-size: 20px;
+
+}
+
+.blu {
+
+    color: #180f3a;
+
+}
+
+.grassetto {
+
+    font-weight: bold;
+
+}
+
+#paragrafo-2 .corsivo {
+
+    font-style: italic;
+
+}
+
+.popup{
+    width: 1000px;
+    height: 1000px;
+    background-color:gold ;
+    position: fixed;
+    top: 0px;
+    bottom: 0px;
+    left: 0px;
+    right: 0px;
+    margin: auto;
+    z-index: -50px;
+
+}
+
+.popup2{
+
+    width: 1000px;
+    height: 10000px;
+    background-color:red;
+    position: fixed;
+    top: 0px;
+    bottom: 0px;
+    left: 0px;
+    right: 0px;
+    margin: auto;
+    z-index: 0px;
+
+}
+
+
+.background-color1{
+
+    background-color:#fa9e0a  ;
+}
+
+
+.background-color2{
+
+    background-color: #fa160a;
+}
+
+
+main div .slider2{
+
+    background-image:image("C:\Users\saids\Downloads\HTML\images\McDonalds.png");
+}
+
+
+.font-size1{
+
+    font-size: 100px;
+
+    font-style: oblique;
+}
+
+
