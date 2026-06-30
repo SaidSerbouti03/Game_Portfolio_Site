@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Game Jam — Said B.</title>
+  <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;1,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/base.css">
+  <link rel="stylesheet" href="../css/sidebar.css">
+  <link rel="stylesheet" href="../css/projects.css">
+</head>
+<body>
+
+  <aside class="sidebar">
+    <a class="sidebar-logo" href="../index.html">Said B.<span>Narrative Designer</span></a>
+    <nav class="sidebar-nav">
+      <div class="nav-item"><a class="nav-link" href="../index.html">Home</a></div>
+      <div class="nav-item" id="nav-academic">
+        <button class="nav-link" onclick="toggleDropdown('nav-academic')">Academic Projects <span class="nav-arrow">▶</span></button>
+        <div class="nav-dropdown">
+          <a href="academic.html">All Projects</a>
+          <a href="../casestudies/dodgy-depot.html">Dodgy Depot</a>
+          <a href="../casestudies/ostrava.html">Ostrava</a>
+          <a href="../casestudies/hocus-potion.html">Hocus Potion</a>
+        </div>
+      </div>
+      <div class="nav-item" id="nav-personal">
+        <button class="nav-link" onclick="toggleDropdown('nav-personal')">Personal Projects <span class="nav-arrow">▶</span></button>
+        <div class="nav-dropdown">
+          <a href="personal.html">All Projects</a>
+          <a href="../casestudies/dream-jumper.html">Dream Jumper</a>
+          <a href="../casestudies/tides-of-vengeance.html">Tides of Vengeance</a>
+          <a href="../casestudies/culling-circuit.html">Culling Circuit</a>
+        </div>
+      </div>
+      <div class="nav-item open" id="nav-jam">
+        <button class="nav-link active" onclick="toggleDropdown('nav-jam')">Game Jam <span class="nav-arrow">▶</span></button>
+        <div class="nav-dropdown">
+          <a href="jam.html" class="active">All Projects</a>
+          <a href="../casestudies/coming-back.html">Coming Back</a>
+        </div>
+      </div>
+      <div class="nav-item"><a class="nav-link" href="characters.html">Characters</a></div>
+      <div class="nav-item"><a class="nav-link" href="about.html">About Me</a></div>
+      <div class="nav-item"><a class="nav-link" href="contacts.html">Contacts</a></div>
+    </nav>
+    <div class="sidebar-footer"><p>DBGA Milano<br>2024 — 2027</p></div>
+  </aside>
+
+  <main class="main">
+    <div class="section-page">
+      <div class="section-page-header">
+        <h2>Game Jam</h2>
+        <p>Projects completed under tight time constraints — 5 days or less.</p>
+      </div>
+      <div class="projects-grid">
+
+        <div class="project-thumb" onclick="location.href='../casestudies/coming-back.html'">
+          <div class="thumb-img">
+            <div class="ph-box"><span>Cover image</span></div>
+            <div class="thumb-overlay">View case study →</div>
+          </div>
+          <div class="thumb-info">
+            <div class="thumb-tag">Concept · Art · Sound</div>
+            <div class="thumb-title">Coming Back</div>
+            <div class="thumb-year">2024 · Completed</div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </main>
+
+  <script src="../js/nav.js"></script>
+</body>
+</html>

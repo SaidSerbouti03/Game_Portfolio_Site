@@ -1,0 +1,112 @@
+/* ── ABOUT ── */
+.about-page {
+  padding: 3.5rem;
+  max-width: 720px;
+}
+
+.about-page h2 {
+  font-size: 2rem;
+  font-weight: 400;
+  margin-bottom: 0.4rem;
+}
+
+.about-page .about-role {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  color: var(--accent);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  margin-bottom: 2.5rem;
+}
+
+.about-page p {
+  font-size: 0.97rem;
+  color: var(--text-muted);
+  line-height: 1.85;
+  margin-bottom: 1rem;
+}
+
+.about-page p strong { color: var(--text); font-weight: 500; }
+
+.about-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  margin-top: 2.5rem;
+  padding-top: 2rem;
+  border-top: 0.5px solid var(--border);
+}
+
+.about-grid h4 {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  color: var(--accent);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  margin-bottom: 0.75rem;
+}
+
+/* ── CONTACTS ── */
+.contacts-page {
+  padding: 3.5rem;
+  max-width: 600px;
+}
+
+.contacts-page h2 {
+  font-size: 2rem;
+  font-weight: 400;
+  margin-bottom: 0.4rem;
+}
+
+.contacts-page .contacts-sub {
+  font-size: 0.95rem;
+  color: var(--text-muted);
+  margin-bottom: 3rem;
+  font-style: italic;
+}
+
+.contact-row {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  padding: 1rem 0;
+  border-bottom: 0.5px solid var(--border);
+}
+
+.contact-row:first-of-type { border-top: 0.5px solid var(--border); }
+
+.contact-label {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  color: var(--text-dim);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  width: 90px;
+  flex-shrink: 0;
+}
+
+.contact-value {
+  font-size: 0.97rem;
+  color: var(--text-muted);
+}
+
+.contact-value a { color: var(--accent); text-decoration: none; }
+.contact-value a:hover { text-decoration: underline; }
+
+/* ── SHARED TAG LIST ── */
+.tag-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem;
+  margin-top: 0.5rem;
+}
+
+.tag {
+  font-family: var(--font-mono);
+  font-size: 9px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  padding: 0.2rem 0.55rem;
+  border: 0.5px solid var(--border);
+  color: var(--text-muted);
+}

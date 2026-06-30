@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About — Said B.</title>
+  <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;1,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/base.css">
+  <link rel="stylesheet" href="../css/sidebar.css">
+  <link rel="stylesheet" href="../css/pages.css">
+</head>
+<body>
+
+  <aside class="sidebar">
+    <a class="sidebar-logo" href="../index.html">Said B.<span>Narrative Designer</span></a>
+    <nav class="sidebar-nav">
+      <div class="nav-item"><a class="nav-link" href="../index.html">Home</a></div>
+      <div class="nav-item" id="nav-academic">
+        <button class="nav-link" onclick="toggleDropdown('nav-academic')">Academic Projects <span class="nav-arrow">▶</span></button>
+        <div class="nav-dropdown">
+          <a href="academic.html">All Projects</a>
+          <a href="../casestudies/dodgy-depot.html">Dodgy Depot</a>
+          <a href="../casestudies/ostrava.html">Ostrava</a>
+          <a href="../casestudies/hocus-potion.html">Hocus Potion</a>
+        </div>
+      </div>
+      <div class="nav-item" id="nav-personal">
+        <button class="nav-link" onclick="toggleDropdown('nav-personal')">Personal Projects <span class="nav-arrow">▶</span></button>
+        <div class="nav-dropdown">
+          <a href="personal.html">All Projects</a>
+          <a href="../casestudies/dream-jumper.html">Dream Jumper</a>
+          <a href="../casestudies/tides-of-vengeance.html">Tides of Vengeance</a>
+          <a href="../casestudies/culling-circuit.html">Culling Circuit</a>
+        </div>
+      </div>
+      <div class="nav-item" id="nav-jam">
+        <button class="nav-link" onclick="toggleDropdown('nav-jam')">Game Jam <span class="nav-arrow">▶</span></button>
+        <div class="nav-dropdown">
+          <a href="jam.html">All Projects</a>
+          <a href="../casestudies/coming-back.html">Coming Back</a>
+        </div>
+      </div>
+      <div class="nav-item"><a class="nav-link" href="characters.html">Characters</a></div>
+      <div class="nav-item"><a class="nav-link active" href="about.html">About Me</a></div>
+      <div class="nav-item"><a class="nav-link" href="contacts.html">Contacts</a></div>
+    </nav>
+    <div class="sidebar-footer"><p>DBGA Milano<br>2024 — 2027</p></div>
+  </aside>
+
+  <main class="main">
+    <div class="about-page">
+      <h2>Said B.</h2>
+      <div class="about-role">Narrative Designer · DBGA Milano · First Year</div>
+
+      <p>I'm a narrative design student at DBGA in Milan, with a background that refuses to stay in one lane — narrative design, sound design, production, level design, and a long-standing obsession with games that treat their worlds as lived-in places.</p>
+
+      <p>My aesthetic preferences run toward the <strong>surreal, the gothic, and the genuinely strange</strong>. I'm less interested in conventional fantasy settings than in games that find horror in the domestic, grandeur in the mundane, or comedy in the cosmic. Culling Circuit has a dead god as the racetrack. Dream Jumper is a horror game where the monster is memory. Coming Back is about a hamburger ascending to bovine heaven.</p>
+
+      <p>Outside of games: I play trumpet, compose music, write weird fiction, do cosplay, and maintain a library of physical games spanning PS1 through PS5. I believe sound design is narrative design. I also believe Mortal Shell deserves more recognition than it gets.</p>
+
+      <p><strong>Long-term goal:</strong> a narrative or production role at Techland or CD Projekt RED — studios that treat worldbuilding as a craft rather than a checkbox. Currently building the portfolio and the skills to get there by summer 2027.</p>
+
+      <div class="about-grid">
+        <div>
+          <h4>Skills</h4>
+          <div class="tag-list">
+            <span class="tag">Narrative Design</span>
+            <span class="tag">Sound Design</span>
+            <span class="tag">GDD Writing</span>
+            <span class="tag">Level Design</span>
+            <span class="tag">Production</span>
+            <span class="tag">Dialogue Systems</span>
+            <span class="tag">Worldbuilding</span>
+            <span class="tag">Ink / Yarn Spinner</span>
+            <span class="tag">Unity</span>
+            <span class="tag">Jira · Trello · Git</span>
+          </div>
+        </div>
+        <div>
+          <h4>Languages</h4>
+          <div class="tag-list">
+            <span class="tag">Italian — Native</span>
+            <span class="tag">English — Fluent</span>
+          </div>
+          <h4 style="margin-top:1.25rem;">Education</h4>
+          <div class="tag-list">
+            <span class="tag">DBGA Milano 2024–2027</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <script src="../js/nav.js"></script>
+</body>
+</html>
