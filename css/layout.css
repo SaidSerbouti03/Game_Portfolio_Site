@@ -1,0 +1,14 @@
+/* ── LAYOUT: sidebar + main ── */
+/* Incluso in TUTTE le pagine */
+
+body {
+  display: flex;
+}
+
+.main {
+  margin-left: var(--sidebar-w);
+  flex: 1;
+  min-height: 100vh;
+  width: calc(100% - var(--sidebar-w));
+  overflow-x: hidden;
+}

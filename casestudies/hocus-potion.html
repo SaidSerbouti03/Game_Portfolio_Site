@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hocus Potion — Said B.</title>
+  <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;1,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/base.css">
+  <link rel="stylesheet" href="../css/layout.css">
+  <link rel="stylesheet" href="../css/sidebar.css">
+  <link rel="stylesheet" href="../css/projects.css">
+</head>
+<body>
+
+  <aside class="sidebar">
+    <a class="sidebar-logo" href="../index.html">Said B.<span>Narrative Designer</span></a>
+    <nav class="sidebar-nav">
+      <div class="nav-item"><a class="nav-link" href="../index.html">Home</a></div>
+      <div class="nav-item open" id="nav-academic">
+        <button class="nav-link active" onclick="toggleDropdown('nav-academic')">Academic Projects <span class="nav-arrow">▶</span></button>
+        <div class="nav-dropdown">
+          <a href="../pages/academic.html">All Projects</a>
+          <a href="dodgy-depot.html">Dodgy Depot</a>
+          <a href="ostrava.html">Ostrava</a>
+          <a href="hocus-potion.html" class="active">Hocus Potion</a>
+        </div>
+      </div>
+      <div class="nav-item" id="nav-personal">
+        <button class="nav-link" onclick="toggleDropdown('nav-personal')">Personal Projects <span class="nav-arrow">▶</span></button>
+        <div class="nav-dropdown">
+          <a href="../pages/personal.html">All Projects</a>
+          <a href="dream-jumper.html">Dream Jumper</a>
+          <a href="tides-of-vengeance.html">Tides of Vengeance</a>
+          <a href="culling-circuit.html">Culling Circuit</a>
+        </div>
+      </div>
+      <div class="nav-item" id="nav-jam">
+        <button class="nav-link" onclick="toggleDropdown('nav-jam')">Game Jam <span class="nav-arrow">▶</span></button>
+        <div class="nav-dropdown">
+          <a href="../pages/jam.html">All Projects</a>
+          <a href="coming-back.html">Coming Back</a>
+        </div>
+      </div>
+      <div class="nav-item"><a class="nav-link" href="../pages/characters.html">Characters</a></div>
+      <div class="nav-item"><a class="nav-link" href="../pages/about.html">About Me</a></div>
+      <div class="nav-item"><a class="nav-link" href="../pages/contacts.html">Contacts</a></div>
+    </nav>
+    <div class="sidebar-footer"><p>DBGA Milano<br>2024 — 2027</p></div>
+  </aside>
+
+  <main class="main">
+    <div class="case-study">
+      <button class="cs-back" onclick="location.href='../pages/academic.html'">← Back to Academic Projects</button>
+
+      <div class="cs-cover"><span>Cover image — replace with key artwork</span></div>
+
+      <div class="cs-meta-row">
+        <div class="cs-meta-item"><label>Type</label><span>Academic</span></div>
+        <div class="cs-meta-item"><label>Role</label><span>Narrative Copywriter</span></div>
+        <div class="cs-meta-item"><label>Year</label><span>2024</span></div>
+        <div class="cs-meta-item"><label>Context</label><span>DBGA Milano</span></div>
+        <div class="cs-meta-item"><label>Status</label><span>Completed</span></div>
+      </div>
+
+      <h1 class="cs-title">Hocus Potion</h1>
+      <p class="cs-subtitle">Mobile alchemy game. Writing that sells a world in under 150 characters.</p>
+
+      <div class="cs-section">
+        <div class="cs-section-label">Overview</div>
+        <p>Hocus Potion is a mobile alchemy game developed as part of the DBGA programme. My contribution focused on <strong>app store copywriting</strong> — a discipline that demands narrative compression without losing tone or personality.</p>
+      </div>
+
+      <div class="cs-section">
+        <div class="cs-section-label">The Challenge</div>
+        <p>App store copy lives under extreme constraints: character limits, keyword requirements, platform conventions. The challenge was writing descriptions that felt like <strong>invitations into a world</strong> rather than feature lists — while still hitting every commercial requirement.</p>
+        <p>This meant making every word do double duty: communicate tone, communicate function, and hold attention in a context where the reader is already halfway to scrolling past.</p>
+      </div>
+
+      <div class="cs-section">
+        <div class="cs-section-label">What I Learned</div>
+        <p>Constraint is clarifying. When you can't use ten words, you find the one word that carries everything. That discipline transfers directly to in-game writing — tooltip text, item descriptions, UI copy — anywhere narrative has to work in a small space.</p>
+      </div>
+    </div>
+  </main>
+
+  <script src="../js/nav.js"></script>
+</body>
+</html>

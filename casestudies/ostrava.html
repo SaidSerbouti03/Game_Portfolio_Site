@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ostrava — Said B.</title>
+  <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;1,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/base.css">
+  <link rel="stylesheet" href="../css/layout.css">
+  <link rel="stylesheet" href="../css/sidebar.css">
+  <link rel="stylesheet" href="../css/projects.css">
+</head>
+<body>
+
+  <aside class="sidebar">
+    <a class="sidebar-logo" href="../index.html">Said B.<span>Narrative Designer</span></a>
+    <nav class="sidebar-nav">
+      <div class="nav-item"><a class="nav-link" href="../index.html">Home</a></div>
+      <div class="nav-item open" id="nav-academic">
+        <button class="nav-link active" onclick="toggleDropdown('nav-academic')">Academic Projects <span class="nav-arrow">▶</span></button>
+        <div class="nav-dropdown">
+          <a href="../pages/academic.html">All Projects</a>
+          <a href="dodgy-depot.html">Dodgy Depot</a>
+          <a href="ostrava.html" class="active">Ostrava</a>
+          <a href="hocus-potion.html">Hocus Potion</a>
+        </div>
+      </div>
+      <div class="nav-item" id="nav-personal">
+        <button class="nav-link" onclick="toggleDropdown('nav-personal')">Personal Projects <span class="nav-arrow">▶</span></button>
+        <div class="nav-dropdown">
+          <a href="../pages/personal.html">All Projects</a>
+          <a href="dream-jumper.html">Dream Jumper</a>
+          <a href="tides-of-vengeance.html">Tides of Vengeance</a>
+          <a href="culling-circuit.html">Culling Circuit</a>
+        </div>
+      </div>
+      <div class="nav-item" id="nav-jam">
+        <button class="nav-link" onclick="toggleDropdown('nav-jam')">Game Jam <span class="nav-arrow">▶</span></button>
+        <div class="nav-dropdown">
+          <a href="../pages/jam.html">All Projects</a>
+          <a href="coming-back.html">Coming Back</a>
+        </div>
+      </div>
+      <div class="nav-item"><a class="nav-link" href="../pages/characters.html">Characters</a></div>
+      <div class="nav-item"><a class="nav-link" href="../pages/about.html">About Me</a></div>
+      <div class="nav-item"><a class="nav-link" href="../pages/contacts.html">Contacts</a></div>
+    </nav>
+    <div class="sidebar-footer"><p>DBGA Milano<br>2024 — 2027</p></div>
+  </aside>
+
+  <main class="main">
+    <div class="case-study">
+      <button class="cs-back" onclick="location.href='../pages/academic.html'">← Back to Academic Projects</button>
+
+      <div class="cs-cover"><span>Cover image — replace with key artwork</span></div>
+
+      <div class="cs-meta-row">
+        <div class="cs-meta-item"><label>Type</label><span>Academic</span></div>
+        <div class="cs-meta-item"><label>Role</label><span>Level Designer</span></div>
+        <div class="cs-meta-item"><label>Year</label><span>2024</span></div>
+        <div class="cs-meta-item"><label>Context</label><span>DBGA Milano</span></div>
+        <div class="cs-meta-item"><label>Status</label><span>Completed</span></div>
+      </div>
+
+      <h1 class="cs-title">Ostrava: The Old Quarter</h1>
+      <p class="cs-subtitle">A level design exercise — six zones, one city, a spatial logic that tells its own story.</p>
+
+      <div class="cs-section">
+        <div class="cs-section-label">Overview</div>
+        <p>An academic level design presentation built around a fictional district of Ostrava, Czech Republic. The brief was to design a space with <strong>contextual logic</strong> — each zone had to feel like it belonged to the same city while serving a distinct gameplay function.</p>
+      </div>
+
+      <div class="cs-section">
+        <div class="cs-section-label">Design Approach</div>
+        <ul>
+          <li>Six zones with distinct spatial rhythm, visual language, and gameplay purpose</li>
+          <li>Narrative context embedded in architecture — every area readable as a place with history</li>
+          <li>Custom Unity C# mechanics: climbing system and ledge detection via state machine</li>
+          <li>Verticality used as both gameplay tool and narrative metaphor</li>
+        </ul>
+      </div>
+
+      <div class="cs-section">
+        <div class="cs-section-label">Gallery</div>
+        <div class="cs-gallery">
+          <div class="cs-gallery-img"><span>Zone overview map</span></div>
+          <div class="cs-gallery-img"><span>Zone detail — screenshot</span></div>
+          <div class="cs-gallery-img"><span>Climbing mechanic demo</span></div>
+          <div class="cs-gallery-img"><span>Presentation slide</span></div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <script src="../js/nav.js"></script>
+</body>
+</html>

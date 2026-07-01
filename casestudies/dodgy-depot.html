@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dodgy Depot — Said B.</title>
+  <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;1,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/base.css">
+  <link rel="stylesheet" href="../css/layout.css">
+  <link rel="stylesheet" href="../css/sidebar.css">
+  <link rel="stylesheet" href="../css/projects.css">
+</head>
+<body>
+
+  <aside class="sidebar">
+    <a class="sidebar-logo" href="../index.html">Said B.<span>Narrative Designer</span></a>
+    <nav class="sidebar-nav">
+      <div class="nav-item"><a class="nav-link" href="../index.html">Home</a></div>
+      <div class="nav-item open" id="nav-academic">
+        <button class="nav-link active" onclick="toggleDropdown('nav-academic')">Academic Projects <span class="nav-arrow">▶</span></button>
+        <div class="nav-dropdown">
+          <a href="../pages/academic.html">All Projects</a>
+          <a href="dodgy-depot.html" class="active">Dodgy Depot</a>
+          <a href="ostrava.html">Ostrava</a>
+          <a href="hocus-potion.html">Hocus Potion</a>
+        </div>
+      </div>
+      <div class="nav-item" id="nav-personal">
+        <button class="nav-link" onclick="toggleDropdown('nav-personal')">Personal Projects <span class="nav-arrow">▶</span></button>
+        <div class="nav-dropdown">
+          <a href="../pages/personal.html">All Projects</a>
+          <a href="dream-jumper.html">Dream Jumper</a>
+          <a href="tides-of-vengeance.html">Tides of Vengeance</a>
+          <a href="culling-circuit.html">Culling Circuit</a>
+        </div>
+      </div>
+      <div class="nav-item" id="nav-jam">
+        <button class="nav-link" onclick="toggleDropdown('nav-jam')">Game Jam <span class="nav-arrow">▶</span></button>
+        <div class="nav-dropdown">
+          <a href="../pages/jam.html">All Projects</a>
+          <a href="coming-back.html">Coming Back</a>
+        </div>
+      </div>
+      <div class="nav-item"><a class="nav-link" href="../pages/characters.html">Characters</a></div>
+      <div class="nav-item"><a class="nav-link" href="../pages/about.html">About Me</a></div>
+      <div class="nav-item"><a class="nav-link" href="../pages/contacts.html">Contacts</a></div>
+    </nav>
+    <div class="sidebar-footer"><p>DBGA Milano<br>2024 — 2027</p></div>
+  </aside>
+
+  <main class="main">
+    <div class="case-study">
+      <button class="cs-back" onclick="location.href='../pages/academic.html'">← Back to Academic Projects</button>
+
+      <div class="cs-cover"><span>Cover image — replace with key artwork</span></div>
+
+      <div class="cs-meta-row">
+        <div class="cs-meta-item"><label>Type</label><span>Academic</span></div>
+        <div class="cs-meta-item"><label>Role</label><span>Narrative + Sound Designer</span></div>
+        <div class="cs-meta-item"><label>Year</label><span>2024 – 2025</span></div>
+        <div class="cs-meta-item"><label>Context</label><span>DBGA Milano</span></div>
+        <div class="cs-meta-item"><label>Status</label><span>Completed</span></div>
+      </div>
+
+      <h1 class="cs-title">Dodgy Depot</h1>
+      <p class="cs-subtitle">A retrofuturistic first-person job simulation game set in a world where work never ends.</p>
+
+      <div class="cs-section">
+        <div class="cs-section-label">Overview</div>
+        <p>Dodgy Depot is a first-person job simulation game with a <strong>retrofuturistic aesthetic</strong>. Players navigate a strange, bureaucratic workplace where the mundane becomes surreal. The project gave me full ownership of the narrative and audio direction — working largely independently from concept to delivery.</p>
+      </div>
+
+      <div class="cs-section">
+        <div class="cs-section-label">My Contribution</div>
+        <ul>
+          <li>Developed the full cast of 30+ characters with distinct voices, roles, and dialogue arcs</li>
+          <li>Designed and wrote the complete dialogue system — branching conversations, in-world emails, tutorial text</li>
+          <li>Built the worldbuilding from scratch: lore, internal glossary, invented slang (motherclanker, Vorraxian gibberish), company history</li>
+          <li>Directed the audio and music — source selection, implementation logic, ambient design</li>
+          <li>Created easter eggs and cross-references woven throughout the environment</li>
+        </ul>
+      </div>
+
+      <div class="cs-highlight">
+        <p>"The narrative layer was consistently cited by playtesters and peers as the element that made Dodgy Depot feel like a real place rather than a game level."</p>
+      </div>
+
+      <div class="cs-section">
+        <div class="cs-section-label">Narrative Design Approach</div>
+        <p>The core challenge was building a world that felt <strong>lived-in</strong> without overwhelming the player with lore. I approached it through layering: essential story beats in dialogue, background texture in environmental details, deeper lore accessible only to players who looked for it.</p>
+        <p>Character voices were the most demanding part. With 30+ NPCs sharing the same workspace, each needed a distinct register — from the aggressively upbeat receptionist to the quietly nihilistic warehouse foreman — without any feeling like a parody.</p>
+      </div>
+
+      <div class="cs-section">
+        <div class="cs-section-label">Sound Direction</div>
+        <p>Sound design doubled as narrative design in Dodgy Depot. The sonic palette — <strong>muffled machinery, degraded muzak, intermittent PA announcements</strong> — was built to reinforce the sense of a system running slightly past its expiry date. Each audio layer was chosen to add atmosphere without explaining it.</p>
+      </div>
+
+      <div class="cs-section">
+        <div class="cs-section-label">Gallery</div>
+        <div class="cs-gallery">
+          <div class="cs-gallery-img"><span>Screenshot / artwork</span></div>
+          <div class="cs-gallery-img"><span>Screenshot / artwork</span></div>
+          <div class="cs-gallery-img"><span>Dialogue system diagram</span></div>
+          <div class="cs-gallery-img"><span>Character sheet / concept</span></div>
+        </div>
+      </div>
+
+      <div class="cs-section">
+        <div class="cs-section-label">What I Learned</div>
+        <p>Managing the full narrative pipeline solo taught me how to <strong>prioritise ruthlessly</strong>. Not every character needs a deep arc. Not every piece of lore needs to be findable. The world feels complete when the parts the player does see feel inevitable — not when everything is documented.</p>
+        <p>Friction with the production side of the team also sharpened my instinct for <strong>defending narrative decisions with design language</strong> rather than creative intuition alone.</p>
+      </div>
+    </div>
+  </main>
+
+  <script src="../js/nav.js"></script>
+</body>
+</html>

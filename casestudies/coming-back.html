@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Coming Back — Said B.</title>
+  <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;1,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/base.css">
+  <link rel="stylesheet" href="../css/layout.css">
+  <link rel="stylesheet" href="../css/sidebar.css">
+  <link rel="stylesheet" href="../css/projects.css">
+</head>
+<body>
+
+  <aside class="sidebar">
+    <a class="sidebar-logo" href="../index.html">Said B.<span>Narrative Designer</span></a>
+    <nav class="sidebar-nav">
+      <div class="nav-item"><a class="nav-link" href="../index.html">Home</a></div>
+      <div class="nav-item" id="nav-academic">
+        <button class="nav-link" onclick="toggleDropdown('nav-academic')">Academic Projects <span class="nav-arrow">▶</span></button>
+        <div class="nav-dropdown">
+          <a href="../pages/academic.html">All Projects</a>
+          <a href="dodgy-depot.html">Dodgy Depot</a>
+          <a href="ostrava.html">Ostrava</a>
+          <a href="hocus-potion.html">Hocus Potion</a>
+        </div>
+      </div>
+      <div class="nav-item" id="nav-personal">
+        <button class="nav-link" onclick="toggleDropdown('nav-personal')">Personal Projects <span class="nav-arrow">▶</span></button>
+        <div class="nav-dropdown">
+          <a href="../pages/personal.html">All Projects</a>
+          <a href="dream-jumper.html">Dream Jumper</a>
+          <a href="tides-of-vengeance.html">Tides of Vengeance</a>
+          <a href="culling-circuit.html">Culling Circuit</a>
+        </div>
+      </div>
+      <div class="nav-item open" id="nav-jam">
+        <button class="nav-link active" onclick="toggleDropdown('nav-jam')">Game Jam <span class="nav-arrow">▶</span></button>
+        <div class="nav-dropdown">
+          <a href="../pages/jam.html">All Projects</a>
+          <a href="coming-back.html" class="active">Coming Back</a>
+        </div>
+      </div>
+      <div class="nav-item"><a class="nav-link" href="../pages/characters.html">Characters</a></div>
+      <div class="nav-item"><a class="nav-link" href="../pages/about.html">About Me</a></div>
+      <div class="nav-item"><a class="nav-link" href="../pages/contacts.html">Contacts</a></div>
+    </nav>
+    <div class="sidebar-footer"><p>DBGA Milano<br>2024 — 2027</p></div>
+  </aside>
+
+  <main class="main">
+    <div class="case-study">
+      <button class="cs-back" onclick="location.href='../pages/jam.html'">← Back to Game Jam</button>
+
+      <div class="cs-cover"><span>Cover image — replace with key artwork</span></div>
+
+      <div class="cs-meta-row">
+        <div class="cs-meta-item"><label>Type</label><span>Game Jam</span></div>
+        <div class="cs-meta-item"><label>Role</label><span>Concept · Art · Sound · AI Direction</span></div>
+        <div class="cs-meta-item"><label>Duration</label><span>5 days</span></div>
+        <div class="cs-meta-item"><label>Theme</label><span>Origins</span></div>
+        <div class="cs-meta-item"><label>Status</label><span>Completed · Playable</span></div>
+      </div>
+
+      <h1 class="cs-title">Coming Back</h1>
+      <p class="cs-subtitle">Every thousand years, the god Mucco grants one cow the right to return. You are a hamburger. You are going home.</p>
+
+      <div class="cs-section">
+        <div class="cs-section-label">Overview</div>
+        <p>Coming Back is a shoot 'em up developed in five days for a game jam on the theme of Origins. The concept: a divine bovine mythology in which <strong>the god Mucco</strong> periodically resurrects a fallen cow — in the form of a hamburger — and grants them a chance to ascend back through a shoot 'em up gauntlet inspired by Cuphead and Cho Aniki.</p>
+        <p>The premise is absurdist, but the execution is earnest — which is what makes it work.</p>
+      </div>
+
+      <div class="cs-section">
+        <div class="cs-section-label">My Contribution</div>
+        <ul>
+          <li>Original concept and narrative premise</li>
+          <li>All animated background GIFs — produced and integrated in 5 days</li>
+          <li>Original music composition and implementation</li>
+          <li>Creative direction for the team's AI image and visual tool pipeline — no dedicated artist on the team</li>
+        </ul>
+      </div>
+
+      <div class="cs-highlight">
+        <p>"No artist on the team. Five days. A playable, visually coherent game. That's what problem-solving under pressure looks like."</p>
+      </div>
+
+      <div class="cs-section">
+        <div class="cs-section-label">Creative Direction Under Constraint</div>
+        <p>The absence of a dedicated artist forced a fast pivot to <strong>AI-assisted visual production</strong> — but the outputs still needed creative direction. I developed a prompt documentation workflow on the fly: consistent tone references, style constraints, and iteration notes that let the team generate coherent visuals without a single visual specialist.</p>
+        <p>This is the most transferable skill to come out of Coming Back: knowing how to <strong>maintain aesthetic coherence when the usual pipeline doesn't exist</strong>.</p>
+      </div>
+
+      <div class="cs-section">
+        <div class="cs-section-label">Gallery</div>
+        <div class="cs-gallery">
+          <div class="cs-gallery-img"><span>Screenshot — gameplay</span></div>
+          <div class="cs-gallery-img"><span>Background art sample</span></div>
+          <div class="cs-gallery-img"><span>Character design</span></div>
+          <div class="cs-gallery-img"><span>Mucco — god of cows</span></div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <script src="../js/nav.js"></script>
+</body>
+</html>

@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tides of Vengeance — Said B.</title>
+  <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;1,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/base.css">
+  <link rel="stylesheet" href="../css/layout.css">
+  <link rel="stylesheet" href="../css/sidebar.css">
+  <link rel="stylesheet" href="../css/projects.css">
+</head>
+<body>
+
+  <aside class="sidebar">
+    <a class="sidebar-logo" href="../index.html">Said B.<span>Narrative Designer</span></a>
+    <nav class="sidebar-nav">
+      <div class="nav-item"><a class="nav-link" href="../index.html">Home</a></div>
+      <div class="nav-item" id="nav-academic">
+        <button class="nav-link" onclick="toggleDropdown('nav-academic')">Academic Projects <span class="nav-arrow">▶</span></button>
+        <div class="nav-dropdown">
+          <a href="../pages/academic.html">All Projects</a>
+          <a href="dodgy-depot.html">Dodgy Depot</a>
+          <a href="ostrava.html">Ostrava</a>
+          <a href="hocus-potion.html">Hocus Potion</a>
+        </div>
+      </div>
+      <div class="nav-item open" id="nav-personal">
+        <button class="nav-link active" onclick="toggleDropdown('nav-personal')">Personal Projects <span class="nav-arrow">▶</span></button>
+        <div class="nav-dropdown">
+          <a href="../pages/personal.html">All Projects</a>
+          <a href="dream-jumper.html">Dream Jumper</a>
+          <a href="tides-of-vengeance.html" class="active">Tides of Vengeance</a>
+          <a href="culling-circuit.html">Culling Circuit</a>
+        </div>
+      </div>
+      <div class="nav-item" id="nav-jam">
+        <button class="nav-link" onclick="toggleDropdown('nav-jam')">Game Jam <span class="nav-arrow">▶</span></button>
+        <div class="nav-dropdown">
+          <a href="../pages/jam.html">All Projects</a>
+          <a href="coming-back.html">Coming Back</a>
+        </div>
+      </div>
+      <div class="nav-item"><a class="nav-link" href="../pages/characters.html">Characters</a></div>
+      <div class="nav-item"><a class="nav-link" href="../pages/about.html">About Me</a></div>
+      <div class="nav-item"><a class="nav-link" href="../pages/contacts.html">Contacts</a></div>
+    </nav>
+    <div class="sidebar-footer"><p>DBGA Milano<br>2024 — 2027</p></div>
+  </aside>
+
+  <main class="main">
+    <div class="case-study">
+      <button class="cs-back" onclick="location.href='../pages/personal.html'">← Back to Personal Projects</button>
+
+      <div class="cs-cover"><span>Cover image — replace with key artwork</span></div>
+
+      <div class="cs-meta-row">
+        <div class="cs-meta-item"><label>Type</label><span>Personal</span></div>
+        <div class="cs-meta-item"><label>Role</label><span>Concept · Narrative Designer</span></div>
+        <div class="cs-meta-item"><label>Year</label><span>2024 – 2025</span></div>
+        <div class="cs-meta-item"><label>Status</label><span>Concept / Pitch</span></div>
+      </div>
+
+      <h1 class="cs-title">Tides of Vengeance</h1>
+      <p class="cs-subtitle">An original pitch recognised by a lead designer at DBGA. A world built from the sea floor up.</p>
+
+      <div class="cs-section">
+        <div class="cs-section-label">Concept</div>
+        <p>Tides of Vengeance is an original game concept with a fully developed pitch and worldbuilding documentation. The project was <strong>recognised by a lead designer at the academy</strong> as a standout original concept — praised for its internal consistency and the distinctiveness of its fictional world.</p>
+      </div>
+
+      <div class="cs-section">
+        <div class="cs-section-label">Worldbuilding Approach</div>
+        <p>The world of Tides of Vengeance was built around a single guiding question: <strong>what does revenge look like when the thing you're avenging no longer exists?</strong> Every faction, location, and mechanic was designed to refract that question differently.</p>
+      </div>
+
+      <div class="cs-section">
+        <div class="cs-section-label">Documents Produced</div>
+        <ul>
+          <li>Original pitch document — concept, tone, core loop, target audience</li>
+          <li>Worldbuilding documentation — factions, geography, mythology</li>
+          <li>Narrative design notes — protagonist arc, thematic pillars</li>
+        </ul>
+      </div>
+    </div>
+  </main>
+
+  <script src="../js/nav.js"></script>
+</body>
+</html>

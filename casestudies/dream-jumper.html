@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dream Jumper — Said B.</title>
+  <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;1,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/base.css">
+  <link rel="stylesheet" href="../css/layout.css">
+  <link rel="stylesheet" href="../css/sidebar.css">
+  <link rel="stylesheet" href="../css/projects.css">
+</head>
+<body>
+
+  <aside class="sidebar">
+    <a class="sidebar-logo" href="../index.html">Said B.<span>Narrative Designer</span></a>
+    <nav class="sidebar-nav">
+      <div class="nav-item"><a class="nav-link" href="../index.html">Home</a></div>
+      <div class="nav-item" id="nav-academic">
+        <button class="nav-link" onclick="toggleDropdown('nav-academic')">Academic Projects <span class="nav-arrow">▶</span></button>
+        <div class="nav-dropdown">
+          <a href="../pages/academic.html">All Projects</a>
+          <a href="dodgy-depot.html">Dodgy Depot</a>
+          <a href="ostrava.html">Ostrava</a>
+          <a href="hocus-potion.html">Hocus Potion</a>
+        </div>
+      </div>
+      <div class="nav-item open" id="nav-personal">
+        <button class="nav-link active" onclick="toggleDropdown('nav-personal')">Personal Projects <span class="nav-arrow">▶</span></button>
+        <div class="nav-dropdown">
+          <a href="../pages/personal.html">All Projects</a>
+          <a href="dream-jumper.html" class="active">Dream Jumper</a>
+          <a href="tides-of-vengeance.html">Tides of Vengeance</a>
+          <a href="culling-circuit.html">Culling Circuit</a>
+        </div>
+      </div>
+      <div class="nav-item" id="nav-jam">
+        <button class="nav-link" onclick="toggleDropdown('nav-jam')">Game Jam <span class="nav-arrow">▶</span></button>
+        <div class="nav-dropdown">
+          <a href="../pages/jam.html">All Projects</a>
+          <a href="coming-back.html">Coming Back</a>
+        </div>
+      </div>
+      <div class="nav-item"><a class="nav-link" href="../pages/characters.html">Characters</a></div>
+      <div class="nav-item"><a class="nav-link" href="../pages/about.html">About Me</a></div>
+      <div class="nav-item"><a class="nav-link" href="../pages/contacts.html">Contacts</a></div>
+    </nav>
+    <div class="sidebar-footer"><p>DBGA Milano<br>2024 — 2027</p></div>
+  </aside>
+
+  <main class="main">
+    <div class="case-study">
+      <button class="cs-back" onclick="location.href='../pages/personal.html'">← Back to Personal Projects</button>
+
+      <div class="cs-cover"><span>Cover image — replace with key artwork</span></div>
+
+      <div class="cs-meta-row">
+        <div class="cs-meta-item"><label>Type</label><span>Personal</span></div>
+        <div class="cs-meta-item"><label>Role</label><span>Narrative Designer · Director</span></div>
+        <div class="cs-meta-item"><label>Year</label><span>2025</span></div>
+        <div class="cs-meta-item"><label>Team</label><span>Said, Marco, Alice, Nick</span></div>
+        <div class="cs-meta-item"><label>Status</label><span>In development</span></div>
+      </div>
+
+      <h1 class="cs-title">Dream Jumper</h1>
+      <p class="cs-subtitle">A first-person liminal horror walking simulator with roguelite elements. You fall asleep. The spaces remember.</p>
+
+      <div class="cs-section">
+        <div class="cs-section-label">Concept</div>
+        <p>Dream Jumper follows <strong>Elias</strong>, a young man trapped in recursive dreamscapes — familiar spaces warped just past recognition. Each run generates a new configuration of liminal rooms pulled from his own memory, each holding fragments of the life he's trying to piece together.</p>
+        <p>The game sits between horror and melancholy. The threat is never a monster — it's the creeping sense that the architecture knows you.</p>
+      </div>
+
+      <div class="cs-section">
+        <div class="cs-section-label">Documents Produced</div>
+        <ul>
+          <li>Game Design Document v3.0 — full systemic and narrative specification</li>
+          <li>Level Design Document: <em>Silent Pool</em> — atmospheric horror, memory as space</li>
+          <li>Level Design Document: <em>Playdate</em> — domestic uncanny, childhood distorted</li>
+          <li>Pitch deck for internal presentation</li>
+          <li>AI image prompt documentation for visual direction</li>
+        </ul>
+      </div>
+
+      <div class="cs-highlight">
+        <p>"Both level design documents were praised for their original mechanical thinking — the narrative and spatial logic working as a single system rather than two parallel tracks."</p>
+      </div>
+
+      <div class="cs-section">
+        <div class="cs-section-label">Narrative Design Approach</div>
+        <p>The central design constraint was that <strong>space must carry story</strong>. Dream Jumper has no cutscenes, minimal dialogue, and no explicit exposition. Every piece of information a player receives comes through environmental detail, audio cues, or the behaviour of the space itself.</p>
+        <p>This meant designing levels as narrative instruments first, playable spaces second — then finding the intersection.</p>
+      </div>
+
+      <div class="cs-section">
+        <div class="cs-section-label">Gallery</div>
+        <div class="cs-gallery">
+          <div class="cs-gallery-img"><span>Concept art / moodboard</span></div>
+          <div class="cs-gallery-img"><span>Level map — Silent Pool</span></div>
+          <div class="cs-gallery-img"><span>Level map — Playdate</span></div>
+          <div class="cs-gallery-img"><span>Screenshot / prototype</span></div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <script src="../js/nav.js"></script>
+</body>
+</html>
