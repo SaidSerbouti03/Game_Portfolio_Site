@@ -60,11 +60,22 @@
 .carousel-track {
   display: flex;
   gap: 1.25rem;
-  overflow: hidden;
+  /* scroll orizzontale sempre attivo — funziona su desktop e mobile */
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+  padding-bottom: 0.5rem;
+  /* nasconde la scrollbar visivamente ma mantiene la funzionalità */
+  scrollbar-width: none;
 }
 
+.carousel-track::-webkit-scrollbar { display: none; }
+
 .carousel-slide {
+  /* desktop: 3 slide visibili — tablet: 2 — mobile: 1 */
   flex: 0 0 calc(33.333% - 0.85rem);
+  min-width: 220px;
+  scroll-snap-align: start;
   border: 0.5px solid var(--border);
   cursor: pointer;
   transition: border-color 0.25s, transform 0.25s;
@@ -76,6 +87,29 @@
 .carousel-slide:hover {
   border-color: var(--accent);
   transform: translateY(-3px);
+}
+
+/* ── SLIDE MEDIA: gestisce sia placeholder che img reali ── */
+.slide-media {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  background: var(--surface2);
+}
+
+/*
+  Per aggiungere un'immagine reale, sostituisci:
+    <div class="placeholder-img"><span>Cover image</span></div>
+  con:
+    <img class="slide-img" src="../images/nome-immagine.jpg" alt="Academic Projects">
+
+  Il CSS fa il resto automaticamente.
+*/
+.slide-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
 }
 
 .placeholder-img {
@@ -107,6 +141,8 @@
   color: var(--text);
   letter-spacing: 0.07em;
   text-transform: uppercase;
+  /* z-index garantisce che la label sia sempre sopra l'immagine */
+  z-index: 2;
 }
 
 /* ── OVERVIEW ── */
