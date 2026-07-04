@@ -78,6 +78,66 @@
           <li>Tone: absurd surface, genuinely unsettling undercurrent</li>
         </ul>
       </div>
+
+      
+<style>
+.scp-btn-wrap { padding: 2rem 0; display: flex; justify-content: flex-start; }
+.scp-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-family: 'JetBrains Mono', 'Courier New', monospace;
+  font-size: 12px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: #e8e4d9;
+  background: #0e0e0c;
+  border: 0.5px solid rgba(200,169,110,0.4);
+  padding: 0.75rem 1.5rem;
+  cursor: pointer;
+  transition: background 0.25s, border-color 0.25s, color 0.25s;
+  position: relative;
+  overflow: hidden;
+}
+.scp-btn::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: #c8a96e;
+  opacity: 0;
+  transition: opacity 0.25s;
+  z-index: 0;
+}
+.scp-btn:hover::before { opacity: 1; }
+.scp-btn:hover { color: #0e0e0c; border-color: #c8a96e; }
+.scp-btn:hover .scp-icon { color: #0e0e0c; }
+.scp-btn span, .scp-icon { position: relative; z-index: 1; }
+.scp-icon { font-size: 15px; color: #c8a96e; transition: color 0.25s; }
+.scp-label-top {
+  font-family: 'JetBrains Mono', 'Courier New', monospace;
+  font-size: 10px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #7a7669;
+  margin-bottom: 0.5rem;
+}
+</style>
+<div class="scp-btn-wrap">
+  <div>
+    <div class="scp-label-top">// progetto narrativo interattivo</div>
+    <a class="scp-btn" href="https://saidserbouti03.github.io/SCP_Project/" target="_blank">
+      <i class="ti ti-player-play scp-icon" aria-hidden="true"></i>
+      <span>Gioca — SCP Foundation</span>
+    </a>
+  </div>
+</div>
+
+
+
+
+
+
     </div>
   </main>
 
