@@ -21,7 +21,6 @@
         <div class="nav-dropdown">
           <a href="../pages/academic.html">All Projects</a>
           <a href="dodgy-depot.html">Dodgy Depot</a>
-          <a href="ostrava.html">Ostrava</a>
           <a href="hocus-potion.html">Hocus Potion</a>
         </div>
       </div>
@@ -29,16 +28,16 @@
         <button class="nav-link active" onclick="toggleDropdown('nav-personal')">Personal Projects <span class="nav-arrow">▶</span></button>
         <div class="nav-dropdown">
           <a href="../pages/personal.html">All Projects</a>
-          <a href="dream-jumper.html" class="active">Dream Jumper</a>
-          <a href="tides-of-vengeance.html">Tides of Vengeance</a>
-          <a href="culling-circuit.html">Culling Circuit</a>
+          <a href="dream-jumper.html">Dream Jumper</a>
+          <a href="tides-of-vengeance.html">Prism Breaker</a>
+          <a href="culling-circuit.html">SCP Project</a>
         </div>
       </div>
       <div class="nav-item" id="nav-jam">
         <button class="nav-link" onclick="toggleDropdown('nav-jam')">Game Jam <span class="nav-arrow">▶</span></button>
         <div class="nav-dropdown">
           <a href="../pages/jam.html">All Projects</a>
-          <a href="coming-back.html">Coming Back</a>
+          <a href="coming-back.html">COW-ming Back</a>
         </div>
       </div>
       <div class="nav-item"><a class="nav-link" href="../pages/characters.html">Characters</a></div>
@@ -47,6 +46,8 @@
     </nav>
     <div class="sidebar-footer"><p>DBGA Milano<br>2025 — 2027</p></div>
   </aside>
+
+
 
   <main class="main">
     <div class="case-study">
@@ -63,33 +64,42 @@
       </div>
 
       <h1 class="cs-title">Dream Jumper</h1>
-      <p class="cs-subtitle">A first-person liminal horror walking simulator with roguelite elements. You fall asleep. The spaces remember.</p>
+      <p class="cs-subtitle">Narrative Design · Environmental Storytelling</p>
 
       <div class="cs-section">
-        <div class="cs-section-label">Concept</div>
-        <p>Dream Jumper follows <strong>Elias</strong>, a young man trapped in recursive dreamscapes — familiar spaces warped just past recognition. Each run generates a new configuration of liminal rooms pulled from his own memory, each holding fragments of the life he's trying to piece together.</p>
-        <p>The game sits between horror and melancholy. The threat is never a monster — it's the creeping sense that the architecture knows you.</p>
+        <div class="cs-section-label">Overview</div>
+        <p>Dream Jumper is a first-person liminal horror walking simulator with roguelite elements. You play as <strong>Elias</strong>, a young man who falls asleep and enters the dreams of the people around him — familiar spaces warped just past recognition, each holding fragments of a life he is trying to understand. The game has no cutscenes, no explicit exposition, and minimal dialogue. 
+          Every piece of story the player receives comes through space, sound, and the behaviour of the environment itself.</p>
+        <p>This page documents the narrative design approach behind the project — specifically how personal narrative and environmental storytelling were designed to work as a single system rather than two parallel tracks.</p>
       </div>
 
       <div class="cs-section">
-        <div class="cs-section-label">Documents Produced</div>
+        <div class="cs-section-label">Personal Narrative: Elias</div>
+        <p>Elias is not a hero. He is someone who does not know how to stop moving long enough to feel what is happening to him. The roguelite structure mirrors this directly: each run is another night, another attempt, another refusal to stay still.
+          The emotional arc is built around a central absence — his girlfriend Sara, whose dream is the final level and the only one he cannot fully enter. Every other dream he visits is preparation for that confrontation, and every environmental detail across the game is a fragment of their shared history seen from the wrong angle.
+          The design challenge was making a protagonist legible without giving him a voice. The solution was to make the spaces react to him rather than describe him. Doors that open too easily. Rooms that are too familiar. Objects in the wrong place by exactly one degree. 
+          The horror of Dream Jumper is not what is in the rooms — it is the creeping sense that the rooms know Elias better than he knows himself.</p>
+
+          <p>Key narrative pillars for Elias:</p>
         <ul>
-          <li>Game Design Document v3.0 — full systemic and narrative specification</li>
-          <li>Level Design Document: <em>Silent Pool</em> — atmospheric horror, memory as space</li>
-          <li>Level Design Document: <em>Playdate</em> — domestic uncanny, childhood distorted</li>
-          <li>Pitch deck for internal presentation</li>
-          <li>AI image prompt documentation for visual direction</li>
+          <li>No object exists purely for decoration — every item is a narrative choice</li>
+          <li>Lighting and shadow carry emotional information, not just atmosphere</li>
+          <li>Sound design is written alongside spatial design, not added after</li>
+          <li>The player's movement speed is a narrative tool — liminal spaces slow you down deliberately</li>
         </ul>
+
+        <p><strong>Playdate</strong>:the second level, applies the same logic to childhood memory. The domestic uncanny: a child's bedroom where nothing is quite wrong but everything is slightly too quiet, slightly too neat, slightly too preserved. 
+          The narrative question the level asks is whether some memories are kept intact because they bring comfort or because they cannot be changed.</p>
       </div>
 
-      <div class="cs-highlight">
-        <p>"Both level design documents were praised for their original mechanical thinking — the narrative and spatial logic working as a single system rather than two parallel tracks."</p>
-      </div>
+      
 
       <div class="cs-section">
-        <div class="cs-section-label">Narrative Design Approach</div>
-        <p>The central design constraint was that <strong>space must carry story</strong>. Dream Jumper has no cutscenes, minimal dialogue, and no explicit exposition. Every piece of information a player receives comes through environmental detail, audio cues, or the behaviour of the space itself.</p>
-        <p>This meant designing levels as narrative instruments first, playable spaces second — then finding the intersection.</p>
+        <div class="cs-section-label">What IHave Learned</div>
+        <p>The most important lesson from Dream Jumper's narrative design was the difference between hiding story in the environment and building story into the environment. Hidden story assumes the player will find it. 
+          Built-in story communicates even to players who never look — because it shapes the feel of the space regardless of whether the player consciously registers it.</p>
+        <p>The second lesson was about restraint. The first draft of Silent Pool had too many objects, too many deliberate narrative details. The revision stripped it back to a third of the original content and the level became dramatically more effective. 
+          Emptiness is a narrative choice. What is absent tells as much story as what is present.</p>
       </div>
 
       <div class="cs-section">

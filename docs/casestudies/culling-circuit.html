@@ -29,8 +29,8 @@
         <div class="nav-dropdown">
           <a href="../pages/personal.html">All Projects</a>
           <a href="dream-jumper.html">Dream Jumper</a>
-          <a href="tides-of-vengeance.html">Tides of Vengeance</a>
-          <a href="culling-circuit.html" class="active">Prism Breaker</a>
+          <a href="tides-of-vengeance.html">Prism Breaker</a>
+          <a href="culling-circuit.html">SCP Project</a>
         </div>
       </div>
       <div class="nav-item" id="nav-jam">
@@ -47,6 +47,7 @@
     <div class="sidebar-footer"><p>DBGA Milano<br>2025 — 2027</p></div>
   </aside>
 
+
   <main class="main">
     <div class="case-study">
       <button class="cs-back" onclick="location.href='../pages/personal.html'">← Back to Personal Projects</button>
@@ -61,23 +62,39 @@
       </div>
 
       <h1 class="cs-title">SCP Project</h1>
-      <p class="cs-subtitle">A narrative racer built inside the skull of a dead god. Azathoth as finish line.</p>
+      <p class="cs-subtitle">Case Study: Branching Narrative and Dialogue Systems in Twine.</p>
 
       <div class="cs-section">
-        <div class="cs-section-label">Concept</div>
-        <p>Culling Circuit is a cosmic horror kart racing concept blending the energy of Crash Team Racing, the brutality of Mortal Kombat, and the rhythm of Thumper — set inside a mythology where <strong>Azathoth's dreaming is the track itself</strong>.</p>
-        <p>Factions race not for glory but for the right to survive the next cycle of the Outer Gods' attention. Losing means ceasing to exist. Winning means you get to race again.</p>
+        <div class="cs-section-label">Overview</div>
+        <p>This project is an original interactive narrative game built in Twine (Harlowe format), set in the SCP Foundation universe. The player takes the role of a Foundation agent navigating encounters with five anomalous entities across episodic chapters, with an underlying macro-narrative about
+          <strong> The Scarlett King </strong>that emerges through optional classified files.</p>
+        <p>The game is built entirely in Twine with custom JavaScript for audio (Harlowe Audio Library) and timer mechanics. It is designed as a playable portfolio piece demonstrating branching narrative structure, dialogue system design, variable-based state tracking, and environmental pacing through text.</p>
+        <p>This page documents the design decisions behind the system, not the story, but the architecture that makes the story work.</p>
       </div>
 
+     
+
+
+
       <div class="cs-section">
-        <div class="cs-section-label">Worldbuilding</div>
+        <div class="cs-section-label">Core Systems</div>
         <ul>
-          <li>Cosmological structure built around Lovecraftian mythology — recontextualised for competition</li>
-          <li>Multiple distinct factions with competing eschatologies</li>
-          <li>Visual language: psychedelic, gothic, non-Euclidean track geometry</li>
-          <li>Tone: absurd surface, genuinely unsettling undercurrent</li>
+          <li>The Awareness Counter</li>
+          <li>Branching Dialogue Architecture</li>
+          <li>Death States as Narrative</li>
+          <li>Audio as Pacing Tool</li>
         </ul>
       </div>
+
+      <div class="cs-section">
+        <div class="cs-section-label">What I Have Learned</div>
+        <p>
+          Each episode has a distinct audio layer implemented through Harlowe Audio. The musical palette was designed before the episodes were written — not to set atmosphere, but to set the player's cognitive state. The Veteran's ambient track is slow and warm. 096's track is minimal. 682's track has urgency built into its tempo. The Scarlett King's theme enters at volume 0 and fades in over thirty seconds.
+          The most significant audio decision was the silence in the 2399 episode after the passive response is sent. Two seconds of silence in a text-based game is an unusual choice. The silence communicates waiting — which is the emotional content of that moment — without a single word.
+        </p>
+      </div>
+
+
 
       
 <style>

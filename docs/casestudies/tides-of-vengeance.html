@@ -21,7 +21,6 @@
         <div class="nav-dropdown">
           <a href="../pages/academic.html">All Projects</a>
           <a href="dodgy-depot.html">Dodgy Depot</a>
-          <a href="ostrava.html">Ostrava</a>
           <a href="hocus-potion.html">Hocus Potion</a>
         </div>
       </div>
@@ -30,15 +29,15 @@
         <div class="nav-dropdown">
           <a href="../pages/personal.html">All Projects</a>
           <a href="dream-jumper.html">Dream Jumper</a>
-          <a href="tides-of-vengeance.html" class="active">Tides of Vengeance</a>
-          <a href="culling-circuit.html">Culling Circuit</a>
+          <a href="tides-of-vengeance.html">Prism Breaker</a>
+          <a href="culling-circuit.html">SCP Project</a>
         </div>
       </div>
       <div class="nav-item" id="nav-jam">
         <button class="nav-link" onclick="toggleDropdown('nav-jam')">Game Jam <span class="nav-arrow">▶</span></button>
         <div class="nav-dropdown">
           <a href="../pages/jam.html">All Projects</a>
-          <a href="coming-back.html">Coming Back</a>
+          <a href="coming-back.html">COW-ming Back</a>
         </div>
       </div>
       <div class="nav-item"><a class="nav-link" href="../pages/characters.html">Characters</a></div>
@@ -47,6 +46,8 @@
     </nav>
     <div class="sidebar-footer"><p>DBGA Milano<br>2025 — 2027</p></div>
   </aside>
+
+
 
   <main class="main">
     <div class="case-study">
@@ -57,30 +58,69 @@
       <div class="cs-meta-row">
         <div class="cs-meta-item"><label>Type</label><span>Personal</span></div>
         <div class="cs-meta-item"><label>Role</label><span>Concept · Narrative Designer</span></div>
-        <div class="cs-meta-item"><label>Year</label><span>2024 – 2025</span></div>
-        <div class="cs-meta-item"><label>Status</label><span>Concept / Pitch</span></div>
+        <div class="cs-meta-item"><label>Year</label><span> 2026</span></div>
+        <div class="cs-meta-item"><label>Status</label><span>Concept / Narrative Designer</span></div>
       </div>
 
       <h1 class="cs-title">Prism Breaker</h1>
-      <p class="cs-subtitle">An original pitch recognised by a lead designer at DBGA. A world built from the sea floor up.</p>
+      <p class="cs-subtitle">Study: Linear Narrative in Roguelike Games · Reference: Hades</p>
 
       <div class="cs-section">
-        <div class="cs-section-label">Concept</div>
-        <p>Tides of Vengeance is an original game concept with a fully developed pitch and worldbuilding documentation. The project was <strong>recognised by a lead designer at the academy</strong> as a standout original concept — praised for its internal consistency and the distinctiveness of its fictional world.</p>
+        <div class="cs-section-label">Overview</div>
+        <p><strong>Prism Breaker</strong> is a high-speed action roguelike TPS where color defines both combat and identity. You play a fractured crystal soldier in a divided chromatic realm, forced to adapt, blend in, or rebel. The game's three core systems — Chromatic Ballistics, Prismatic Armor, and Chromospeak — all express the same thematic question through mechanics: in a world that reads you by your color, do you conform or resist?</p>
+          <p>This page is not a full design breakdown of Prism Breaker. It is a focused study on one specific problem the project raised: how do you tell a linear story inside a genre that structurally resists linearity?</p>
       </div>
 
       <div class="cs-section">
-        <div class="cs-section-label">Worldbuilding Approach</div>
-        <p>The world of Tides of Vengeance was built around a single guiding question: <strong>what does revenge look like when the thing you're avenging no longer exists?</strong> Every faction, location, and mechanic was designed to refract that question differently.</p>
+        <div class="cs-section-label">The Problem: Roguelikes and Narrative</div>
+        <p>Roguelikes are built on repetition, randomness, and failure as progression. These qualities are directly hostile to traditional linear narrative. A cutscene loses impact the third time you die and watch it again. A character's death means nothing in a genre where death is the expected state.
+           Exposition delivered in a fixed sequence becomes noise when the player has already heard it twice.</p>
+        <p>Most roguelikes solve this by abandoning linear narrative entirely — they use lore fragments, item descriptions, and environmental detail that the player assembles themselves across multiple runs. This works for atmosphere but makes it difficult to deliver a story with emotional stakes and a satisfying arc.</p> 
+        <p>Hades solved this problem more elegantly than almost any other game in the genre, and it is the primary reference for Prism Breaker's narrative approach.</p>     
       </div>
 
       <div class="cs-section">
-        <div class="cs-section-label">Documents Produced</div>
+        <div class="cs-section-label">The Problem: Roguelikes and Narrative</div>
+        <p>Roguelikes are built on repetition, randomness, and failure as progression. These qualities are directly hostile to traditional linear narrative. A cutscene loses impact the third time you die and watch it again. A character's death means nothing in a genre where death is the expected state.
+           Exposition delivered in a fixed sequence becomes noise when the player has already heard it twice.</p>
+        <p>Most roguelikes solve this by abandoning linear narrative entirely — they use lore fragments, item descriptions, and environmental detail that the player assembles themselves across multiple runs. This works for atmosphere but makes it difficult to deliver a story with emotional stakes and a satisfying arc.</p> 
+        <p>Hades solved this problem more elegantly than almost any other game in the genre, and it is the primary reference for Prism Breaker's narrative approach.</p>     
+      </div>
+
+      <div class="cs-section">
+        <div class="cs-section-label">Case Study: Hades</div>
+        <p>Hades uses what its developers called the dialogue weaving system. Rather than gating narrative content behind specific run outcomes, the game delivers story through the natural rhythm of attempting, failing, and returning. 
+          Every time the protagonist Zagreus dies and returns to the House of Hades, new dialogue is available — with different characters, in different combinations, advancing different threads of a story that always moves forward regardless of whether the player succeeds or fails.</p>
+        <p>The key insight is that death is not treated as failure in the narrative — it is treated as a return. The loop is diegetic. Zagreus dying and coming back is part of the world's logic, which means the narrative never has to restart. It accumulates.
+          Specific techniques Hades uses that are directly applicable to Prism Breaker:</p> 
+        
         <ul>
-          <li>Original pitch document — concept, tone, core loop, target audience</li>
-          <li>Worldbuilding documentation — factions, geography, mythology</li>
-          <li>Narrative design notes — protagonist arc, thematic pillars</li>
+          <li><strong>Reactive dialogue over scripted sequences.</strong> Characters respond to what the player did in the last run, not to a fixed narrative timeline. This means the story feels personal to each player's experience rather than generic.</li>
+          <li><strong>Relationship as progression system.</strong> Narrative advancement is tied to character relationships — deepening bonds unlock new story content. This makes emotional investment a gameplay mechanic, not a distraction from it.</li>
+          <li><strong>Failure as information.</strong> Every death in Hades tells the player something about the world. The characters react to how Zagreus died, what he found, how far he got. Death is not a reset — it is a data point that the story acknowledges.</li>
+          <li><strong>The heat system as narrative pressure.</strong> Increasing the challenge is framed as Zagreus choosing to push himself harder, which is a character choice. Mechanics and character motivation are the same action.</li>
         </ul>
+          
+      </div>
+
+      <div class="cs-section">
+        <div class="cs-section-label">Application to Prism Breaker</div>
+        <p>Prism Breaker's narrative problem is different from Hades but related. The game has two endings — the Diamond path (unity) and the Obsidian path (individualism) — determined by the player's cumulative color choices across runs. This means the ending must feel earned by the player's behavior rather than chosen at a binary decision point.</p>
+        <p>The approach developed for Prism Breaker draws directly from Hades:</p> 
+
+        <ul>
+          <li>The Chromospeak system — where your color alignment changes how NPCs respond to you — doubles as a narrative accumulation system. Factions remember your previous alignments across runs. A soldier who has been Red for three consecutive runs is perceived differently than one who shifts colors constantly. This gives the story a memory without requiring the player to follow a fixed path.</li>
+          <li>The two endings are not unlocked by a single choice. They emerge from the pattern of choices made throughout the game — which means a player can arrive at the Diamond path through completely different runs than another player and both experiences feel equally valid. The linear emotional arc (belonging, identity, difference) is delivered through mechanics that are played differently every time.</li>
+          <li>The lesson from Hades applied to Prism Breaker: the story does not have to be linear. The themes have to be consistent. If every system in the game expresses the same question — what does your color say about who you are — then the narrative coherence survives the randomness of the roguelike structure.</li>
+        </ul>
+           
+      </div>
+
+      <div class="cs-section">
+        <div class="cs-section-label">What I Have Learned</div>
+        <p>Studying Hades for this project clarified a distinction I had not articulated clearly before: the difference between a linear story and a linear emotional journey. Hades is not linear — the runs are different every time, the dialogue fires in different orders for different players. 
+          But the emotional journey is always the same: you want to escape, you keep failing, you learn why, and you eventually understand what you are actually running toward.</p>
+        <p><strong>Prism Breaker</strong> does not need to tell the same story every run. It needs to ask the same question every run. That is what makes the ending feel inevitable rather than arbitrary.</p>
       </div>
     </div>
   </main>
