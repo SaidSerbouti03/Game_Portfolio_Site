@@ -192,7 +192,7 @@
 
 .cs-section-label {
   font-family: var(--font-mono);
-  font-size: 10px;
+  font-size: 13px;
   color: var(--accent);
   letter-spacing: 0.1em;
   text-transform: uppercase;
@@ -213,7 +213,7 @@
 .cs-section ul { list-style: none; padding: 0; }
 
 .cs-section ul li {
-  font-size: 0.95rem;
+  font-size: 14px;
   color: var(--text-muted);
   line-height: 1.7;
   padding: 0.4rem 0 0.4rem 1.1rem;

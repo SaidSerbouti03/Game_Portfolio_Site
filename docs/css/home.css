@@ -137,7 +137,7 @@
   padding: 0.75rem 1rem;
   background: linear-gradient(transparent, rgba(0,0,0,0.85));
   font-family: var(--font-mono);
-  font-size: 10px;
+  font-size: 14px;
   color: var(--text);
   letter-spacing: 0.07em;
   text-transform: uppercase;
@@ -155,7 +155,7 @@
 
 .overview-block h3 {
   font-family: var(--font-mono);
-  font-size: 10px;
+  font-size: 14px;
   color: var(--accent);
   letter-spacing: 0.1em;
   text-transform: uppercase;
@@ -182,7 +182,7 @@
 
 .tag {
   font-family: var(--font-mono);
-  font-size: 9px;
+  font-size: 10px;
   letter-spacing: 0.06em;
   text-transform: uppercase;
   padding: 0.2rem 0.55rem;
