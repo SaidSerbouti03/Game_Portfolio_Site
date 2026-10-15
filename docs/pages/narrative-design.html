@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Narrative Design — Said Serbouti</title>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/base.css">
+  <link rel="stylesheet" href="../css/layout.css">
+  <link rel="stylesheet" href="../css/sidebar.css">
+  <link rel="stylesheet" href="../css/home.css">
+  <link rel="stylesheet" href="../css/projects.css">
+  <link rel="stylesheet" href="../css/pages.css">
+</head>
+<body>
+
+  <aside class="sidebar">
+    <a class="sidebar-logo" href="../index.html">
+      Said Serbouti
+      <span>Game &amp; Narrative Designer</span>
+    </a>
+
+    <nav class="sidebar-nav">
+
+      <div class="nav-item">
+        <a class="nav-link" href="../index.html">Home</a>
+      </div>
+
+      <div class="nav-item" id="nav-gamedesign">
+        <button class="nav-link" onclick="toggleDropdown('nav-gamedesign')">
+          Game Design <span class="nav-arrow">▶</span>
+        </button>
+        <div class="nav-dropdown">
+          <a class="active" href="../pages/game-design.html">All projects</a>
+          <a href="../casestudies/hocus_potion.html">Hocus Potion</a>
+          <a href="../casestudies/dream-jumper.html">Dream Jumper</a>
+          <a href="../casestudies/cowmingback.html">COW-ming Back</a>
+        </div>
+      </div>
+
+      <div class="nav-item open" id="nav-narrative">
+        <button class="nav-link" onclick="toggleDropdown('nav-narrative')">
+          Narrative Design <span class="nav-arrow">▶</span>
+        </button>
+        <div class="nav-dropdown">
+          <a href="../pages/narrative-design.html">All projects</a>
+          <a href="../casestudies/dream-jumpernarrative.html">Dream Jumper</a>
+          <a href="../casestudies/dodgydepot.html">Dodgy Depot</a>
+          <a href="../casestudies/peaknight.html">Peaknight Quest</a>
+          <a href="../casestudies/gattinferno.html">Gattinferno</a>
+          <a href="../casestudies/scp-project.html">SCP Project</a>
+          
+        </div>
+      </div>
+
+      <div class="nav-item" id="nav-other">
+        <button class="nav-link" onclick="toggleDropdown('nav-other')">
+          Other <span class="nav-arrow">▶</span>
+        </button>
+        <div class="nav-dropdown">
+          <a href="../pages/other.html">All projects</a>
+          <a href="casestudies/devils-swing.html">Devil's Swing</a>
+        </div>
+      </div>
+
+      <div class="nav-item">
+        <a class="nav-link" href="../pages/about.html">About Me</a>
+      </div>
+
+      <div class="nav-item">
+        <a class="nav-link" href="../pages/contacts.html">Contact</a>
+      </div>
+
+    </nav>
+
+    <div class="sidebar-footer">
+      <a class="cv-button" href="assets/ResumeV02 (1) (1).pdf" download>Download CV ↓</a>
+      <p>DBGA Milan<br>2025 — 2027</p>
+    </div>
+  </aside>
+
+  <main class="main">
+    <div class="section-page">
+
+      <div class="section-page-header">
+        <h2>Narrative Design</h2>
+        <p>Stories, dialogue and worldbuilding — projects centered on writing: branching structure, character work and building worlds that hold together.</p>
+      </div>
+
+      <div class="project-carousel" id="nd-carousel">
+        <a class="project-thumb" href="../casestudies/dream-jumpernarrative.html">
+          <div class="thumb-img"><img src="../images/Dream_Jumper_Pitch (2).png" alt="SCP Project (Twine)"></div>
+          <div class="thumb-tear"></div>
+          <div class="thumb-info">
+            <div class="thumb-tag">Environmental Narrative Design</div>
+            <div class="thumb-title">Dream Jumper</div>
+            <p class="thumb-role">Branching interactive fiction across seven SCP episodes, with variables tracking choices to four distinct endings.</p>
+            <div class="thumb-year">In revision</div>
+          </div>
+        </a>
+
+        <a class="project-thumb" href="../casestudies/dodgydepot.html">
+          <div class="thumb-img"><img src="../images/DD_LoadingScreen (1).png" alt="Alastor's Game"></div>
+          <div class="thumb-tear"></div>
+          <div class="thumb-info">
+            <div class="thumb-tag">Narrative Design</div>
+            <div class="thumb-title">Dodgy Depot</div>
+            <p class="thumb-role">A love story set in 1940s–50s New Orleans, with Alastor as a supernatural antagonist.</p>
+            <div class="thumb-year">In progress</div>
+          </div>
+        </a>
+
+        <a class="project-thumb" href="../casestudies/peaknight.html">
+          <div class="thumb-img"><img src="../images/Celandine.png" alt="The Hiccup God"></div>
+          <div class="thumb-tear"></div>
+          <div class="thumb-info">
+            <div class="thumb-tag">Narrative Design</div>
+            <div class="thumb-title">Peaknight Quest</div>
+            <p class="thumb-role">A 2D narrative game with a 20-minute time loop and a twist about who really rules the world.</p>
+            <div class="thumb-year">Concept</div>
+          </div>
+        </a>
+      </div>
+
+      
+
+      <div class="projects-grid">
+                <a class="project-thumb" href="../casestudies/catnhell.html">
+          <div class="thumb-img"><img src="../images/WhatsApp Image 2026-10-15 at 20.48.00.jpeg" alt="SCP Project (Twine)"></div>
+          <div class="thumb-tear"></div>
+          <div class="thumb-info">
+            <div class="thumb-tag">Co-author Narrative and worlbuilding</div>
+            <div class="thumb-title">Cat'n'Hell</div>
+            <p class="thumb-role">A 2D narrative game with a 20-minute time loop and a twist about who really rules the world.</p>
+            <div class="thumb-year">Concept</div>
+          </div>
+        </a>
+                <a class="project-thumb" href="../casestudies/scp-project.html">
+          <div class="thumb-img"><img src="../images/images (16) (1).jpg" alt="Alastor's Game"></div>
+          <div class="thumb-tear"></div>
+          <div class="thumb-info">
+            <div class="thumb-tag">Technical proof of branching narrative</div>
+            <div class="thumb-title">SCP Project</div>
+            <p class="thumb-role">A 2D narrative game with a 20-minute time loop and a twist about who really rules the world.</p>
+            <div class="thumb-year">Concept</div>
+          </div>
+        </a>
+                
+      </div>
+
+    </div>
+  </main>
+
+  <script src="../js/nav.js"></script>
+
+</body>
+</html>

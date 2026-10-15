@@ -3,91 +3,105 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>About — Said Serbouti</title>
-  <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;1,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <title>About Me — Said Serbouti</title>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="../css/base.css">
   <link rel="stylesheet" href="../css/layout.css">
   <link rel="stylesheet" href="../css/sidebar.css">
+  <link rel="stylesheet" href="../css/home.css">
+  <link rel="stylesheet" href="../css/projects.css">
   <link rel="stylesheet" href="../css/pages.css">
 </head>
 <body>
 
-  <<aside class="sidebar">
-    <a class="sidebar-logo" href="../index.html">Said Serbouti<span>Narrative Designer</span></a>
-    <nav class="sidebar-nav">
-      <div class="nav-item"><a class="nav-link" href="../index.html">Home</a></div>
-      <div class="nav-item" id="nav-academic">
-        <button class="nav-link" onclick="toggleDropdown('nav-academic')">Academic Projects <span class="nav-arrow">▶</span></button>
-        <div class="nav-dropdown">
-          <a href="../pages/academic.html">All Projects</a>
-          <a href="dodgy-depot.html">Dodgy Depot</a>
-          <a href="hocus-potion.html">Hocus Potion</a>
-        </div>
-      </div>
-      <div class="nav-item open" id="nav-personal">
-        <button class="nav-link active" onclick="toggleDropdown('nav-personal')">Personal Projects <span class="nav-arrow">▶</span></button>
-        <div class="nav-dropdown">
-          <a href="../pages/personal.html">All Projects</a>
-          <a href="dream-jumper.html">Dream Jumper</a>
-          <a href="tides-of-vengeance.html">Prism Breaker</a>
-          <a href="culling-circuit.html">SCP Project</a>
-        </div>
-      </div>
-      <div class="nav-item" id="nav-jam">
-        <button class="nav-link" onclick="toggleDropdown('nav-jam')">Game Jam <span class="nav-arrow">▶</span></button>
-        <div class="nav-dropdown">
-          <a href="../pages/jam.html">All Projects</a>
-          <a href="coming-back.html">COW-ming Back</a>
-        </div>
-      </div>
-      <div class="nav-item"><a class="nav-link" href="../pages/characters.html">Characters</a></div>
-      <div class="nav-item"><a class="nav-link" href="../pages/about.html">About Me</a></div>
-      <div class="nav-item"><a class="nav-link" href="../pages/contacts.html">Contacts</a></div>
-    </nav>
-    <div class="sidebar-footer"><p>DBGA Milano<br>2025 — 2027</p></div>
-  </aside>
+  <aside class="sidebar">
+    <a class="sidebar-logo" href="../index.html">
+      Said Serbouti
+      <span>Game &amp; Narrative Designer</span>
+    </a>
 
+    <nav class="sidebar-nav">
+
+      <div class="nav-item">
+        <a class="nav-link" href="../index.html">Home</a>
+      </div>
+
+      <div class="nav-item" id="nav-gamedesign">
+        <button class="nav-link" onclick="toggleDropdown('nav-gamedesign')">
+          Game Design <span class="nav-arrow">▶</span>
+        </button>
+        <div class="nav-dropdown">
+          <a class="active" href="../pages/game-design.html">All projects</a>
+          <a href="../casestudies/hocus_potion.html">Hocus Potion</a>
+          <a href="../casestudies/dream-jumper.html">Dream Jumper</a>
+          <a href="../casestudies/cowmingback.html">COW-ming Back</a>
+        </div>
+      </div>
+
+      <div class="nav-item" id="nav-narrative">
+        <button class="nav-link" onclick="toggleDropdown('nav-narrative')">
+          Narrative Design <span class="nav-arrow">▶</span>
+        </button>
+        <div class="nav-dropdown">
+          <a href="../pages/narrative-design.html">All projects</a>
+          <a href="../casestudies/dream-jumpernarrative.html">Dream Jumper</a>
+          <a href="../casestudies/dodgydepot.html">Dodgy Depot</a>
+          <a href="../casestudies/peaknight.html">Peaknight Quest</a>
+          <a href="../casestudies/gattinferno.html">Gattinferno</a>
+          <a href="../casestudies/scp-project.html">SCP Project</a>
+        </div>
+      </div>
+
+      <div class="nav-item" id="nav-other">
+        <button class="nav-link" onclick="toggleDropdown('nav-other')">
+          Other <span class="nav-arrow">▶</span>
+        </button>
+        <div class="nav-dropdown">
+          <a href="../pages/other.html">All projects</a>
+          <a href="casestudies/devils-swing.html">Devil's Swing</a>
+      </div>
+
+      <div class="nav-item">
+        <a class="nav-link active" href="../pages/about.html">About Me</a>
+      </div>
+
+      <div class="nav-item">
+        <a class="nav-link" href="../pages/contacts.html">Contact</a>
+      </div>
+
+    </nav>
+
+    <div class="sidebar-footer">
+      <a class="cv-button" href="../assets/cv-said-serbouti.pdf" download>Download CV ↓</a>
+      <p>DBGA Milan<br>2025 — 2027</p>
+    </div>
+  </aside>
 
   <main class="main">
     <div class="about-page">
       <h2>Said Serbouti</h2>
-      <div class="about-role">Narrative Designer · DBGA Milano · First Year</div>
+      <div class="about-role">Narrative &amp; Game Designer — DBGA Milan</div>
 
-      <p>I'm a narrative design student at DBGA in Milan, with a background that refuses to stay in one lane — narrative design, sound design, production, level design, and a long-standing obsession with games that treat their worlds as lived-in places.</p>
+      <p>I'm a first-year <strong>Narrative Design</strong> student at Digital Bros Game Academy in Milan, working toward a role as a narrative or game designer at studios like <strong>CDPR</strong>, <strong>Techland</strong> or <strong>Fool's Theory</strong>.</p>
 
-      <p>My aesthetic preferences run toward the <strong>surreal, the gothic, and the genuinely strange</strong>. I'm less interested in conventional fantasy settings than in games that find horror in the domestic, grandeur in the mundane, or comedy in the cosmic. Culling Circuit has a dead god as the racetrack. Dream Jumper is a horror game where the monster is memory. Coming Back is about a hamburger ascending to bovine heaven.</p>
+      <p>Alongside my studies, I work part-time at DHL Express, and I'm building a portfolio that ranges from retro-futuristic cashier sims to branching Twine fiction — aimed at a career path that, over the next few years, points toward Poland.</p>
 
-      <p>Outside of games: I play trumpet, compose music, write weird fiction, do cosplay, and maintain a library of physical games spanning PS1 through PS5. I believe sound design is narrative design. I also believe Mortal Shell deserves more recognition than it gets.</p>
+      <p>The thread running through my work is building coherent worlds where mechanics and story hold each other up: a game loop that says something, a line of dialogue that changes depending on how you've already played.</p>
 
       <div class="about-grid">
         <div>
-          <h4>Skills</h4>
-          <div class="tag-list">
-            <span class="tag">Narrative Design</span>
-            <span class="tag">Level Design</span>
-            <span class="tag">Dialogue Systems</span>
-            <span class="tag">Worldbuilding</span>
-            <span class="tag">Ink / Yarn Spinner</span>
-            <span class="tag">Unity</span>
-            <span class="tag">Jira · Trello · Git</span>
-          </div>
+          <h4>Education</h4>
+          <p style="margin:0;">Narrative Design, DBGA Milan<br>First year — graduating 2027</p>
         </div>
         <div>
-          <h4>Languages</h4>
-          <div class="tag-list">
-            <span class="tag">Italian — Native</span>
-            <span class="tag">Arabic — Native</span>
-            <span class="tag">English — Fluent</span>
-          </div>
-          <h4 style="margin-top:1.25rem;">Education</h4>
-          <div class="tag-list">
-            <span class="tag">DBGA Milano 2025–2027</span>
-          </div>
+          <h4>Aiming for</h4>
+          <p style="margin:0;">Narrative Designer / Game Designer<br>Poland (Warsaw / Kraków)</p>
         </div>
       </div>
     </div>
   </main>
 
   <script src="../js/nav.js"></script>
+
 </body>
 </html>

@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Said Serbouti — Narrative Designer</title>
-  <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;1,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <title>Said Serbouti — Game &amp; Narrative Designer</title>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/base.css">
   <link rel="stylesheet" href="css/layout.css">
   <link rel="stylesheet" href="css/sidebar.css">
@@ -18,7 +18,7 @@
   <aside class="sidebar">
     <a class="sidebar-logo" href="index.html">
       Said Serbouti
-      <span>Narrative Designer</span>
+      <span>Game &amp; Narrative Designer</span>
     </a>
 
     <nav class="sidebar-nav">
@@ -27,41 +27,41 @@
         <a class="nav-link active" href="index.html">Home</a>
       </div>
 
-      <div class="nav-item" id="nav-academic">
-        <button class="nav-link" onclick="toggleDropdown('nav-academic')">
-          Academic Projects <span class="nav-arrow">▶</span>
+      <div class="nav-item" id="nav-gamedesign">
+        <button class="nav-link" onclick="toggleDropdown('nav-gamedesign')">
+          Game Design <span class="nav-arrow">▶</span>
         </button>
         <div class="nav-dropdown">
-          <a href="pages/academic.html">All Projects</a>
-          <a href="casestudies/dodgy-depot.html">Dodgy Depot</a>
-          <a href="casestudies/hocus-potion.html">Hocus Potion</a>
-        </div>
-      </div>
-
-      <div class="nav-item" id="nav-personal">
-        <button class="nav-link" onclick="toggleDropdown('nav-personal')">
-          Personal Projects <span class="nav-arrow">▶</span>
-        </button>
-        <div class="nav-dropdown">
-          <a href="pages/personal.html">All Projects</a>
+          <a href="pages/game-design.html">All projects</a>
+          <a href="casestudies/hocus_potion.html">Hocus Potion</a>
           <a href="casestudies/dream-jumper.html">Dream Jumper</a>
-          <a href="casestudies/tides-of-vengeance.html">Prism Breaker</a>
-          <a href="casestudies/culling-circuit.html">SCP Project</a>
+          <a href="casestudies/cowmingback.html">COW-ming Back</a>
         </div>
       </div>
 
-      <div class="nav-item" id="nav-jam">
-        <button class="nav-link" onclick="toggleDropdown('nav-jam')">
-          Game Jam <span class="nav-arrow">▶</span>
+      <div class="nav-item" id="nav-narrative">
+        <button class="nav-link" onclick="toggleDropdown('nav-narrative')">
+          Narrative Design <span class="nav-arrow">▶</span>
         </button>
         <div class="nav-dropdown">
-          <a href="pages/jam.html">All Projects</a>
-          <a href="casestudies/coming-back.html">COW-ming Back</a>
+          <a href="pages/narrative-design.html">All projects</a>
+          <a href="casestudies/dream-jumpernarrative.html">Dream Jumper</a>
+          <a href="casestudies/dodgydepot.html">Dodgy Depot</a>
+          <a href="casestudies/peaknight.html">Peaknight Quest</a>
+          <a href="casestudies/gattinferno.html">Gattinferno</a>
+          <a href="casestudies/scp-project.html">SCP Project (Twine)</a>
+          
         </div>
       </div>
 
-      <div class="nav-item">
-        <a class="nav-link" href="pages/characters.html">Characters</a>
+      <div class="nav-item" id="nav-other">
+        <button class="nav-link" onclick="toggleDropdown('nav-other')">
+          Other <span class="nav-arrow">▶</span>
+        </button>
+        <div class="nav-dropdown">
+          <a href="pages/other.html">All projects</a>
+          <a href="casestudies/devils-swing.html">Devil's Swing</a>
+        </div>
       </div>
 
       <div class="nav-item">
@@ -69,13 +69,14 @@
       </div>
 
       <div class="nav-item">
-        <a class="nav-link" href="pages/contacts.html">Contacts</a>
+        <a class="nav-link" href="pages/contacts.html">Contact</a>
       </div>
 
     </nav>
 
     <div class="sidebar-footer">
-      <p>DBGA Milano<br>2025 — 2027</p>
+      <a class="cv-button" href="assets/ResumeV02 (1) (1).pdf" download>Download CV ↓</a>
+      <p>DBGA Milan<br>2025 — 2027</p>
     </div>
   </aside>
 
@@ -83,68 +84,88 @@
   <main class="main">
 
     <div class="home-hero">
-      <div class="hero-eyebrow">Narrative Designer · DBGA Milano · IT</div>
+      <div class="hero-eyebrow">Narrative &amp; Game Designer, DBGA Milan</div>
       <h1 class="hero-title">
-        Building worlds<br>through <em>words</em><span class="cursor"></span>
+        I build worlds<br>that perform <em>tricks</em><span class="cursor"></span>
       </h1>
       <p class="hero-bio">
-        First-year student at DBGA, specialising in narrative design, sound design, and production.
-        I'm drawn to surreal worlds, liminal atmospheres, and games that treat sound as a storytelling tool.
-        
+        First-year Narrative Design student at DBGA, drawn to gothic whimsy, jazz-age
+        carnival and the theatrics of a world that rewards close attention. I design
+        systems that tell stories and stories that behave like systems, aiming at
+        studios like Techland, CDPR and Fool's Theory.
       </p>
-    </div>
-
-    <div class="carousel-section">
-      <div class="section-label">// Browse by section</div>
-      <div class="carousel-track">
-
-        <div class="carousel-slide" onclick="location.href='pages/academic.html'">
-          <img class="slide-img" src="./images/academic.png" alt="Academic Projects">
-
-          <div class="slide-label">Academic Projects</div>
-        </div>
-
-        <div class="carousel-slide" onclick="location.href='pages/personal.html'">
-          <img class="slide-img" src="./images/personal.png" alt="Personal Projects">
-
-          <div class="slide-label">Personal Projects</div>
-        </div>
-
-        <div class="carousel-slide" onclick="location.href='pages/jam.html'">
-          <img class="slide-img" src="./images/jam.png" alt="Game Jam">
-
-          <div class="slide-label">Game Jam</div>
-        </div>
-
-        <div class="carousel-slide" onclick="location.href='pages/characters.html'">
-          <div class="placeholder-img"><span>Cover image</span></div>
-          <div class="slide-label">Characters</div>
-        </div>
-
+      <div class="hero-actions">
+        <a class="pill-button is-primary" href="pages/about.html">About me</a>
+        <a class="pill-button" href="pages/contacts.html">Get in touch</a>
+        <a class="pill-button" href="assets/ResumeV02 (1) (1).pdf" download>Download CV</a>
       </div>
     </div>
 
+    <div class="stage-divider"><div class="marquee-rule"><div class="bulbs"><span></span><span></span><span></span></div></div></div>
+
+    <div class="carousel-section">
+      <h2 class="section-heading">Three acts, one stage</h2>
+      <div class="carousel-track" id="home-carousel">
+
+        <a class="carousel-slide" href="pages/game-design.html">
+          <div class="slide-sub">Act One</div>
+          <img class="slide-img" src="images/designcollage.png" alt="">
+          <div class="slide-label">Game Design</div>
+        </a>
+
+        <a class="carousel-slide" href="pages/narrative-design.html">
+          <div class="slide-sub">Act Two</div>
+          <img class="slide-img" src="images/narrativecollage.png" alt="">
+          <div class="slide-label">Narrative Design</div>
+        </a>
+
+        <a class="carousel-slide" href="pages/other.html">
+          <div class="slide-sub">Act Three</div>
+          <img class="slide-img" src="images/othercollage.png" alt="">
+          <div class="slide-label">Other</div>
+        </a>
+
+        <a class="carousel-slide" href="pages/other.html">
+          <div class="slide-sub">Act Four</div>
+          <img class="slide-img" src="images/aboutcollage.jpeg" alt="">
+          <div class="slide-label">About Me</div>
+        </a>
+
+        <a class="carousel-slide" href="pages/other.html">
+          <div class="slide-sub">Act Five</div>
+          <img class="slide-img" src="images/contactscollage.png" alt="">
+          <div class="slide-label">Contacts</div>
+        </a>
+
+      </div>
+      <div class="carousel-nav">
+        <button class="carousel-arrow" onclick="scrollCarousel('home-carousel', -1)" aria-label="Scroll back">‹</button>
+        <button class="carousel-arrow" onclick="scrollCarousel('home-carousel', 1)" aria-label="Scroll forward">›</button>
+      </div>
+    </div>
+
+    <div class="stage-divider"><div class="marquee-rule"><div class="bulbs"><span></span><span></span><span></span></div></div></div>
+
     <div class="overview-section">
       <div class="overview-block">
-        <h3>Currently working on</h3>
-        <p><strong>Dream Jumper</strong> — first-person liminal horror walking simulator with roguelite elements. Full GDD, two level design documents, producing a playable demo with a small team.</p>
-        <p><strong>Portfolio development</strong> — case studies for Dodgy Depot, Dream Jumper, Tides of Vengeance, Coming Back.</p>
-        <p><strong>Exploring</strong> Ink / Yarn Spinner for dialogue implementation in Unity.</p>
+        <h3>Currently on the workbench</h3>
+        <p><strong>Dream Jumper</strong> — a first-person liminal horror walking sim with light roguelite elements. Full GDD, level design underway on a playable demo.</p>
+        <p><strong>Portfolio</strong> — case studies for Dodgy Depot, Dream Jumper, the SCP Twine project and Alastor's Game.</p>
+        <p><strong>Exploring</strong> — Ink / Yarn Spinner for dialogue implementation in Unity.</p>
       </div>
       <div class="overview-block">
         <h3>Skills &amp; tools</h3>
         <p><strong>Narrative</strong></p>
         <div class="tag-list">
-          <span class="tag">World Building</span>
-          <span class="tag">Dialogue Systems</span>
-          <span class="tag">GDD Writing</span>
-          <span class="tag">Character Design</span>
+          <span class="tag">World building</span>
+          <span class="tag">Dialogue systems</span>
+          <span class="tag">GDD writing</span>
+          <span class="tag">Character design</span>
           <span class="tag">Ink / Yarn</span>
         </div>
-        <p style="margin-top:1rem;"><strong>Production &amp; Design</strong></p>
+        <p style="margin-top:1rem;"><strong>Production &amp; design</strong></p>
         <div class="tag-list">
-          <span class="tag">Sound Design</span>
-          <span class="tag">Level Design</span>
+          <span class="tag">Level design</span>
           <span class="tag">Unity</span>
           <span class="tag">Jira</span>
           <span class="tag">Trello</span>

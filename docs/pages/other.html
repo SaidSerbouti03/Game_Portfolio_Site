@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Other — Said Serbouti</title>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/base.css">
+  <link rel="stylesheet" href="../css/layout.css">
+  <link rel="stylesheet" href="../css/sidebar.css">
+  <link rel="stylesheet" href="../css/home.css">
+  <link rel="stylesheet" href="../css/projects.css">
+  <link rel="stylesheet" href="../css/pages.css">
+</head>
+<body>
+
+  <aside class="sidebar">
+    <a class="sidebar-logo" href="../index.html">
+      Said Serbouti
+      <span>Game &amp; Narrative Designer</span>
+    </a>
+
+    <nav class="sidebar-nav">
+
+      <div class="nav-item">
+        <a class="nav-link" href="../index.html">Home</a>
+      </div>
+
+      <div class="nav-item" id="nav-gamedesign">
+        <button class="nav-link" onclick="toggleDropdown('nav-gamedesign')">
+          Game Design <span class="nav-arrow">▶</span>
+        </button>
+        <div class="nav-dropdown">
+          <a class="active" href="../pages/game-design.html">All projects</a>
+          <a href="../casestudies/hocus_potion.html">Hocus Potion</a>
+          <a href="../casestudies/dream-jumper.html">Dream Jumper</a>
+          <a href="../casestudies/cowmingback.html">COW-ming Back</a>
+        </div>
+      </div>
+
+      <div class="nav-item" id="nav-narrative">
+        <button class="nav-link" onclick="toggleDropdown('nav-narrative')">
+          Narrative Design <span class="nav-arrow">▶</span>
+        </button>
+        <div class="nav-dropdown">
+          <a href="../pages/narrative-design.html">All projects</a>
+          <a href="../casestudies/dream-jumpernarrative.html">Dream Jumper</a>
+          <a href="../casestudies/dodgydepot.html">Dodgy Depot</a>
+          <a href="../casestudies/peaknight.html">Peaknight Quest</a>
+          <a href="../casestudies/gattinferno.html">Gattinferno</a>
+          <a href="../casestudies/scp-project.html">SCP Project</a>
+        </div>
+      </div>
+
+      <div class="nav-item open" id="nav-other">
+        <button class="nav-link" onclick="toggleDropdown('nav-other')">
+          Other <span class="nav-arrow">▶</span>
+        </button>
+        <div class="nav-dropdown">
+          <a class="active" href="../pages/other.html">All projects</a>
+          <a href="casestudies/devils-swing.html">Devil's Swing</a>
+        </div>
+      </div>
+
+      <div class="nav-item">
+        <a class="nav-link" href="../pages/about.html">About Me</a>
+      </div>
+
+      <div class="nav-item">
+        <a class="nav-link" href="../pages/contacts.html">Contact</a>
+      </div>
+
+    </nav>
+
+    <div class="sidebar-footer">
+      <a class="cv-button" href="../assets/cv-said-serbouti.pdf" download>Download CV ↓</a>
+      <p>DBGA Milan<br>2025 — 2027</p>
+    </div>
+  </aside>
+
+  <main class="main">
+    <div class="section-page">
+
+      <div class="section-page-header">
+        <h2>Other</h2>
+        <p>Work where I wore other hats — character sheets, crossover scripts, experimental worldbuilding — alongside game and narrative design.</p>
+      </div>
+
+      <div class="project-carousel" id="ot-carousel">
+        <a class="project-thumb" href="../casestudies/devils-swing.html">
+          <div class="thumb-img"><img src="../images/devils-swing-cover.jpg" alt="Devil's Swing"></div>
+          <div class="thumb-tear"></div>
+          <div class="thumb-info">
+            <div class="thumb-tag">Musical crossover</div>
+            <div class="thumb-title">Devil's Swing</div>
+            <p class="thumb-role">A fan musical crossover between Bendy and the Ink Machine and Hazbin Hotel.</p>
+            <div class="thumb-year">In progress</div>
+          </div>
+        </a>
+
+        <a class="project-thumb" href="../casestudies/il-tratto.html">
+          <div class="thumb-img"><img src="../images/il-tratto-cover.jpg" alt="Il Tratto"></div>
+          <div class="thumb-tear"></div>
+          <div class="thumb-info">
+            <div class="thumb-tag">Original worldbuilding</div>
+            <div class="thumb-title">Il Tratto</div>
+            <p class="thumb-role">An original cosmogony built from graphite and charcoal, about grief.</p>
+            <div class="thumb-year">Standalone project</div>
+          </div>
+        </a>
+
+        <a class="project-thumb" href="../casestudies/blood-magic-game.html">
+          <div class="thumb-img"><img src="../images/blood-magic-cover.jpg" alt="Blood Tree"></div>
+          <div class="thumb-tear"></div>
+          <div class="thumb-info">
+            <div class="thumb-tag">Game concept</div>
+            <div class="thumb-title">Blood Tree</div>
+            <p class="thumb-role">A concept fusing Bloodborne's darkness with Hogwarts Legacy's magic-progression cosmology.</p>
+            <div class="thumb-year">Concept</div>
+          </div>
+        </a>
+
+        <a class="project-thumb" href="../casestudies/wolverine-game.html">
+          <div class="thumb-img"><img src="../images/wolverine-cover.jpg" alt="Wolverine — Action Game"></div>
+          <div class="thumb-tear"></div>
+          <div class="thumb-info">
+            <div class="thumb-tag">Game concept</div>
+            <div class="thumb-title">Wolverine — Action Game</div>
+            <p class="thumb-role">Combat system and game design built around pain as the price of immortality.</p>
+            <div class="thumb-year">Concept</div>
+          </div>
+        </a>
+
+        <a class="project-thumb" href="../casestudies/cortometraggio-marocco.html">
+          <div class="thumb-img"><img src="../images/cortometraggio-marocco-cover.jpg" alt="Morocco Short Film"></div>
+          <div class="thumb-tear"></div>
+          <div class="thumb-info">
+            <div class="thumb-tag">Short film</div>
+            <div class="thumb-title">Morocco Short Film</div>
+            <p class="thumb-role">A live-action short film concept set in Morocco, in an Assassin's Creed style.</p>
+            <div class="thumb-year">Concept</div>
+          </div>
+        </a>
+      </div>
+
+      <div class="projects-grid">
+                <a class="project-thumb" href="../casestudies/devils-swing.html">
+          <div class="thumb-img"><img src="../images/devils-swing-cover.jpg" alt="Devil's Swing"></div>
+          <div class="thumb-tear"></div>
+          <div class="thumb-info">
+            <div class="thumb-tag">Musical crossover</div>
+            <div class="thumb-title">Devil's Swing</div>
+          </div>
+        </a>
+                <a class="project-thumb" href="../casestudies/il-tratto.html">
+          <div class="thumb-img"><img src="../images/il-tratto-cover.jpg" alt="Il Tratto"></div>
+          <div class="thumb-tear"></div>
+          <div class="thumb-info">
+            <div class="thumb-tag">Original worldbuilding</div>
+            <div class="thumb-title">Il Tratto</div>
+          </div>
+        </a>
+                <a class="project-thumb" href="../casestudies/blood-magic-game.html">
+          <div class="thumb-img"><img src="../images/blood-magic-cover.jpg" alt="Blood Tree"></div>
+          <div class="thumb-tear"></div>
+          <div class="thumb-info">
+            <div class="thumb-tag">Game concept</div>
+            <div class="thumb-title">Blood Tree</div>
+          </div>
+        </a>
+                <a class="project-thumb" href="../casestudies/wolverine-game.html">
+          <div class="thumb-img"><img src="../images/wolverine-cover.jpg" alt="Wolverine — Action Game"></div>
+          <div class="thumb-tear"></div>
+          <div class="thumb-info">
+            <div class="thumb-tag">Game concept</div>
+            <div class="thumb-title">Wolverine — Action Game</div>
+          </div>
+        </a>
+                <a class="project-thumb" href="../casestudies/cortometraggio-marocco.html">
+          <div class="thumb-img"><img src="../images/cortometraggio-marocco-cover.jpg" alt="Morocco Short Film"></div>
+          <div class="thumb-tear"></div>
+          <div class="thumb-info">
+            <div class="thumb-tag">Short film</div>
+            <div class="thumb-title">Morocco Short Film</div>
+          </div>
+        </a>
+      </div>
+
+    </div>
+  </main>
+
+  <script src="../js/nav.js"></script>
+
+</body>
+</html>

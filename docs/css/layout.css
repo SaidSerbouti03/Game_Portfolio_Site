@@ -1,9 +1,7 @@
-/* ── LAYOUT: sidebar + main ── */
-/* Incluso in TUTTE le pagine */
-
-body {
-  display: flex;
-}
+/* ══════════════════════════════════════════
+   LAYOUT — struttura sidebar fissa + contenuto
+   Incluso in TUTTE le pagine del sito
+   ══════════════════════════════════════════ */
 
 .main {
   margin-left: var(--sidebar-w);
@@ -11,4 +9,20 @@ body {
   min-height: 100vh;
   width: calc(100% - var(--sidebar-w));
   overflow-x: hidden;
+}
+
+/* Su schermi stretti la sidebar collassa in alto */
+@media (max-width: 780px) {
+  body { flex-direction: column; }
+
+  .sidebar {
+    position: relative;
+    width: 100%;
+    min-height: auto;
+  }
+
+  .main {
+    margin-left: 0;
+    width: 100%;
+  }
 }

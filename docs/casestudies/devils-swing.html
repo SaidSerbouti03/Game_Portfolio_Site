@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Devil's Swing — Case Study</title>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/base.css">
+  <link rel="stylesheet" href="../css/layout.css">
+  <link rel="stylesheet" href="../css/sidebar.css">
+  <link rel="stylesheet" href="../css/home.css">
+  <link rel="stylesheet" href="../css/projects.css">
+  <link rel="stylesheet" href="../css/pages.css">
+</head>
+<body>
+
+  <aside class="sidebar">
+    <a class="sidebar-logo" href="../index.html">
+      Said Serbouti
+      <span>Game &amp; Narrative Designer</span>
+    </a>
+
+    <nav class="sidebar-nav">
+
+      <div class="nav-item">
+        <a class="nav-link" href="../index.html">Home</a>
+      </div>
+
+      <div class="nav-item" id="nav-gamedesign">
+        <button class="nav-link" onclick="toggleDropdown('nav-gamedesign')">
+          Game Design <span class="nav-arrow">▶</span>
+        </button>
+        <div class="nav-dropdown">
+          <a class="active" href="../pages/game-design.html">All projects</a>
+          <a href="../casestudies/hocus_potion.html">Hocus Potion</a>
+          <a href="../casestudies/dream-jumper.html">Dream Jumper</a>
+          <a href="../casestudies/cowmingback.html">COW-ming Back</a>
+        </div>
+        </div>
+      </div>
+
+      <div class="nav-item" id="nav-narrative">
+        <button class="nav-link" onclick="toggleDropdown('nav-narrative')">
+          Narrative Design <span class="nav-arrow">▶</span>
+        </button>
+        <div class="nav-dropdown">
+          <a href="../pages/narrative-design.html">All projects</a>
+          <a href="../casestudies/dream-jumpernarrative.html">Dream Jumper</a>
+          <a href="../casestudies/dodgydepot.html">Dodgy Depot</a>
+          <a href="../casestudies/peaknight.html">Peaknight Quest</a>
+          <a href="../casestudies/gattinferno.html">Gattinferno</a>
+          <a href="../casestudies/scp-project.html">SCP Project</a>
+        </div>
+        </div>
+      </div>
+
+      <div class="nav-item open" id="nav-other">
+        <button class="nav-link" onclick="toggleDropdown('nav-other')">
+          Other <span class="nav-arrow">▶</span>
+        </button>
+        <div class="nav-dropdown">
+          <a href="../pages/other.html">All projects</a>
+          <a class="active" href="../casestudies/devils-swing.html">Devil's Swing</a>
+          <a href="../casestudies/il-tratto.html">Il Tratto</a>
+          <a href="../casestudies/blood-magic-game.html">Blood Tree</a>
+          <a href="../casestudies/wolverine-game.html">Wolverine</a>
+          <a href="../casestudies/cortometraggio-marocco.html">Morocco Short Film</a>
+        </div>
+      </div>
+
+      <div class="nav-item">
+        <a class="nav-link" href="../pages/about.html">About Me</a>
+      </div>
+
+      <div class="nav-item">
+        <a class="nav-link" href="../pages/contacts.html">Contact</a>
+      </div>
+
+    </nav>
+
+    <div class="sidebar-footer">
+      <a class="cv-button" href="../assets/cv-said-serbouti.pdf" download>Download CV ↓</a>
+      <p>DBGA Milan<br>2025 — 2027</p>
+    </div>
+  </aside>
+
+  <main class="main">
+    <div class="case-study">
+      <a class="cs-back" href="../pages/other.html">← Back to Other</a>
+
+      <div class="cs-cover">
+        <img src="../images/devils-swing-hero.jpg" alt="Devil's Swing">
+      </div>
+
+      <div class="cs-meta-row">
+        <div class="cs-meta-item"><label>Role</label><span>Writer / Screenwriter</span></div>
+        <div class="cs-meta-item"><label>Type</label><span>Musical crossover</span></div>
+        <div class="cs-meta-item"><label>Format</label><span>Script + song lyrics</span></div>
+        <div class="cs-meta-item"><label>Status</label><span>In progress</span></div>
+      </div>
+
+      <h1 class="cs-title">Devil's Swing</h1>
+      <p class="cs-subtitle">A fan musical crossover between Bendy and the Ink Machine and Hazbin Hotel.</p>
+
+      <div class="cs-section">
+        <div class="cs-section-label">The concept</div>
+        <p>Devil's Swing merges the inked aesthetic of Bendy and the Ink Machine with the musical tone of Hazbin Hotel, in a crossover built as a musical: characters, musical numbers, and a story arc that draws from both worlds without simply adding them together.</p>
+      </div>
+
+      <div class="cs-section">
+        <div class="cs-section-label">My role</div>
+        <p>I write the script and structure the musical numbers, while working out how characters from both universes meet without losing what makes each one work.</p>
+        <ul>
+          <li>Wrote the crossover script</li>
+          <li>Structured the musical numbers</li>
+          <li>Kept both source universes coherent</li>
+        </ul>
+      </div>
+
+      <div class="cs-highlight">
+        <p>The starting question wasn't "what happens when they meet" — it was "what song would they sing together, and why".</p>
+      </div>
+
+      <div class="cs-section">
+        <div class="cs-section-label">Gallery — screenshots &amp; gifs</div>
+        <div class="cs-gallery">
+          <div class="cs-gallery-img"><span>Crossover moodboard (image)</span></div>
+          <div class="cs-gallery-img"><span>Script excerpt (screenshot)</span></div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <script src="../js/nav.js"></script>
+
+</body>
+</html>

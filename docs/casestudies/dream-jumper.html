@@ -3,116 +3,139 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Dream Jumper — Said Serbouti</title>
-  <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;1,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <title>Dream Jumper — Case Study</title>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="../css/base.css">
   <link rel="stylesheet" href="../css/layout.css">
   <link rel="stylesheet" href="../css/sidebar.css">
+  <link rel="stylesheet" href="../css/home.css">
   <link rel="stylesheet" href="../css/projects.css">
+  <link rel="stylesheet" href="../css/pages.css">
+  <link rel="stylesheet" href="../css/curtain.css">
 </head>
 <body>
 
   <aside class="sidebar">
-    <a class="sidebar-logo" href="../index.html">Said Serbouti<span>Narrative Designer</span></a>
+    <a class="sidebar-logo" href="../index.html">
+      Said Serbouti
+      <span>Game &amp; Narrative Designer</span>
+    </a>
+
     <nav class="sidebar-nav">
-      <div class="nav-item"><a class="nav-link" href="../index.html">Home</a></div>
-      <div class="nav-item" id="nav-academic">
-        <button class="nav-link" onclick="toggleDropdown('nav-academic')">Academic Projects <span class="nav-arrow">▶</span></button>
+
+      <div class="nav-item">
+        <a class="nav-link" href="../index.html">Home</a>
+      </div>
+
+      <div class="nav-item open" id="nav-gamedesign">
+        <button class="nav-link" onclick="toggleDropdown('nav-gamedesign')">
+          Game Design <span class="nav-arrow">▶</span>
+        </button>
         <div class="nav-dropdown">
-          <a href="../pages/academic.html">All Projects</a>
-          <a href="dodgy-depot.html">Dodgy Depot</a>
-          <a href="hocus-potion.html">Hocus Potion</a>
+          <a class="active" href="../pages/game-design.html">All projects</a>
+          <a href="../casestudies/hocus_potion.html">Hocus Potion</a>
+          <a href="../casestudies/dream-jumper.html">Dream Jumper</a>
+          <a href="../casestudies/cowmingback.html">COW-ming Back</a>
+        </div>
         </div>
       </div>
-      <div class="nav-item open" id="nav-personal">
-        <button class="nav-link active" onclick="toggleDropdown('nav-personal')">Personal Projects <span class="nav-arrow">▶</span></button>
+
+      <div class="nav-item" id="nav-narrative">
+        <button class="nav-link" onclick="toggleDropdown('nav-narrative')">
+          Narrative Design <span class="nav-arrow">▶</span>
+        </button>
         <div class="nav-dropdown">
-          <a href="../pages/personal.html">All Projects</a>
-          <a href="dream-jumper.html">Dream Jumper</a>
-          <a href="tides-of-vengeance.html">Prism Breaker</a>
-          <a href="culling-circuit.html">SCP Project</a>
+          <a href="../pages/narrative-design.html">All projects</a>
+          <a href="../casestudies/dream-jumpernarrative.html">Dream Jumper</a>
+          <a href="../casestudies/dodgydepot.html">Dodgy Depot</a>
+          <a href="../casestudies/peaknight.html">Peaknight Quest</a>
+          <a href="../casestudies/gattinferno.html">Gattinferno</a>
+          <a href="../casestudies/scp-project.html">SCP Project</a>
         </div>
       </div>
-      <div class="nav-item" id="nav-jam">
-        <button class="nav-link" onclick="toggleDropdown('nav-jam')">Game Jam <span class="nav-arrow">▶</span></button>
+
+      <div class="nav-item" id="nav-other">
+        <button class="nav-link" onclick="toggleDropdown('nav-other')">
+          Other <span class="nav-arrow">▶</span>
+        </button>
         <div class="nav-dropdown">
-          <a href="../pages/jam.html">All Projects</a>
-          <a href="coming-back.html">COW-ming Back</a>
+          <a href="../pages/other.html">All projects</a>
+          <a href="../casestudies/devils-swing.html">Devil's Swing</a>
+          <a href="../casestudies/il-tratto.html">Il Tratto</a>
+          <a href="../casestudies/blood-magic-game.html">Blood Tree</a>
+          <a href="../casestudies/wolverine-game.html">Wolverine</a>
+          <a href="../casestudies/cortometraggio-marocco.html">Morocco Short Film</a>
         </div>
       </div>
-      <div class="nav-item"><a class="nav-link" href="../pages/characters.html">Characters</a></div>
-      <div class="nav-item"><a class="nav-link" href="../pages/about.html">About Me</a></div>
-      <div class="nav-item"><a class="nav-link" href="../pages/contacts.html">Contacts</a></div>
+
+      <div class="nav-item">
+        <a class="nav-link" href="../pages/about.html">About Me</a>
+      </div>
+
+      <div class="nav-item">
+        <a class="nav-link" href="../pages/contacts.html">Contact</a>
+      </div>
+
     </nav>
-    <div class="sidebar-footer"><p>DBGA Milano<br>2025 — 2027</p></div>
+
+    <div class="sidebar-footer">
+      <a class="cv-button" href="../assets/cv-said-serbouti.pdf" download>Download CV ↓</a>
+      <p>DBGA Milan<br>2025 — 2027</p>
+    </div>
   </aside>
-
-
 
   <main class="main">
     <div class="case-study">
-      <button class="cs-back" onclick="location.href='../pages/personal.html'">← Back to Personal Projects</button>
+      <a class="cs-back" href="../pages/game-design.html">← Back to Game Design</a>
 
-      <div class="cs-cover"><img src="../imagespages/Dream_Jumper_Pitch.png" alt="Dream Jumper"></div>
+      <div class="cs-cover">
+        <img src="../images/Dream_Jumper_Pitch.png" alt="Dream Jumper">
+      </div>
 
       <div class="cs-meta-row">
-        <div class="cs-meta-item"><label>Type</label><span>Personal</span></div>
-        <div class="cs-meta-item"><label>Role</label><span>Narrative Designer · Director</span></div>
-        <div class="cs-meta-item"><label>Year</label><span>2026</span></div>
-        <div class="cs-meta-item"><label>Status</label><span>In development</span></div>
+        <div class="cs-meta-item"><label>Role</label><span>Game Designer</span></div>
+        <div class="cs-meta-item"><label>Type</label><span>Personal project</span></div>
+        <div class="cs-meta-item"><label>Format</label><span>Unity — 3D</span></div>
+        <div class="cs-meta-item"><label>Status</label><span>In progress — a 2 to 3 dream demo</span></div>
       </div>
 
       <h1 class="cs-title">Dream Jumper</h1>
-      <p class="cs-subtitle">Narrative Design · Environmental Storytelling</p>
+      <p class="cs-subtitle">A liminal horror walking sim where every dream follows its own rules.</p>
 
       <div class="cs-section">
-        <div class="cs-section-label">Overview</div>
-        <p>Dream Jumper is a first-person liminal horror walking simulator with roguelite elements. You play as <strong>Elias</strong>, a young man who falls asleep and enters the dreams of the people around him — familiar spaces warped just past recognition, each holding fragments of a life he is trying to understand. The game has no cutscenes, no explicit exposition, and minimal dialogue. 
-          Every piece of story the player receives comes through space, sound, and the behaviour of the environment itself.</p>
-        <p>This page documents the narrative design approach behind the project — specifically how personal narrative and environmental storytelling were designed to work as a single system rather than two parallel tracks.</p>
+        <div class="cs-section-label">The concept</div>
+        <p>Dream Jumper moves the player through a sequence of first-person dreams, each with its own liminal atmosphere and slightly different rules. It's designed as a demo of 2 to 3 dreams rather than a full game, meant to show range in level design within a short playtime.</p>
       </div>
 
       <div class="cs-section">
-        <div class="cs-section-label">Personal Narrative: Elias</div>
-        <p>Elias is not a hero. He is someone who does not know how to stop moving long enough to feel what is happening to him. The roguelite structure mirrors this directly: each run is another night, another attempt, another refusal to stay still.
-          The emotional arc is built around a central absence — his girlfriend Sara, whose dream is the final level and the only one he cannot fully enter. Every other dream he visits is preparation for that confrontation, and every environmental detail across the game is a fragment of their shared history seen from the wrong angle.
-          The design challenge was making a protagonist legible without giving him a voice. The solution was to make the spaces react to him rather than describe him. Doors that open too easily. Rooms that are too familiar. Objects in the wrong place by exactly one degree. 
-          The horror of Dream Jumper is not what is in the rooms — it is the creeping sense that the rooms know Elias better than he knows himself.</p>
-
-          <p>Key narrative pillars for Elias:</p>
+        <div class="cs-section-label">My role</div>
+        <p>I handle general game design and level design: defining each dream's distinct rules, their relative difficulty, and how they fit the project's roguelite structure.</p>
         <ul>
-          <li>No object exists purely for decoration — every item is a narrative choice</li>
-          <li>Lighting and shadow carry emotional information, not just atmosphere</li>
-          <li>Sound design is written alongside spatial design, not added after</li>
-          <li>The player's movement speed is a narrative tool — liminal spaces slow you down deliberately</li>
+          <li>Level design for the first dream (current prototype)</li>
+          <li>Defined the distinct rules for each dream</li>
+          <li>Wrote the full game design document</li>
         </ul>
-
-        <p><strong>Playdate</strong>:the second level, applies the same logic to childhood memory. The domestic uncanny: a child's bedroom where nothing is quite wrong but everything is slightly too quiet, slightly too neat, slightly too preserved. 
-          The narrative question the level asks is whether some memories are kept intact because they bring comfort or because they cannot be changed.</p>
       </div>
 
-      
-
-      <div class="cs-section">
-        <div class="cs-section-label">What IHave Learned</div>
-        <p>The most important lesson from Dream Jumper's narrative design was the difference between hiding story in the environment and building story into the environment. Hidden story assumes the player will find it. 
-          Built-in story communicates even to players who never look — because it shapes the feel of the space regardless of whether the player consciously registers it.</p>
-        <p>The second lesson was about restraint. The first draft of Silent Pool had too many objects, too many deliberate narrative details. The revision stripped it back to a third of the original content and the level became dramatically more effective. 
-          Emptiness is a narrative choice. What is absent tells as much story as what is present.</p>
+      <div class="cs-highlight">
+        <p>Every dream had to feel familiar and wrong at the same time — the goal was déjà-vu unease, not jump scares.</p>
       </div>
 
       <div class="cs-section">
-        <div class="cs-section-label">Gallery</div>
+        <div class="cs-section-label">Gallery — screenshots &amp; gifs</div>
         <div class="cs-gallery">
-          <div class="cs-gallery-img"><span>Concept art / moodboard</span></div>
-          <div class="cs-gallery-img"><span>Level map — Silent Pool</span></div>
-          <div class="cs-gallery-img"><span>Level map — Playdate</span></div>
-          <div class="cs-gallery-img"><span>Screenshot / prototype</span></div>
+          <div class="cs-gallery-img"><span>Corridor from the first dream (screenshot)</span></div>
+          <div class="cs-gallery-img"><span>Transition between dreams (gif)</span></div>
+          <div class="cs-gallery-img"><span>Roguelite variation — environment (screenshot)</span></div>
+          <div class="cs-gallery-img"><span>Level design overview (screenshot)</span></div>
         </div>
       </div>
     </div>
   </main>
 
   <script src="../js/nav.js"></script>
+   <script src="../js/curtain.js"></script>
+
+
 </body>
 </html>

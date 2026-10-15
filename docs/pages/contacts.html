@@ -3,80 +3,109 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Contacts — Said B.</title>
-  <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;1,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <title>Contact — Said Serbouti</title>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="../css/base.css">
   <link rel="stylesheet" href="../css/layout.css">
   <link rel="stylesheet" href="../css/sidebar.css">
+  <link rel="stylesheet" href="../css/home.css">
+  <link rel="stylesheet" href="../css/projects.css">
   <link rel="stylesheet" href="../css/pages.css">
 </head>
 <body>
 
   <aside class="sidebar">
-    <a class="sidebar-logo" href="../index.html">Said Serbouti<span>Narrative Designer</span></a>
+    <a class="sidebar-logo" href="../index.html">
+      Said Serbouti
+      <span>Game &amp; Narrative Designer</span>
+    </a>
+
     <nav class="sidebar-nav">
-      <div class="nav-item"><a class="nav-link" href="../index.html">Home</a></div>
-      <div class="nav-item" id="nav-academic">
-        <button class="nav-link" onclick="toggleDropdown('nav-academic')">Academic Projects <span class="nav-arrow">▶</span></button>
+
+      <div class="nav-item">
+        <a class="nav-link" href="../index.html">Home</a>
+      </div>
+
+      <div class="nav-item" id="nav-gamedesign">
+        <button class="nav-link" onclick="toggleDropdown('nav-gamedesign')">
+          Game Design <span class="nav-arrow">▶</span>
+        </button>
         <div class="nav-dropdown">
-          <a href="../pages/academic.html">All Projects</a>
-          <a href="dodgy-depot.html">Dodgy Depot</a>
-          <a href="hocus-potion.html">Hocus Potion</a>
+          <a class="active" href="../pages/game-design.html">All projects</a>
+          <a href="../casestudies/hocus_potion.html">Hocus Potion</a>
+          <a href="../casestudies/dream-jumper.html">Dream Jumper</a>
+          <a href="../casestudies/cowmingback.html">COW-ming Back</a>
         </div>
       </div>
-      <div class="nav-item open" id="nav-personal">
-        <button class="nav-link active" onclick="toggleDropdown('nav-personal')">Personal Projects <span class="nav-arrow">▶</span></button>
+
+      <div class="nav-item" id="nav-narrative">
+        <button class="nav-link" onclick="toggleDropdown('nav-narrative')">
+          Narrative Design <span class="nav-arrow">▶</span>
+        </button>
         <div class="nav-dropdown">
-          <a href="../pages/personal.html">All Projects</a>
-          <a href="dream-jumper.html">Dream Jumper</a>
-          <a href="tides-of-vengeance.html">Prism Breaker</a>
-          <a href="culling-circuit.html">SCP Project</a>
+          <a href="../pages/narrative-design.html">All projects</a>
+          <a href="../casestudies/dream-jumpernarrative.html">Dream Jumper</a>
+          <a href="../casestudies/dodgydepot.html">Dodgy Depot</a>
+          <a href="../casestudies/peaknight.html">Peaknight Quest</a>
+          <a href="../casestudies/gattinferno.html">Gattinferno</a>
+          <a href="../casestudies/scp-project.html">SCP Project</a>
+          
         </div>
       </div>
-      <div class="nav-item" id="nav-jam">
-        <button class="nav-link" onclick="toggleDropdown('nav-jam')">Game Jam <span class="nav-arrow">▶</span></button>
+
+      <div class="nav-item" id="nav-other">
+        <button class="nav-link" onclick="toggleDropdown('nav-other')">
+          Other <span class="nav-arrow">▶</span>
+        </button>
         <div class="nav-dropdown">
-          <a href="../pages/jam.html">All Projects</a>
-          <a href="coming-back.html">COW-ming Back</a>
+          <a href="../pages/other.html">All projects</a>
+          <a href="casestudies/devils-swing.html">Devil's Swing</a>
         </div>
       </div>
-      <div class="nav-item"><a class="nav-link" href="../pages/characters.html">Characters</a></div>
-      <div class="nav-item"><a class="nav-link" href="../pages/about.html">About Me</a></div>
-      <div class="nav-item"><a class="nav-link" href="../pages/contacts.html">Contacts</a></div>
+
+      <div class="nav-item">
+        <a class="nav-link" href="../pages/about.html">About Me</a>
+      </div>
+
+      <div class="nav-item">
+        <a class="nav-link active" href="../pages/contacts.html">Contact</a>
+      </div>
+
     </nav>
-    <div class="sidebar-footer"><p>DBGA Milano<br>2025 — 2027</p></div>
+
+    <div class="sidebar-footer">
+      <a class="cv-button" href="../assets/cv-said-serbouti.pdf" download>Download CV ↓</a>
+      <p>DBGA Milan<br>2025 — 2027</p>
+    </div>
   </aside>
-
-
 
   <main class="main">
     <div class="contacts-page">
-      <h2>Get in touch</h2>
-      <p class="contacts-sub">Open to internships, collaborations, and conversations about narrative design.</p>
+      <h2>Contact</h2>
+      <p class="contacts-sub">Always open to collaborations, game jams, or a good conversation about design.</p>
 
       <div class="contact-row">
-        <div class="contact-label">Email</div>
-        <div class="contact-value"><a href="saidserbouti9@gmail.com">saidserbouti9@gmail.com</a></div>
+        <span class="contact-label">Email</span>
+        <span class="contact-value"><a href="mailto:said.serbouti@example.com">said.serbouti@example.com</a></span>
       </div>
       <div class="contact-row">
-        <div class="contact-label">Instagram</div>
-        <div class="contact-value"><a href="https://instagram.com/just_said_baby" target="_blank">@just_said_baby</a></div>
+        <span class="contact-label">LinkedIn</span>
+        <span class="contact-value"><a href="#" target="_blank" rel="noopener">linkedin.com/in/said-serbouti</a></span>
       </div>
       <div class="contact-row">
-        <div class="contact-label">LinkedIn</div>
-        <div class="contact-value"><a href="https://www.linkedin.com/in/said-serbouti-63a073270/">linkedin.com/in/said-serbouti</a></div>
+        <span class="contact-label">Itch.io</span>
+        <span class="contact-value"><a href="#" target="_blank" rel="noopener">said-serbouti.itch.io</a></span>
       </div>
       <div class="contact-row">
-        <div class="contact-label">Location</div>
-        <div class="contact-value">Bergamo / Milan, Italy</div>
+        <span class="contact-label">Based in</span>
+        <span class="contact-value">Brembate di Sopra, Italy</span>
       </div>
-      <div class="contact-row">
-        <div class="contact-label">Based</div>
-        <div class="contact-value">Available for remote collaboration and relocation post-2027</div>
-      </div>
+
+      
     </div>
   </main>
 
   <script src="../js/nav.js"></script>
+
 </body>
 </html>

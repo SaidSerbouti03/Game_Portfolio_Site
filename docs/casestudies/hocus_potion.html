@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dodgy Depot — Case Study</title>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/base.css">
+  <link rel="stylesheet" href="../css/layout.css">
+  <link rel="stylesheet" href="../css/sidebar.css">
+  <link rel="stylesheet" href="../css/home.css">
+  <link rel="stylesheet" href="../css/projects.css">
+  <link rel="stylesheet" href="../css/pages.css">
+  <link rel="stylesheet" href="../css/curtain.css">
+  <script src="../js/curtain.js"></script>
+</head>
+<body>
+
+  <aside class="sidebar">
+    <a class="sidebar-logo" href="../index.html">
+      Said Serbouti
+      <span>Game &amp; Narrative Designer</span>
+    </a>
+
+    <nav class="sidebar-nav">
+
+      <div class="nav-item">
+        <a class="nav-link" href="../index.html">Home</a>
+      </div>
+
+      <div class="nav-item open" id="nav-gamedesign">
+        <button class="nav-link" onclick="toggleDropdown('nav-gamedesign')">
+          Game Design <span class="nav-arrow">▶</span>
+        </button>
+        <div class="nav-dropdown">
+          <a class="active" href="../pages/game-design.html">All projects</a>
+          <a href="../casestudies/hocus_potion.html">Hocus Potion</a>
+          <a href="../casestudies/dream-jumper.html">Dream Jumper</a>
+          <a href="../casestudies/cowmingback.html">COW-ming Back</a>
+        </div>
+        </div>
+      </div>
+
+      <div class="nav-item" id="nav-narrative">
+        <button class="nav-link" onclick="toggleDropdown('nav-narrative')">
+          Narrative Design <span class="nav-arrow">▶</span>
+        </button>
+        <div class="nav-dropdown">
+          <a href="../pages/narrative-design.html">All projects</a>
+          <a href="../casestudies/dream-jumpernarrative.html">Dream Jumper</a>
+          <a href="../casestudies/dodgydepot.html">Dodgy Depot</a>
+          <a href="../casestudies/peaknight.html">Peaknight Quest</a>
+          <a href="../casestudies/gattinferno.html">Gattinferno</a>
+          <a href="../casestudies/scp-project.html">SCP Project</a>
+        </div>
+        </div>
+      </div>
+
+      <div class="nav-item" id="nav-other">
+        <button class="nav-link" onclick="toggleDropdown('nav-other')">
+          Other <span class="nav-arrow">▶</span>
+        </button>
+        <div class="nav-dropdown">
+          <a href="../pages/other.html">All projects</a>
+          <a href="../casestudies/devils-swing.html">Devil's Swing</a>
+          <a href="../casestudies/il-tratto.html">Il Tratto</a>
+          <a href="../casestudies/blood-magic-game.html">Blood Tree</a>
+          <a href="../casestudies/wolverine-game.html">Wolverine</a>
+          <a href="../casestudies/cortometraggio-marocco.html">Morocco Short Film</a>
+        </div>
+      </div>
+
+      <div class="nav-item">
+        <a class="nav-link" href="../pages/about.html">About Me</a>
+      </div>
+
+      <div class="nav-item">
+        <a class="nav-link" href="../pages/contacts.html">Contact</a>
+      </div>
+
+    </nav>
+
+    <div class="sidebar-footer">
+      <a class="cv-button" href="assets/ResumeV02 (1) (1).pdf" download>Download CV ↓</a>
+      <p>DBGA Milan<br>2025 — 2027</p>
+    </div>
+  </aside>
+
+  <main class="main">
+    <div class="case-study">
+      <a class="cs-back" href="../pages/game-design.html">← Back to Game Design</a>
+
+      <div class="cs-cover">
+        <img src="../images/Hocus_Potion_Pitch (2).pptx.png" alt="">
+      </div>
+
+      <div class="cs-meta-row">
+        <div class="cs-meta-item"><label>Role</label><span>Producer</span></div>
+        <div class="cs-meta-item"><label>Type</label><span>Academic project</span></div>
+        <div class="cs-meta-item"><label>Platform</label><span>Android</span></div>
+        <div class="cs-meta-item"><label>Format</label><span>Unity</span></div>
+        <div class="cs-meta-item"><label>Status</label><span>[delivered / evaluated]</span></div>
+      </div>
+
+      <h1 class="cs-title">Hocus Potion</h1>
+      <p class="cs-subtitle">A collection of casual mini-games about an apprentice sorcerer learning to brew potions.</p>
+
+      <div class="cs-section">
+        <div class="cs-section-label">The concept</div>
+        <p>The brief was to build, in one month, an Android game in Unity: a collection of thematically linked games, with at least two casual ones. We chose an apprentice sorcerer learning to make potions. The two mini-games are connected: in the first, you find the ingredients that you use to brew potions in the second.</p>
+      </div>
+
+      <div class="cs-section">
+        <div class="cs-section-label">My role</div>
+        <p>I was the <strong> producer</strong> . I ran the team’s meetings and communication and made sure development problems got solved. [Tools: Discord, task board, build pipeline.]</p>
+        
+        <div class="cs-section-label">How I ran production</div>
+        <p>I attended every meeting and posted a written recap on the team’s Discord as a reminder. During the week I collected feedback and problems as they came up and noted them down, and those notes became the next meeting’s agenda. The team praised this routine.</p>
+
+        <div class="cs-section-label">Challenges</div>
+        <p>Mini-game 1: microphone input. Using the phone’s microphone as a controller was hard, especially on the dated hardware used for evaluation. The two hard problems were balancing the strength of the blow and tuning sensitivity against ambient noise. [How you solved it: thresholds, calibration, a fallback.]</p>
+        <span></span>
+        <p>Mini-game 2: depth perception. The lighting was flat, so players struggled to read 3D distances. [What fixed it: shadows, lighting, camera angle, visual cues.]</p>
+        <span></span>
+        <p>Production: learning the role. It was my first time as a producer, and the main challenge was working out what the role actually was, making communication clearer and resolving development issues. I was sometimes hesitant and not assertive enough, because I didn’t want to make mistakes. I was advised to stop calling the whole team for every problem and to bring in only the people involved, so they could settle it directly and precisely.</p>
+
+        <div class="cs-section-label">Outcomes</div>
+        <p>[What you delivered, how it was evaluated, one thing you would do differently as producer.]
+</p>
+      </div>
+
+    
+
+      <div class="cs-section">
+        <div class="cs-section-label">Gallery </div>
+        <div class="cs-gallery2">
+          <div class="cs-gallery-img2"><img src="../assets/WhatsApp Image 2026-10-15 at 18.19.51 (1).jpeg" alt=""></div>
+          <div class="cs-gallery-img2"><span>Receipt UI (screenshot)</span></div>
+          <div class="cs-gallery-img2"><span>An alien customer (screenshot)</span></div>
+          
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <script src="../js/nav.js"></script>
+
+</body>
+</html>

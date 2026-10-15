@@ -1,20 +1,47 @@
-/* ── RESET & ROOT ── */
-*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+/* ══════════════════════════════════════════
+   BASE — reset, design tokens, global type
+   Theme: gothic vaudeville / jazz-age playbill —
+   an ink-black stage, an oxblood curtain, a brass marquee.
+   ══════════════════════════════════════════ */
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
 
 :root {
-  --bg: #0e0e0c;
-  --surface: #161613;
-  --surface2: #1e1e1a;
-  --border: rgba(255,255,255,0.08);
-  --border-hover: rgba(255,255,255,0.18);
-  --text: #e8e4d9;
-  --text-muted: #7a7669;
-  --text-dim: #4a4840;
-  --accent: #c8a96e;
-  --accent-dim: rgba(200,169,110,0.10);
-  --sidebar-w: 220px;
-  --font-serif: 'EB Garamond', Georgia, serif;
-  --font-mono: 'JetBrains Mono', 'Courier New', monospace;
+  /* Stage — warm near-black, not cold grey */
+  --bg: #14110d;
+  --surface: #1d1811;
+  --surface-2: #262019;
+
+  /* Curtain & marquee — the two colors of the identity */
+  --oxblood: #8a2f34;
+  --oxblood-bright: #b23f43;
+  --brass: #c8a24a;
+  --brass-bright: #e0bd6b;
+  --teal: #2e5652;
+
+  /* Paper & ink */
+  --paper: #efe6d3;
+  --text: #f1e9da;
+  --text-muted: #cac3b7;
+  --text-dim: #c9ad7d;
+
+  --border: rgba(239, 230, 211, 0.12);
+  --border-bright: rgba(200, 162, 74, 0.45);
+
+  --sidebar-w: 260px;
+
+  /* Type: an ornate display serif for character,
+     a clean sans for everything that must stay easy to read */
+  --font-display: 'Fraunces', 'EB Garamond', Georgia, serif;
+  --font-body: 'Inter', -apple-system, sans-serif;
+
+  --fs-body: 1.05rem;
+  --fs-small: 0.92rem;
+  --fs-label: 0.8rem;
 }
 
 html, body { height: 100%; }
@@ -22,10 +49,66 @@ html, body { height: 100%; }
 body {
   background: var(--bg);
   color: var(--text);
-  font-family: var(--font-serif);
-  font-size: 17px;
-  line-height: 1.6;
+  font-family: var(--font-body);
+  font-size: var(--fs-body);
+  line-height: 1.65;
   display: flex;
+  -webkit-font-smoothing: antialiased;
 }
 
-@keyframes blink { 0%,100%{opacity:1} 50%{opacity:0} }
+a:focus-visible,
+button:focus-visible {
+  outline: 2px solid var(--brass);
+  outline-offset: 2px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+@keyframes curtainRise {
+  from { opacity: 0; transform: translateY(14px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50%      { opacity: 0; }
+}
+
+/* ── The marquee rule — the site's signature divider ──
+   A brass hairline, a row of small dots (marquee bulbs),
+   an oxblood hairline. Used wherever a section closes. */
+.marquee-rule {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  height: 1px;
+  margin: 0;
+}
+
+.marquee-rule::before,
+.marquee-rule::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+}
+
+.marquee-rule::before { background: var(--brass); }
+.marquee-rule::after   { background: var(--oxblood); }
+
+.marquee-rule .bulbs {
+  display: flex;
+  gap: 5px;
+  flex-shrink: 0;
+}
+
+.marquee-rule .bulbs span {
+  width: 3px;
+  height: 3px;
+  border-radius: 50%;
+  background: var(--brass-bright);
+}

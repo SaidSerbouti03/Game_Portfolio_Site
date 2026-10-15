@@ -1,0 +1,154 @@
+/* ══════════════════════════════════════════
+   CURTAIN — a stage curtain that stays closed
+   until the visitor clicks, then gathers to the sides.
+
+   Pair with js/curtain.js, which builds the markup.
+   Re-theme it by overriding the variables on .curtain,
+   e.g. in your page CSS:  .curtain { --curtain-fold-mid: #1f3d3a; }
+   ══════════════════════════════════════════ */
+
+.curtain {
+  /* Theme variables — change these to recolor the whole curtain */
+  --curtain-fold-dark: #5a1d22;
+  --curtain-fold-mid: #7d2a30;
+  --curtain-fold-light: #a23a40;
+  --curtain-valance: #4a1519;
+  --curtain-trim: var(--brass, #c8a24a);
+  --curtain-glow: var(--brass-bright, #e0bd6b);
+  --curtain-shade: rgba(20, 17, 13, 1);
+
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  cursor: pointer;
+  overflow: hidden;
+}
+
+/* While the curtain is down the page can't scroll, and what's
+   behind it stays hidden (so the hover "peek" shows only the stage). */
+html.curtain-closed { overflow: hidden; }
+html.curtain-closed body > *:not(.curtain) { visibility: hidden; }
+
+/* Once opened, clicks go through to the page while the folds finish gathering */
+.curtain.is-open { pointer-events: none; }
+
+/* ── The two velvet panels ──
+   Folds are a repeating gradient. Scaling a panel toward its
+   outer edge squeezes the folds together, so the curtain
+   looks gathered instead of simply sliding away. */
+.curtain-panel {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 50.6%;                 /* slight overlap hides the seam */
+  background:
+    linear-gradient(180deg,
+      color-mix(in srgb, var(--curtain-shade) 55%, transparent) 0%,
+      transparent 24%,
+      transparent 76%,
+      color-mix(in srgb, var(--curtain-shade) 60%, transparent) 100%),
+    repeating-linear-gradient(90deg,
+      var(--curtain-fold-dark) 0px,
+      var(--curtain-fold-mid) 14px,
+      var(--curtain-fold-light) 30px,
+      var(--curtain-fold-mid) 46px,
+      var(--curtain-fold-dark) 62px);
+  transition: transform 1.9s cubic-bezier(0.65, 0, 0.2, 1);
+  will-change: transform;
+}
+
+.curtain-panel--left  { left: 0;  transform-origin: left center; }
+.curtain-panel--right { right: 0; transform-origin: right center; }
+
+/* trim band and fringe along the hem */
+.curtain-panel::before {
+  content: '';
+  position: absolute;
+  left: 0; right: 0;
+  bottom: 14px;
+  height: 3px;
+  background: var(--curtain-trim);
+}
+
+.curtain-panel::after {
+  content: '';
+  position: absolute;
+  left: 0; right: 0;
+  bottom: 0;
+  height: 14px;
+  background: repeating-linear-gradient(90deg,
+    var(--curtain-trim) 0 2px,
+    transparent 2px 6px);
+}
+
+/* A small tug on hover: the panels part a hair to hint that it opens */
+.curtain:not(.is-open):hover .curtain-panel,
+.curtain:not(.is-open):focus-visible .curtain-panel {
+  transform: scaleX(0.985);
+}
+
+.curtain.is-open .curtain-panel { transform: scaleX(0.1); }
+
+/* ── Valance (the scalloped top drape) ──
+   Stays put while the panels gather, then lifts away. */
+.curtain-valance {
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 46px;
+  background: var(--curtain-valance);
+  border-top: 8px solid var(--curtain-trim);
+  box-sizing: content-box;
+  z-index: 2;
+  transition: transform 0.7s ease-in 1.5s;
+}
+
+.curtain-valance::after {
+  content: '';
+  position: absolute;
+  top: 100%;
+  left: 0; right: 0;
+  height: 24px;
+  background: radial-gradient(circle at 24px 0, var(--curtain-valance) 23px, transparent 24px) repeat-x;
+  background-size: 48px 24px;
+}
+
+.curtain.is-open .curtain-valance { transform: translateY(-140%); }
+
+/* ── Prompt plaque, like a theatre sign on the curtain ── */
+.curtain-prompt {
+  position: absolute;
+  top: 50%; left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 3;
+  padding: 1.1rem 1.9rem;
+  background: color-mix(in srgb, var(--curtain-shade) 82%, transparent);
+  border: 1px solid var(--curtain-trim);
+  border-radius: 2px;
+  text-align: center;
+  max-width: 86vw;
+  transition: opacity 0.35s ease;
+  animation: curtainGlow 2.8s ease-in-out infinite;
+}
+
+.curtain-prompt__text {
+  font-family: var(--font-display, 'Fraunces', Georgia, serif);
+  font-style: italic;
+  font-size: clamp(1.15rem, 2.4vw, 1.6rem);
+  color: var(--curtain-glow);
+}
+
+.curtain.is-open .curtain-prompt { opacity: 0; animation: none; }
+
+@keyframes curtainGlow {
+  0%, 100% { box-shadow: 0 0 0 0 transparent; }
+  50%      { box-shadow: 0 0 22px 2px color-mix(in srgb, var(--curtain-glow) 28%, transparent); }
+}
+
+.curtain:focus-visible { outline: 3px solid var(--curtain-glow); outline-offset: -6px; }
+
+@media (prefers-reduced-motion: reduce) {
+  .curtain-panel,
+  .curtain-valance,
+  .curtain-prompt { transition-duration: 0.01ms !important; transition-delay: 0s !important; }
+  .curtain-prompt { animation: none; }
+}

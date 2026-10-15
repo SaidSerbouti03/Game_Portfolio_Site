@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dream Jumper — Case Study</title>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/base.css">
+  <link rel="stylesheet" href="../css/layout.css">
+  <link rel="stylesheet" href="../css/sidebar.css">
+  <link rel="stylesheet" href="../css/home.css">
+  <link rel="stylesheet" href="../css/projects.css">
+  <link rel="stylesheet" href="../css/pages.css">
+</head>
+<body>
+
+  <aside class="sidebar">
+    <a class="sidebar-logo" href="../index.html">
+      Said Serbouti
+      <span>Game &amp; Narrative Designer</span>
+    </a>
+
+    <nav class="sidebar-nav">
+
+      <div class="nav-item">
+        <a class="nav-link" href="../index.html">Home</a>
+      </div>
+
+      <div class="nav-item open" id="nav-gamedesign">
+        <button class="nav-link" onclick="toggleDropdown('nav-gamedesign')">
+          Game Design <span class="nav-arrow">▶</span>
+        </button>
+        <div class="nav-dropdown">
+          <a class="active" href="../pages/game-design.html">All projects</a>
+          <a href="../casestudies/hocus_potion.html">Hocus Potion</a>
+          <a href="../casestudies/dream-jumper.html">Dream Jumper</a>
+          <a href="../casestudies/cowmingback.html">COW-ming Back</a>
+        </div>
+        </div>
+      </div>
+
+      <div class="nav-item" id="nav-narrative">
+        <button class="nav-link" onclick="toggleDropdown('nav-narrative')">
+          Narrative Design <span class="nav-arrow">▶</span>
+        </button>
+        <div class="nav-dropdown">
+          <a href="../pages/narrative-design.html">All projects</a>
+          <a href="../casestudies/dream-jumpernarrative.html">Dream Jumper</a>
+          <a href="../casestudies/dodgydepot.html">Dodgy Depot</a>
+          <a href="../casestudies/peaknight.html">Peaknight Quest</a>
+          <a href="../casestudies/gattinferno.html">Gattinferno</a>
+          <a href="../casestudies/scp-project.html">SCP Project</a>
+        </div>
+      </div>
+
+      <div class="nav-item" id="nav-other">
+        <button class="nav-link" onclick="toggleDropdown('nav-other')">
+          Other <span class="nav-arrow">▶</span>
+        </button>
+        <div class="nav-dropdown">
+          <a href="../pages/other.html">All projects</a>
+          <a href="../casestudies/devils-swing.html">Devil's Swing</a>
+          <a href="../casestudies/il-tratto.html">Il Tratto</a>
+          <a href="../casestudies/blood-magic-game.html">Blood Tree</a>
+          <a href="../casestudies/wolverine-game.html">Wolverine</a>
+          <a href="../casestudies/cortometraggio-marocco.html">Morocco Short Film</a>
+        </div>
+      </div>
+
+      <div class="nav-item">
+        <a class="nav-link" href="../pages/about.html">About Me</a>
+      </div>
+
+      <div class="nav-item">
+        <a class="nav-link" href="../pages/contacts.html">Contact</a>
+      </div>
+
+    </nav>
+
+    <div class="sidebar-footer">
+      <a class="cv-button" href="../assets/ResumeV02 (1) (1).pdf" download>Download CV ↓</a>
+      <p>DBGA Milan<br>2025 — 2027</p>
+    </div>
+  </aside>
+
+  <main class="main">
+    <div class="case-study">
+      <a class="cs-back" href="../pages/game-design.html">← Back to Game Design</a>
+
+      <div class="cs-cover">
+        <img src="../images/DD_LoadingScreen (2).png" alt="Dream Jumper">
+      </div>
+
+      <div class="cs-meta-row">
+        <div class="cs-meta-item"><label>Role</label><span>Game Designer</span></div>
+        <div class="cs-meta-item"><label>Type</label><span>Personal project</span></div>
+        <div class="cs-meta-item"><label>Format</label><span>Unity — 3D</span></div>
+        <div class="cs-meta-item"><label>Status</label><span>In progress — a 2 to 3 dream demo</span></div>
+      </div>
+
+      <h1 class="cs-title">Dodgy Depot</h1>
+      <p class="cs-subtitle">A liminal horror walking sim where every dream follows its own rules.</p>
+
+      <div class="cs-section">
+        <div class="cs-section-label">The concept</div>
+        <p>Dream Jumper moves the player through a sequence of first-person dreams, each with its own liminal atmosphere and slightly different rules. It's designed as a demo of 2 to 3 dreams rather than a full game, meant to show range in level design within a short playtime.</p>
+      </div>
+
+      <div class="cs-section">
+        <div class="cs-section-label">My role</div>
+        <p>I handle general game design and level design: defining each dream's distinct rules, their relative difficulty, and how they fit the project's roguelite structure.</p>
+        <ul>
+          <li>Level design for the first dream (current prototype)</li>
+          <li>Defined the distinct rules for each dream</li>
+          <li>Wrote the full game design document</li>
+        </ul>
+      </div>
+
+      <div class="cs-highlight">
+        <p>Every dream had to feel familiar and wrong at the same time — the goal was déjà-vu unease, not jump scares.</p>
+      </div>
+
+      <div class="cs-section">
+        <div class="cs-section-label">Gallery — screenshots &amp; gifs</div>
+        <div class="cs-gallery">
+          <div class="cs-gallery-img"><span>Corridor from the first dream (screenshot)</span></div>
+          <div class="cs-gallery-img"><span>Transition between dreams (gif)</span></div>
+          <div class="cs-gallery-img"><span>Roguelite variation — environment (screenshot)</span></div>
+          <div class="cs-gallery-img"><span>Level design overview (screenshot)</span></div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <script src="../js/nav.js"></script>
+
+</body>
+</html>
