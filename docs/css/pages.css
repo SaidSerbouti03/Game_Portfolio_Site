@@ -182,3 +182,132 @@
   border-radius: 999px;
   color: var(--text-muted);
 }
+
+
+/* ══════════════════════════════════════════
+   RESPONSIVE — on mobile the sidebar becomes a slide-in drawer.
+
+   PASTE AT THE VERY END of css/pages.css (the last file loaded),
+   so these rules win over the desktop styles of the other files.
+   ══════════════════════════════════════════ */
+
+/* Mobile-only elements (built by nav.js) stay hidden on desktop */
+.mobile-bar,
+.sidebar-backdrop { display: none; }
+
+@media (max-width: 780px) {
+
+  /* ── Top bar with the menu button ── */
+  .mobile-bar {
+    display: flex;
+    align-items: center;
+    gap: 0.9rem;
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    height: 56px;
+    padding: 0 1rem;
+    background: var(--surface);
+    border-bottom: 1px solid var(--border);
+    z-index: 350;                               /* stays above the open drawer, so the X is always reachable */
+  }
+
+  .menu-toggle {
+    width: 40px;
+    height: 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    background: none;
+    border: 1px solid var(--border);
+    border-radius: 50%;
+    cursor: pointer;
+  }
+
+  .menu-toggle span {
+    display: block;
+    width: 18px;
+    height: 2px;
+    background: var(--paper);
+    transition: transform 0.25s, opacity 0.25s;
+  }
+
+  /* the three bars turn into an X while the menu is open */
+  .menu-toggle[aria-expanded="true"] span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+  .menu-toggle[aria-expanded="true"] span:nth-child(2) { opacity: 0; }
+  .menu-toggle[aria-expanded="true"] span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+  .mobile-bar__title {
+    font-family: var(--font-display);
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--paper);
+    text-decoration: none;
+  }
+
+  /* ── The sidebar becomes an off-canvas drawer ── */
+  .sidebar {
+    top: 56px;                                  /* starts below the top bar */
+    padding-top: 1rem;
+    width: min(84vw, 320px);
+    transform: translateX(-100%);
+    visibility: hidden;                         /* closed links can't be tabbed to */
+    transition: transform 0.3s ease, visibility 0s 0.3s;
+    z-index: 300;
+  }
+
+  .sidebar.is-open {
+    transform: translateX(0);
+    visibility: visible;
+    transition: transform 0.3s ease, visibility 0s;
+    box-shadow: 8px 0 30px rgba(0, 0, 0, 0.5);
+  }
+
+  .sidebar-logo { display: none; }              /* the top bar already shows the name */
+
+  .sidebar-backdrop {
+    display: block;
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.6);
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s;
+    z-index: 290;
+  }
+
+  .sidebar-backdrop.is-visible { opacity: 1; pointer-events: auto; }
+
+  html.menu-open { overflow: hidden; }
+
+  /* ── Content uses the full width, below the top bar ── */
+  .main {
+    margin-left: 0;
+    width: 100%;
+    padding-top: 56px;
+  }
+
+  /* ── Smaller side padding on every page ── */
+  .home-hero        { padding: 2.5rem 1.25rem 2rem; }
+  .stage-divider    { padding: 0 1.25rem; }
+  .carousel-section { padding: 2rem 1.25rem 2.25rem; }
+  .overview-section { padding: 2rem 1.25rem 3rem; gap: 2rem; }
+
+  .section-page,
+  .case-study,
+  .about-page,
+  .contacts-page    { padding: 2rem 1.25rem 3rem; }
+
+  .hero-title { font-size: 2.3rem; }
+  .section-page-header h2 { font-size: 1.7rem; }
+  .project-carousel .project-thumb { flex: 0 0 78%; }
+  .cs-cover { aspect-ratio: 16 / 9; }
+  .cs-meta-row { gap: 1.25rem 2rem; }
+
+  .contact-row {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.35rem;
+  }
+}

@@ -12,17 +12,4 @@
 }
 
 /* Su schermi stretti la sidebar collassa in alto */
-@media (max-width: 780px) {
-  body { flex-direction: column; }
 
-  .sidebar {
-    position: relative;
-    width: 100%;
-    min-height: auto;
-  }
-
-  .main {
-    margin-left: 0;
-    width: 100%;
-  }
-}
