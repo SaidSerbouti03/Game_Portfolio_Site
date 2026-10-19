@@ -1,0 +1,181 @@
+/* ══════════════════════════════════════════
+   LIGHTBOX — click a screenshot, gif or CV page to enlarge it
+   Used with js/lightbox.js (it builds its own markup)
+   ══════════════════════════════════════════ */
+
+/* Enlargeable media: the cursor and the keyboard focus say so */
+[data-lb-ready] { cursor: zoom-in; }
+
+[data-lb-ready]:focus-visible {
+  outline: 2px solid var(--brass, #c8a24a);
+  outline-offset: 3px;
+}
+
+/* ── The viewer ── */
+.lb {
+  position: fixed;
+  inset: 0;
+  z-index: 900;
+}
+
+.lb [hidden] { display: none !important; }
+.lb[hidden]  { display: none; }
+
+html.lb-open { overflow: hidden; }
+
+.lb-backdrop {
+  position: absolute;
+  inset: 0;
+  background: rgba(20, 17, 13, 0.94);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.lb.is-visible .lb-backdrop { opacity: 1; }
+
+.lb-stage {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 64px 72px 92px;
+  overflow: hidden;
+  touch-action: none;
+}
+
+.lb-frame {
+  display: block;
+  transform-origin: center;
+  will-change: transform, opacity;
+}
+
+.lb-img {
+  display: block;
+  max-width: calc(100vw - 144px);
+  max-height: calc(100vh - 156px);
+  width: auto;
+  height: auto;
+  transform-origin: center;
+  touch-action: none;
+  user-select: none;
+  -webkit-user-drag: none;
+  cursor: zoom-in;
+  box-shadow: 0 12px 50px rgba(0, 0, 0, 0.6);
+}
+
+.lb-img.is-animating { transition: transform 0.25s ease; }
+
+.lb.is-zoomed .lb-img { cursor: grab; }
+.lb.is-dragging .lb-img { cursor: grabbing; }
+
+/* ── Buttons ── */
+.lb-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 42px;
+  height: 42px;
+  padding: 0;
+  font-family: var(--font-body, sans-serif);
+  font-size: 1.4rem;
+  line-height: 1;
+  color: var(--paper, #efe6d3);
+  background: rgba(29, 24, 17, 0.88);
+  border: 1px solid var(--border-bright, rgba(200, 162, 74, 0.45));
+  border-radius: 50%;
+  cursor: pointer;
+  transition: color 0.2s, border-color 0.2s, background 0.2s;
+}
+
+.lb-btn:hover:not(:disabled) {
+  color: var(--brass-bright, #e0bd6b);
+  border-color: var(--brass, #c8a24a);
+}
+
+.lb-btn:disabled { opacity: 0.3; cursor: default; }
+
+.lb-btn:focus-visible {
+  outline: 2px solid var(--brass-bright, #e0bd6b);
+  outline-offset: 2px;
+}
+
+.lb-close { position: absolute; top: 16px; right: 16px; z-index: 3; }
+
+.lb-nav {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 3;
+}
+
+.lb-prev { left: 14px; }
+.lb-next { right: 14px; }
+
+/* ── Bottom bar: caption on the left, zoom tools on the right ── */
+.lb-bar {
+  position: absolute;
+  left: 0; right: 0; bottom: 0;
+  z-index: 3;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 14px 20px 18px;
+  pointer-events: none;
+}
+
+.lb-bar > * { pointer-events: auto; }
+
+.lb-caption {
+  flex: 1;
+  min-width: 0;
+  font-family: var(--font-body, sans-serif);
+  font-style: italic;
+  font-size: 0.9rem;
+  color: var(--text-muted, #b3a58d);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.lb-tools {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-left: auto;
+}
+
+.lb-counter {
+  font-family: var(--font-body, sans-serif);
+  font-size: 0.82rem;
+  color: var(--text-dim, #7f735e);
+  margin-right: 0.5rem;
+}
+
+.lb-small { width: 36px; height: 36px; font-size: 1.15rem; }
+
+.lb-level {
+  width: auto;
+  min-width: 4.2rem;
+  padding: 0 0.8rem;
+  border-radius: 999px;
+  font-size: 0.82rem;
+}
+
+@media (max-width: 780px) {
+  .lb-stage { padding: 56px 12px 92px; }
+  .lb-img   { max-width: calc(100vw - 24px); max-height: calc(100vh - 160px); }
+  .lb-nav   { width: 36px; height: 36px; font-size: 1.2rem; }
+  .lb-prev  { left: 6px; }
+  .lb-next  { right: 6px; }
+  .lb-bar   { flex-direction: column; align-items: stretch; gap: 0.5rem; padding: 10px 14px 14px; }
+  .lb-caption { text-align: center; }
+  .lb-tools { margin: 0 auto; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .lb-backdrop, .lb-img.is-animating { transition-duration: 0.01ms !important; }
+}
+
+@media print { .lb { display: none !important; } }
