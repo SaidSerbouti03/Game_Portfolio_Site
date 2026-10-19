@@ -348,7 +348,7 @@
 }
 
 .cs-gallery-img2 {
-  aspect-ratio: 2 / 3;
+  aspect-ratio: 9 / 16;
   background: var(--surface-2);
   border: 1px solid var(--border);
   display: flex;
