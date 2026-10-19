@@ -1,0 +1,151 @@
+/* ══════════════════════════════════════════
+   CV VIEWER — a PDF shown inside the page
+   Used with js/cv-viewer.js (and pdf.js in js/vendor/)
+   ══════════════════════════════════════════ */
+
+.cv-viewer {
+  margin-top: 2.5rem;
+  padding-top: 2.25rem;
+  border-top: 1px solid var(--border);
+}
+
+.cv-viewer__heading {
+  font-family: var(--font-display);
+  font-size: 1.4rem;
+  font-weight: 600;
+  color: var(--brass-bright);
+  margin-bottom: 1rem;
+}
+
+/* ── Toolbar ── */
+.cv-toolbar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.6rem 0.75rem;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 4px 4px 0 0;
+}
+
+.cv-btn {
+  font-family: var(--font-body);
+  font-weight: 500;
+  font-size: 0.84rem;
+  color: var(--text-muted);
+  background: transparent;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  padding: 0.4rem 0.95rem;
+  cursor: pointer;
+  text-decoration: none;
+  line-height: 1.2;
+  transition: color 0.2s, border-color 0.2s, background 0.2s;
+}
+
+.cv-btn:hover {
+  color: var(--paper);
+  border-color: var(--border-bright);
+  background: rgba(239, 230, 211, 0.04);
+}
+
+.cv-btn:disabled {
+  opacity: 0.35;
+  cursor: default;
+  pointer-events: none;
+}
+
+.cv-btn--icon {
+  width: 34px;
+  height: 34px;
+  padding: 0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.15rem;
+}
+
+.cv-zoom-label {
+  min-width: 3.2rem;
+  text-align: center;
+  font-family: var(--font-body);
+  font-size: 0.84rem;
+  color: var(--text-muted);
+}
+
+.cv-count {
+  margin-left: 0.5rem;
+  font-family: var(--font-body);
+  font-style: italic;
+  font-size: 0.8rem;
+  color: var(--text-dim);
+}
+
+.cv-spacer { flex: 1; }
+
+/* ── Pages ── */
+.cv-pages {
+  background: var(--surface-2);
+  border: 1px solid var(--border);
+  border-top: 0;
+  padding: 1.25rem;
+  overflow-x: auto;
+}
+
+/* Pages are drawn once; zoom only changes their width */
+.cv-pages canvas {
+  display: block;
+  width: calc(var(--cv-zoom, 1) * 100%);
+  height: auto;
+  margin: 0 auto 1.25rem;
+  background: #fff;
+  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.45);
+}
+
+.cv-pages canvas:last-child { margin-bottom: 0; }
+
+.cv-status {
+  font-family: var(--font-body);
+  font-style: italic;
+  font-size: 0.9rem;
+  color: var(--text-dim);
+  text-align: center;
+  padding: 2rem 1rem;
+}
+
+.cv-status a { color: var(--brass-bright); }
+
+@media (max-width: 780px) {
+  .cv-pages { padding: 0.75rem; }
+  .cv-count { display: none; }
+}
+
+/* ── Printing: only the CV pages, full width, one per sheet ── */
+@media print {
+  @page { margin: 10mm; }
+
+  .sidebar,
+  .mobile-bar,
+  .sidebar-backdrop,
+  .curtain,
+  .cv-toolbar,
+  .cv-viewer__heading { display: none !important; }
+
+  .main { margin: 0; width: 100%; padding: 0; }
+
+  .about-page { padding: 0; max-width: none; }
+  .about-page > *:not(.cv-viewer) { display: none !important; }
+
+  .cv-viewer { margin: 0; padding: 0; border: 0; }
+  .cv-pages { padding: 0; border: 0; background: none; overflow: visible; }
+
+  .cv-pages canvas {
+    width: 100% !important;
+    margin: 0;
+    box-shadow: none;
+    break-after: page;
+    break-inside: avoid;
+  }
+  .cv-pages canvas:last-child { break-after: auto; }
+}

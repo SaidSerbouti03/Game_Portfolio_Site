@@ -11,6 +11,7 @@
   <link rel="stylesheet" href="../css/home.css">
   <link rel="stylesheet" href="../css/projects.css">
   <link rel="stylesheet" href="../css/pages.css">
+  <link rel="stylesheet" href="../css/curtain.css">
 </head>
 <body>
 
@@ -79,7 +80,7 @@
     </nav>
 
     <div class="sidebar-footer">
-      <a class="cv-button" href="../assets/cv-said-serbouti.pdf" download>Download CV ↓</a>
+      
       <p>DBGA Milan<br>2025 — 2027</p>
     </div>
   </aside>
@@ -93,10 +94,10 @@
       </div>
 
       <div class="cs-meta-row">
-        <div class="cs-meta-item"><label>Role</label><span>Game Designer</span></div>
+        <div class="cs-meta-item"><label>Role</label><span>Narrative designer, environmental storytelling · co-author of worldbuilding and story</span></div>
         <div class="cs-meta-item"><label>Type</label><span>Personal project</span></div>
-        <div class="cs-meta-item"><label>Format</label><span>Unity — 3D</span></div>
-        <div class="cs-meta-item"><label>Status</label><span>In progress — a 2 to 3 dream demo</span></div>
+        <div class="cs-meta-item"><label>Format</label><span>First-person liminal horror walking sim, UnityD</span></div>
+        <div class="cs-meta-item"><label>Status</label><span>In progress, a 3-dream demo of about 30 minutes</span></div>
       </div>
 
       <h1 class="cs-title">Dream Jumper</h1>
@@ -104,27 +105,60 @@
 
       <div class="cs-section">
         <div class="cs-section-label">The concept</div>
-        <p>Dream Jumper moves the player through a sequence of first-person dreams, each with its own liminal atmosphere and slightly different rules. It's designed as a demo of 2 to 3 dreams rather than a full game, meant to show range in level design within a short playtime.</p>
+        <p>The player jumps through dreams that each belong to a person dear to the protagonist. There are no cutscenes: the story is told through the spaces themselves. A dream has to express and represent its owner, so the player learns who they are by exploring what the dream is made of.</p>
       </div>
 
       <div class="cs-section">
         <div class="cs-section-label">My role</div>
-        <p>I handle general game design and level design: defining each dream's distinct rules, their relative difficulty, and how they fit the project's roguelite structure.</p>
         <ul>
-          <li>Level design for the first dream (current prototype)</li>
-          <li>Defined the distinct rules for each dream</li>
-          <li>Wrote the full game design document</li>
+          <li>Environmental narrative. I design how each dream expresses its owner.</li>
+          <li>Worldbuilding and story. I co-write the world and the protagonist’s story, and how that story has consequences on the game.</li>
+          <li>Emotional tone of the music. The music supports the immersion in each owner’s emotional world.</li>
         </ul>
       </div>
 
-      <div class="cs-highlight">
-        <p>Every dream had to feel familiar and wrong at the same time — the goal was déjà-vu unease, not jump scares.</p>
+      <div class="cs-section">
+        <div class="cs-section-label">How a dream tells you who it belongs to</div>
+        <p>Every layer of a level carries the owner:</p>
+        <ul>
+          <li>Color and lighting</li>
+          <li>The entities that live there</li>
+          <li>Puzzles</li>
+          <li>Set props</li>
+        </ul>
+        <p>Example: the pool level. It is intricate, and in places anxious, because of creatures that react to sound. The palette sits in aquamarine tones. Space, color and enemy design all say something about the person who dreams it.</p>
       </div>
+
+      <div class="cs-section">
+        <div class="cs-section-label">Pacing: room to breathe</div>
+        <p>Not every level is like that. Some include contemplative, artistic stretches that give the player a breather between one dream and the next.</p>
+      </div>
+
+      <div class="cs-section">
+        <div class="cs-section-label">Story as mechanic</div>
+        <p>What the player learns changes the game. The awareness meter in the HUD tracks it: green when you arrive, yellow once you have found every clue about whose dream it is, which opens the portal to the next dream. Red means total knowledge, reached when you die: the dream starts to crumble and the enemies grow more aggressive.</p>
+      </div>
+
+      <div class="cs-section">
+        <div class="cs-section-label">Challenges</div>
+        <ul>
+          <li>The three dreams play in a random order, so each one has to work on its own, whichever the player meets first.</li>
+          <li>Making each dream read as a different person through space, light and sound, without long dialogue.</li>
+          <li>Keeping tone consistent with the level design.</li>
+        </ul>
+      </div>
+
+      <div class="cs-section">
+        <div class="cs-section-label">Outcome</div>
+        <p>The Pool level is blocked out and the randomized structure of the dreams work.</p>
+      </div>
+
+     
 
       <div class="cs-section">
         <div class="cs-section-label">Gallery — screenshots &amp; gifs</div>
         <div class="cs-gallery">
-          <div class="cs-gallery-img"><span>Corridor from the first dream (screenshot)</span></div>
+          <div class="cs-gallery-img"><img src="../assets/djumpern01.png" alt="" loading="lazy"></div>
           <div class="cs-gallery-img"><span>Transition between dreams (gif)</span></div>
           <div class="cs-gallery-img"><span>Roguelite variation — environment (screenshot)</span></div>
           <div class="cs-gallery-img"><span>Level design overview (screenshot)</span></div>
@@ -134,6 +168,8 @@
   </main>
 
   <script src="../js/nav.js"></script>
+  <script src="../js/curtain.js"></script>
+
 
 </body>
 </html>

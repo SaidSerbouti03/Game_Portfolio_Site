@@ -11,6 +11,8 @@
   <link rel="stylesheet" href="../css/home.css">
   <link rel="stylesheet" href="../css/projects.css">
   <link rel="stylesheet" href="../css/pages.css">
+  <link rel="stylesheet" href="../css/cv-viewer.css">
+
 </head>
 <body>
 
@@ -88,6 +90,14 @@
 
       <p>The thread running through my work is building coherent worlds where mechanics and story hold each other up: a game loop that says something, a line of dialogue that changes depending on how you've already played.</p>
 
+      <section class="cv-viewer" id="cv"
+         data-pdf="../assets/ResumeV02 (1) (1).pdf"
+         data-heading="Resume"
+         data-filename="Said-Serbouti-CV.pdf">
+        <noscript><p><a href="../assets/ResumeV02 (1) (1).pdf">Open my CV (PDF)</a></p></noscript>
+      </section>
+
+
       <div class="about-grid">
         <div>
           <h4>Education</h4>
@@ -101,7 +111,9 @@
     </div>
   </main>
 
+  <script src="../js/vendor/pdf.min.js"></script>
+  <script src="../js/cv-viewer.js"></script>
   <script src="../js/nav.js"></script>
-
+ 
 </body>
 </html>

@@ -11,6 +11,7 @@
   <link rel="stylesheet" href="../css/home.css">
   <link rel="stylesheet" href="../css/projects.css">
   <link rel="stylesheet" href="../css/pages.css">
+  <link rel="stylesheet" href="../css/curtain.css">
 </head>
 <body>
 
@@ -92,47 +93,60 @@
       </div>
 
       <div class="cs-meta-row">
-        <div class="cs-meta-item"><label>Role</label><span>Game Designer</span></div>
-        <div class="cs-meta-item"><label>Type</label><span>Personal project</span></div>
+        <div class="cs-meta-item"><label>Role</label><span>Dodgy Depot</span></div>
+        <div class="cs-meta-item"><label>Type</label><span>Academic project</span></div>
         <div class="cs-meta-item"><label>Format</label><span>Unity — 3D</span></div>
-        <div class="cs-meta-item"><label>Status</label><span>In progress — a 2 to 3 dream demo</span></div>
+        <div class="cs-meta-item"><label>Status</label><span>Delivered</span></div>
       </div>
 
       <h1 class="cs-title">Dodgy Depot</h1>
-      <p class="cs-subtitle">A liminal horror walking sim where every dream follows its own rules.</p>
+      <p class="cs-subtitle">A retro-futuristic cashier sim set in a space minimarket, where you need to sell illegal items just to scrap by.</p>
 
       <div class="cs-section">
         <div class="cs-section-label">The concept</div>
-        <p>Dream Jumper moves the player through a sequence of first-person dreams, each with its own liminal atmosphere and slightly different rules. It's designed as a demo of 2 to 3 dreams rather than a full game, meant to show range in level design within a short playtime.</p>
+        <p>A retro-futuristic cashier sim set in a minimarket in space. The player serves customers against the clock, while some of them are undercover robot cops. Narrative was my main role: I wrote the characters, the dialogue, the tutorial and the end-of-shift messages, and I helped shape the game’s sound.</p>
       </div>
 
       <div class="cs-section">
         <div class="cs-section-label">My role</div>
-        <p>I handle general game design and level design: defining each dream's distinct rules, their relative difficulty, and how they fit the project's roguelite structure.</p>
-        <ul>
-          <li>Level design for the first dream (current prototype)</li>
-          <li>Defined the distinct rules for each dream</li>
-          <li>Wrote the full game design document</li>
+          <li>Dialogue. I wrote the lines for the customers and for the undercover cops, in three states: before they are found out, when they are found out, and when the cashier fails to spot them.</li>
+          <li>Tutorial and end of shift. I wrote the tutorial and the victory and defeat messages at the end of each shift.</li>
+          <li>Dialogue system. I worked with the programmer to build the dialogue system that best fit our game. The protagonist has no name and cannot answer, a design choice driven by the time we had and the plot features we needed.</li>
+          <li>Audio. I helped the sound designer find music that fit the game’s mood. I found the sound effects for objects, actions and the robot cops’ transformations. I also found samples of vocal sounds on Freesound and edited them into character voices, the way Hollow Knight does.</li>
+
         </ul>
       </div>
 
-      <div class="cs-highlight">
-        <p>Every dream had to feel familiar and wrong at the same time — the goal was déjà-vu unease, not jump scares.</p>
+      <div class="cs-section">
+        <div class="cs-section-label">Design decisions</div>
+          <li>Readable orders, fast. With so little time per customer, the player had to understand at a glance what was being asked. We highlighted the products on sale with key colors.</li>
+          <li>Customers that don’t repeat. Customers are random, so to keep the experience varied I created a set of distinct characters. Each has a personality, a way of speaking, a dialogue length and a piece of the world to narrate.</li>
+          <li>Long dialogue on purpose. I used a few key characters in two ways: to slow down a player racing against the clock and annoy them, and to use those long conversations to make the Dodgy Depot universe feel believable.</li>
+          <li>A manager with a voice. The tutorial and the end-of-shift emails come from the shop manager, not from a neutral system. They carry his personality and the protagonist’s micro-plot.</li>
+
+        </ul>
       </div>
+
+      <div class="cs-section">
+        <div class="cs-section-label">Outcome</div>
+        <p>The gamers fan of the genre found or game entertaining and addicting for its rushed gameplay.</p>
+      </div>
+
+      
 
       <div class="cs-section">
         <div class="cs-section-label">Gallery — screenshots &amp; gifs</div>
         <div class="cs-gallery">
-          <div class="cs-gallery-img"><span>Corridor from the first dream (screenshot)</span></div>
-          <div class="cs-gallery-img"><span>Transition between dreams (gif)</span></div>
-          <div class="cs-gallery-img"><span>Roguelite variation — environment (screenshot)</span></div>
-          <div class="cs-gallery-img"><span>Level design overview (screenshot)</span></div>
-        </div>
+          <div class="cs-gallery-img"><img src="../assets/ddepot1.png" alt="" loading="lazy"></div>
+          <div class="cs-gallery-img"><img src="../assets/ddepot2.png" alt="" loading="lazy"></div>
+          <div class="cs-gallery-img"><img src="../assets/ddepot3.png" alt="" loading="lazy"></div>
+          <div class="cs-gallery-img"><img src="../assets/ddepot4.png" alt="" loading="lazy"></div>
       </div>
     </div>
   </main>
 
   <script src="../js/nav.js"></script>
+  <script src="../js/curtain.js"></script>
 
 </body>
 </html>

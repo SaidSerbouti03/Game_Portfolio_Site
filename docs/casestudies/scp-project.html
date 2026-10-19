@@ -11,6 +11,7 @@
   <link rel="stylesheet" href="../css/home.css">
   <link rel="stylesheet" href="../css/projects.css">
   <link rel="stylesheet" href="../css/pages.css">
+  <link rel="stylesheet" href="../css/curtain.css">
 </head>
 <body>
 
@@ -48,7 +49,7 @@
           <a href="../casestudies/dream-jumpernarrative.html">Dream Jumper</a>
           <a href="../casestudies/dodgydepot.html">Dodgy Depot</a>
           <a href="../casestudies/peaknight.html">Peaknight Quest</a>
-          <a href="../casestudies/gattinferno.html">Gattinferno</a>
+          <a href="../casestudies/catnhell.html">Cat 'n' Hell</a>
           <a href="../casestudies/scp-project.html">SCP Project</a>
         </div>
         </div>
@@ -61,10 +62,7 @@
         <div class="nav-dropdown">
           <a href="../pages/other.html">All projects</a>
           <a href="../casestudies/devils-swing.html">Devil's Swing</a>
-          <a href="../casestudies/il-tratto.html">Il Tratto</a>
-          <a href="../casestudies/blood-magic-game.html">Blood Tree</a>
-          <a href="../casestudies/wolverine-game.html">Wolverine</a>
-          <a href="../casestudies/cortometraggio-marocco.html">Morocco Short Film</a>
+          
         </div>
       </div>
 
@@ -79,7 +77,7 @@
     </nav>
 
     <div class="sidebar-footer">
-      <a class="cv-button" href="../assets/cv-said-serbouti.pdf" download>Download CV ↓</a>
+      
       <p>DBGA Milan<br>2025 — 2027</p>
     </div>
   </aside>
@@ -89,27 +87,27 @@
       <a class="cs-back" href="../pages/narrative-design.html">← Back to Narrative Design</a>
 
       <div class="cs-cover">
-        <img src="../images/scp-project-hero.jpg" alt="SCP Project (Twine)">
+        <img src="../images/casescp.jpg" alt="SCP Project (Twine)">
       </div>
 
       <div class="cs-meta-row">
-        <div class="cs-meta-item"><label>Role</label><span>Narrative Designer</span></div>
-        <div class="cs-meta-item"><label>Type</label><span>Technical proof</span></div>
-        <div class="cs-meta-item"><label>Format</label><span>Twine — text-based</span></div>
+        <div class="cs-meta-item"><label>Role</label><span>Narrative designer, writer</span></div>
+        <div class="cs-meta-item"><label>Type</label><span>Personal project</span></div>
+        <div class="cs-meta-item"><label>Format</label><span>Twine, text-based branching narrative</span></div>
         <div class="cs-meta-item"><label>Status</label><span>In revision</span></div>
       </div>
 
-      <h1 class="cs-title">SCP Project (Twine)</h1>
+      <h1 class="cs-title">SCP Project</h1>
       <p class="cs-subtitle">Branching interactive fiction across seven episodes, with four distinct endings.</p>
 
       <div class="cs-section">
         <div class="cs-section-label">The concept</div>
-        <p>A project built as a technical proof of branching writing: seven SCP-inspired episodes, linked by variables that track the player's choices across the whole run, leading to four different endings.</p>
+        <p>A branching interactive fiction game built in Twine, set in the SCP universe. I wrote an original story, told in episodes (seven in total, with four distinct endings). In every episode the player makes choices that shape where the story goes, and the people in it remember what you did.</p>
       </div>
 
       <div class="cs-section">
         <div class="cs-section-label">My role</div>
-        <p>I wrote the entire narrative structure and implemented the variable logic in Twine, balancing freedom of choice against the coherence of the central mystery.</p>
+        <p>I wrote the whole story and its branching structure, and designed the systems that make choices matter:</p>
         <ul>
           <li>Wrote seven branching episodes</li>
           <li>Designed the variables that shape each ending</li>
@@ -117,23 +115,48 @@
         </ul>
       </div>
 
-      <div class="cs-highlight">
-        <p>The hardest part wasn't writing the forks — it was making every ending feel like a logical consequence, not a label stuck on at the finish.</p>
+      <div class="cs-section">
+        <div class="cs-section-label">How the choices work</div>
+        <ul>
+          <li>Awareness points. The first choice of the game sets the tone: consult the archive, or not. Consulting raises your awareness score. Reaching a certain amount is useful to move the plot forward, but going past it risks sending the player’s choices into a downward spiral. Curiosity helps, up to a point.</li>
+          <li>Different weights of choice. Many choices are light and conversational. Others carry real moral weight. Some are deadly.</li>
+          <li>Timed choices. In the sequences where adrenaline is at its highest, choices run on a timer, so the tension grows with the clock.</li>
+          <li>Characters that remember. The main characters, SCP-999 among them, remember what you chose, and that changes how the story ends.</li>
+        </ul>
       </div>
+
+      <div class="cs-section">
+        <div class="cs-section-label">Challenges</div>
+        <ul>
+          <li>Making awareness a real tension: rewarding curiosity while making excess costly.</li>
+          <li>Keeping choices meaningful across seven episodes, so that each ending follows from what the player did.</li>
+          <li>Making timed choices feel urgent without feeling unfair.</li>
+          <li>Tracking the variables in Twine, and keeping the world consistent with the SCP source material.</li>
+        </ul>
+      </div>
+
+      <div class="cs-section">
+        <div class="cs-section-label">Outcome</div>
+        <p>The project is in revision.</p>
+      </div>
+
+      
 
       <div class="cs-section">
         <div class="cs-section-label">Gallery — screenshots &amp; gifs</div>
         <div class="cs-gallery">
-          <div class="cs-gallery-img"><span>A Twine node (screenshot)</span></div>
-          <div class="cs-gallery-img"><span>Variable map (screenshot)</span></div>
-          <div class="cs-gallery-img"><span>One of the four endings (screenshot)</span></div>
-          <div class="cs-gallery-img"><span>Branching structure overview (screenshot)</span></div>
+          <div class="cs-gallery-img"><img src="../assets/twine1.png" alt="" loading="lazy"></div>
+          <div class="cs-gallery-img"><img src="../assets/twine2.png" alt="" loading="lazy"></div>
+          <div class="cs-gallery-img"><img src="../assets/scpingame1.png" alt="" loading="lazy"></div>
+          <div class="cs-gallery-img"><img src="../assets/scpingame2.png" alt="" loading="lazy"></div>
         </div>
       </div>
     </div>
   </main>
 
   <script src="../js/nav.js"></script>
+  <script src="../js/curtain.js"></script>
+
 
 </body>
 </html>
